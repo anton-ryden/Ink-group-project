@@ -10,3 +10,17 @@ We have not yet started using Scrum.
 
 * What is my contribution towards the team’s deliveries?
 This week we created the social contract and I helped by sharing my thoughts and ideas.
+
+
+Week 2:
+* What do I want to learn or understand better?
+I want to learn more about the APIs that we are going to be working with.
+
+* How can I help someone else, or the entire team, to learn something new?
+I think the project we are going to work on is new for everybody so my plan is whenever I learn something new then I will share it with the group.
+
+* What is my contribution towards the team’s use of Scrum?
+We have not yet started using Scrum.
+
+* What is my contribution towards the team’s deliveries?
+I helped the team to brainstorm ideas on what our project is going to be, such as having an interactive map for our app.
