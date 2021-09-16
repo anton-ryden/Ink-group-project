@@ -123,7 +123,6 @@ public class World extends Region {
     private              Pane                            pane;
     private              Group                           group;
     private              Map<String, List<CountryPath>>  countryPaths;
-    private              ObservableMap<Location, Shape>  locations;
     private              double                          eventRadius;
     private              boolean                         fadeColors;
 
@@ -188,9 +187,6 @@ public class World extends Region {
             @Override public CssMetaData<? extends Styleable, Color> getCssMetaData() { return SELECTED_COLOR; }
         };
         locationColor        = new StyleableObjectProperty<Color>(LOCATION_COLOR.getInitialValue(this)) {
-            @Override protected void invalidated() {
-                locations.forEach((location, shape) -> shape.setFill(null == location.getColor() ? get() : location.getColor()));
-            }
             @Override public Object getBean() { return World.this; }
             @Override public String getName() { return "locationColor"; }
             @Override public CssMetaData<? extends Styleable, Color> getCssMetaData() { return LOCATION_COLOR; }
@@ -233,7 +229,6 @@ public class World extends Region {
             @Override public String getName() { return "scaleFactor"; }
         };
         countryPaths         = createCountryPaths();
-        locations            = FXCollections.observableHashMap();
         eventRadius          = EVENT_RADIUS;
         fadeColors           = FADE_COLORS;
         heatMapVisible       = new BooleanPropertyBase(true) {
@@ -319,18 +314,6 @@ public class World extends Region {
     private void registerListeners() {
         widthProperty().addListener(o -> resize());
         heightProperty().addListener(o -> resize());
-        sceneProperty().addListener(o -> {
-            if (!locations.isEmpty()) { addShapesToScene(locations.values()); }
-            if (isZoomEnabled()) { getScene().addEventFilter( ScrollEvent.ANY, new WeakEventHandler<>(_scrollEventHandler)); }
-
-            locations.addListener((MapChangeListener<Location, Shape>) CHANGE -> {
-                if (CHANGE.wasAdded()) {
-                    addShapesToScene(CHANGE.getValueAdded());
-                } else if(CHANGE.wasRemoved()) {
-                    Platform.runLater(() -> pane.getChildren().remove(CHANGE.getValueRemoved()));
-                }
-            });
-        });
     }
 
 
@@ -414,49 +397,7 @@ public class World extends Region {
     public Ikon getLocationIconCode() { return locationIconCode; }
     public void setLocationIconCode(final Ikon ICON_CODE) { locationIconCode = ICON_CODE; }
 
-    public void addLocation(final Location LOCATION) {
-        double x = (LOCATION.getLongitude() + 180) * (PREFERRED_WIDTH / 360) + MAP_OFFSET_X;
-        double y = (PREFERRED_HEIGHT / 2) - (PREFERRED_WIDTH * (Math.log(Math.tan((Math.PI / 4) + (Math.toRadians(LOCATION.getLatitude()) / 2)))) / (2 * Math.PI)) + MAP_OFFSET_Y;
 
-        FontIcon locationIcon = new FontIcon(null == LOCATION.getIconCode() ? locationIconCode : LOCATION.getIconCode());
-        locationIcon.setIconSize(LOCATION.getIconSize());
-        locationIcon.setTextOrigin(VPos.CENTER);
-        locationIcon.setIconColor(null == LOCATION.getColor() ? getLocationColor() : LOCATION.getColor());
-        locationIcon.setX(x - LOCATION.getIconSize() * 0.5);
-        locationIcon.setY(y);
-
-        StringBuilder tooltipBuilder = new StringBuilder();
-        if (!LOCATION.getName().isEmpty()) tooltipBuilder.append(LOCATION.getName());
-        if (!LOCATION.getInfo().isEmpty()) tooltipBuilder.append("\n").append(LOCATION.getInfo());
-        String tooltipText = tooltipBuilder.toString();
-        if (!tooltipText.isEmpty()) {
-            Tooltip tooltip = new Tooltip(tooltipText);
-            tooltip.setFont(Font.font(10));
-            Tooltip.install(locationIcon, tooltip);
-        }
-
-        if (null != LOCATION.getMouseEnterHandler()) locationIcon.setOnMouseEntered(new WeakEventHandler<>(LOCATION.getMouseEnterHandler()));
-        if (null != LOCATION.getMousePressHandler()) locationIcon.setOnMousePressed(new WeakEventHandler<>(LOCATION.getMousePressHandler()));
-        if (null != LOCATION.getMouseReleaseHandler()) locationIcon.setOnMouseReleased(new WeakEventHandler<>(LOCATION.getMouseReleaseHandler()));
-        if (null != LOCATION.getMouseExitHandler()) locationIcon.setOnMouseExited(new WeakEventHandler<>(LOCATION.getMouseExitHandler()));
-
-        locations.put(LOCATION, locationIcon);
-    }
-    public void removeLocation(final Location LOCATION) {
-        locations.remove(LOCATION);
-    }
-
-    public void addLocations(final Location... LOCATIONS) {
-        for (Location location : LOCATIONS) { addLocation(location); }
-    }
-    public void clearLocations() { locations.clear(); }
-
-    public void showLocations(final boolean SHOW) {
-        for (Shape shape : locations.values()) {
-            shape.setManaged(SHOW);
-            shape.setVisible(SHOW);
-        }
-    }
 
     public void zoomToCountry(final Country COUNTRY) {
         if (!isZoomEnabled()) return;
