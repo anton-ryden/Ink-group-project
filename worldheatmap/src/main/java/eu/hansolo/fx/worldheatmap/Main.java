@@ -17,11 +17,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 
-/**
- * User: hansolo
- * Date: 12.01.17
- * Time: 05:54
- */
+
 public class Main extends Application {
     private StackPane     pane;
     private World         worldMap;
