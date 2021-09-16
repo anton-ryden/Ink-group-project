@@ -128,8 +128,6 @@ public class World extends Region {
     private              double                          eventRadius;
     private              boolean                         fadeColors;
 
-    private              double                          heatMapOpacity;
-    private              BooleanProperty                 heatMapVisible;
     // internal event handlers
     protected            EventHandler<MouseEvent>        _mouseEnterHandler;
     protected            EventHandler<MouseEvent>        _mousePressHandler;
@@ -233,13 +231,6 @@ public class World extends Region {
         countryPaths         = createCountryPaths();
         eventRadius          = EVENT_RADIUS;
         fadeColors           = FADE_COLORS;
-        heatMapVisible       = new BooleanPropertyBase(true) {
-            @Override protected void invalidated() {
-
-            }
-            @Override public Object getBean() { return World.this; }
-            @Override public String getName() { return "heatMapVisible"; }
-        };
 
         locationIconCode     = MaterialDesign.MDI_CHECKBOX_BLANK_CIRCLE;
         pane                 = new Pane();
@@ -389,9 +380,6 @@ public class World extends Region {
     public void setScaleFactor(final double FACTOR) { scaleFactor.set(FACTOR); }
     public DoubleProperty scaleFactorProperty() { return scaleFactor; }
 
-    public boolean isHeatMapVisible() { return heatMapVisible.get(); }
-    public void setHeatMapVisible(final boolean VISIBLE) { heatMapVisible.set(VISIBLE); }
-    public BooleanProperty heatMapVisibleProperty() { return heatMapVisible; }
 
     public void resetZoom() {
         setScaleFactor(1.0);
@@ -424,112 +412,6 @@ public class World extends Region {
         zoomToArea(getBounds(REGION.getCountries()));
     }
 
-
-
-    public void addEvents(final Point2D... EVENTS) {  }
-
-    /**
-     * Add a list of events and update the heatmap after all events
-     * have been added
-     * @param EVENTS
-     */
-    public void addEvents(final List<Point2D> EVENTS) { }
-
-    /**
-     * Visualizes an event with the given radius and opacity gradient
-     * @param X
-     * @param Y
-     * @param OFFSET_X
-     * @param OFFSET_Y
-     * @param RADIUS
-     */
-    public void addEvent(final double X, final double Y, final double OFFSET_X, final double OFFSET_Y, final double RADIUS) {  }
-
-    /**
-     * Visualizes an event with a given image at the given position and with
-     * the given offset. So one could use different weighted images for different
-     * kinds of events (e.g. important events more opaque as unimportant events)
-     * @param X
-     * @param Y
-     * @param EVENT_IMAGE
-     * @param OFFSET_X
-     * @param OFFSET_Y
-     */
-    public void addEvent(final double X, final double Y, final Image EVENT_IMAGE, final double OFFSET_X, final double OFFSET_Y) {  }
-
-    /**
-     * If you don't need to weight events you could use this method which
-     * will create events that always use the global weight
-     * @param X
-     * @param Y
-     */
-    public void addEvent(final double X, final double Y) {  }
-
-    /**
-     * Calling this method will lead to a clean new heat map without any data
-     */
-    public void clearHeatMap() {}
-
-    /**
-     * Returns the used color mapping with the gradient that is used
-     * to visualize the data
-     * @return
-     */
-
-
-    /**
-     * The ColorMapping enum contains some examples for color mappings
-     * that might be useful to visualize data and here you could set
-     * the one you like most. Setting another color mapping will recreate
-     * the heat map automatically.
-     * @param COLOR_MAPPING
-     */
-
-
-    /**
-     * Returns true if the heat map is used to visualize frequencies (default)
-     * @return true if the heat map is used to visualize frequencies
-     */
-
-
-    /**
-     * If true each event will be visualized by a radial gradient
-     * with the colors from the given color mapping and decreasing
-     * opacity from the inside to the outside. If you set it to false
-     * the color opacity won't fade out but will be opaque. This might
-     * be handy if you would like to visualize the density instead of
-     * the frequency
-     * @param FADE_COLORS
-     */
-    public void setFadeColors(final boolean FADE_COLORS) { }
-
-    /**
-     * Returns the radius of the circle that is used to visualize an
-     * event.
-     * @return the radius of the circle that is used to visualize an event
-     */
-
-
-    /**
-     * Each event will be visualized by a circle filled with a radial
-     * gradient with decreasing opacity from the inside to the outside.
-     * If you have lot's of events it makes sense to set the event radius
-     * to a smaller value. The default value is 15.5
-     * @param RADIUS
-     */
-    public void setEventRadius(final double RADIUS) {  }
-
-
-
-    public void setHeatMapOpacity(final double OPACITY) {  }
-
-    /**
-     * Returns the opacity distribution that will be used to visualize
-     * the events in the monochrome map. If you have lot's of events
-     * it makes sense to reduce the radius and the set the opacity
-     * distribution to exponential.
-     * @return the opacity distribution of events in the monochrome map
-     */
 
     public static double[] latLonToXY(final double LATITUDE, final double LONGITUDE) {
         double x = (LONGITUDE + 180) * (PREFERRED_WIDTH / 360) + MAP_OFFSET_X;

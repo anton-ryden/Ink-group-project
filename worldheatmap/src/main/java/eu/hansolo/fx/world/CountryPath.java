@@ -32,9 +32,6 @@ public class CountryPath extends SVGPath {
 
 
     // ******************** Constructors **************************************
-    public CountryPath(final String NAME) {
-        this(NAME, null);
-    }
     public CountryPath(final String NAME, final String CONTENT) {
         super();
         this.NAME    = NAME;
@@ -48,8 +45,4 @@ public class CountryPath extends SVGPath {
 
     // ******************** Methods *******************************************
     public String getName() { return NAME; }
-
-    public Locale getLocale() { return LOCALE; }
-
-    public Tooltip getTooltip() { return TOOLTIP; }
 }

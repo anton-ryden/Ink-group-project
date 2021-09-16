@@ -54,41 +54,6 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
         return (B)this;
     }
 
-    public final B backgroundColor(final Color COLOR) {
-        properties.put("backgroundColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
-    public final B fillColor(final Color COLOR) {
-        properties.put("fillColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
-    public final B strokeColor(final Color COLOR) {
-        properties.put("strokeColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
-    public final B hoverColor(final Color COLOR) {
-        properties.put("hoverColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
-    public final B pressedColor(final Color COLOR) {
-        properties.put("pressedColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
-    public final B selectedColor(final Color COLOR) {
-        properties.put("selectedColor", new SimpleObjectProperty(COLOR));
-        return (B)this;
-    }
-
-    public final B locationColor(final Color COLOR) {
-        properties.put("locationColor", new SimpleObjectProperty<>(COLOR));
-        return (B)this;
-    }
-
     public final B hoverEnabled(final boolean ENABLED) {
         properties.put("hoverEnabled", new SimpleBooleanProperty(ENABLED));
         return (B)this;
@@ -104,124 +69,13 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
         return (B)this;
     }
 
-    public final B mouseEnterHandler(final EventHandler<MouseEvent> HANDLER) {
-        properties.put("mouseEnterHandler", new SimpleObjectProperty(HANDLER));
-        return (B)this;
-    }
-
-    public final B mousePressHandler(final EventHandler<MouseEvent> HANDLER) {
-        properties.put("mousePressHandler", new SimpleObjectProperty(HANDLER));
-        return (B)this;
-    }
-
-    public final B mouseReleaseHandler(final EventHandler<MouseEvent> HANDLER) {
-        properties.put("mouseReleaseHandler", new SimpleObjectProperty(HANDLER));
-        return (B)this;
-    }
-
-    public final B mouseExitHandler(final EventHandler<MouseEvent> HANDLER) {
-        properties.put("mouseExitHandler", new SimpleObjectProperty(HANDLER));
-        return (B)this;
-    }
-
-
-    public final B showLocations(final boolean VISIBLE) {
-        properties.put("showLocations", new SimpleBooleanProperty(VISIBLE));
-        return (B)this;
-    }
-
-    public final B locationIconCode(final Ikon ICON_CODE) {
-        properties.put("locationIconCode", new SimpleObjectProperty<>(ICON_CODE));
-        return (B)this;
-    }
-
-    public final B eventRadius(final double EVENT_RADIUS) {
-        properties.put("eventRadius", new SimpleDoubleProperty(EVENT_RADIUS));
-        return (B) this;
-    }
 
     public final B fadeColors(final boolean FADE_COLORS) {
         properties.put("fadeColors", new SimpleBooleanProperty(FADE_COLORS));
         return (B)this;
     }
 
-    public final B heatMapOpacity(final double HEAT_MAP_OPACITY) {
-        properties.put("heatMapOpacity", new SimpleDoubleProperty(HEAT_MAP_OPACITY));
-        return (B) this;
-    }
 
-
-    public final B prefSize(final double WIDTH, final double HEIGHT) {
-        properties.put("prefSize", new SimpleObjectProperty<>(new Dimension2D(WIDTH, HEIGHT)));
-        return (B)this;
-    }
-    public final B minSize(final double WIDTH, final double HEIGHT) {
-        properties.put("minSize", new SimpleObjectProperty<>(new Dimension2D(WIDTH, HEIGHT)));
-        return (B)this;
-    }
-    public final B maxSize(final double WIDTH, final double HEIGHT) {
-        properties.put("maxSize", new SimpleObjectProperty<>(new Dimension2D(WIDTH, HEIGHT)));
-        return (B)this;
-    }
-
-    public final B prefWidth(final double PREF_WIDTH) {
-        properties.put("prefWidth", new SimpleDoubleProperty(PREF_WIDTH));
-        return (B)this;
-    }
-    public final B prefHeight(final double PREF_HEIGHT) {
-        properties.put("prefHeight", new SimpleDoubleProperty(PREF_HEIGHT));
-        return (B)this;
-    }
-
-    public final B minWidth(final double MIN_WIDTH) {
-        properties.put("minWidth", new SimpleDoubleProperty(MIN_WIDTH));
-        return (B)this;
-    }
-    public final B minHeight(final double MIN_HEIGHT) {
-        properties.put("minHeight", new SimpleDoubleProperty(MIN_HEIGHT));
-        return (B)this;
-    }
-
-    public final B maxWidth(final double MAX_WIDTH) {
-        properties.put("maxWidth", new SimpleDoubleProperty(MAX_WIDTH));
-        return (B)this;
-    }
-    public final B maxHeight(final double MAX_HEIGHT) {
-        properties.put("maxHeight", new SimpleDoubleProperty(MAX_HEIGHT));
-        return (B)this;
-    }
-
-    public final B scaleX(final double SCALE_X) {
-        properties.put("scaleX", new SimpleDoubleProperty(SCALE_X));
-        return (B)this;
-    }
-    public final B scaleY(final double SCALE_Y) {
-        properties.put("scaleY", new SimpleDoubleProperty(SCALE_Y));
-        return (B)this;
-    }
-
-    public final B layoutX(final double LAYOUT_X) {
-        properties.put("layoutX", new SimpleDoubleProperty(LAYOUT_X));
-        return (B)this;
-    }
-    public final B layoutY(final double LAYOUT_Y) {
-        properties.put("layoutY", new SimpleDoubleProperty(LAYOUT_Y));
-        return (B)this;
-    }
-
-    public final B translateX(final double TRANSLATE_X) {
-        properties.put("translateX", new SimpleDoubleProperty(TRANSLATE_X));
-        return (B)this;
-    }
-    public final B translateY(final double TRANSLATE_Y) {
-        properties.put("translateY", new SimpleDoubleProperty(TRANSLATE_Y));
-        return (B)this;
-    }
-
-    public final B padding(final Insets INSETS) {
-        properties.put("padding", new SimpleObjectProperty<>(INSETS));
-        return (B)this;
-    }
 
     public final World build() {
         double              eventRadius         = properties.containsKey("eventRadius") ? ((DoubleProperty) properties.get("eventRadius")).get() : 5;

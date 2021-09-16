@@ -53,7 +53,7 @@ public enum Country {
     ZA, ZM, ZW;
 
     private ValueObject value;
-    private Color       color;
+    private Color color;
 
 
     // ******************** Constructors **************************************
@@ -64,11 +64,19 @@ public enum Country {
 
 
     // ******************** Methods *******************************************
-    public String getName() { return name(); }
+    public String getName() {
+        return name();
+    }
 
-    public ValueObject getValue() { return value; }
-    public void setValue(final ValueObject VALUE) { value = VALUE; }
+    public void setValue(final ValueObject VALUE) {
+        value = VALUE;
+    }
 
-    public Color getColor() { return color; }
-    public void setColor(final Color COLOR) { color = COLOR; }
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(final Color COLOR) {
+        color = COLOR;
+    }
 }
