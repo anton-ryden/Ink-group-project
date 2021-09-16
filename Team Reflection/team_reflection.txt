@@ -1,0 +1,26 @@
+Team Reflection - Group Ink
+
+Each entry will be about 1 week apart.
+
+-------Entry 1---------
+
+This team reflection we discuss our application of scrum, design decisions and product structure and social contract and effort
+
+Right now the scope of the project is rather small but we plan on expanding the further we go. the priority of features were discussed within the group. 
+The features that are most vital for the project to work were labled with a higher priority and those that weren't with a lower. 
+
+We haven't changed anything in our social contract but we have followed the rules it contains. Mainly booking meetings and everyone expressing their thoughts.
+This week we spent about 7-8 hours and we believe we are on track. We have managed to set a foundation for our project and are ready for our first sprint.
+Most importantly we want to learn as much as possible about working together in a group and programming. We will see this project as a success as long as the most vital user stories are completed.
+
+
+We have decided to a class diagram to better agree on the structure of our code. We will mainly use trello for documentation, 
+the trello will also be updated frequently whenever we think of something new or something that needs to be improved.
+It will be difficult to ensure code quality but we will make sure to do rigorous testing and also have the PO check the final result if it works properly.
+
+We devided the work in groups of 2. Where each group is responsible for several user stories. 
+These user stories have an assigned PO which is one of the other groups. 
+This allows us to work in smaller groups and share ideas/thoughts within your subgroup.
+We used a trello board and took inspiration from a exercise session how the structure should look like. This made it possible
+to come up with various epics and user stories.
+
