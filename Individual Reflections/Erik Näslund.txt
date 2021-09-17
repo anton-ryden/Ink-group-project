@@ -30,3 +30,21 @@ of what we are going to do) as well as the mockup visual representation of the a
 
 --------- Week 3 -----------
 
+what do I want to learn or understand better?
+I want to be able to understand how to create an interactable map based on JavaFX. It should be a map of the world where you are
+able to zoom in on, highlight and select all countries. This will be a vital feature of our project.
+
+how can I help someone else, or the entire team, to learn something new?
+By learning this myself i will be able to tell the other members of my group how it works and how they can use it to create what we want our end result to be.
+
+what is my contribution towards the team’s use of Scrum?
+I have been assigned as PO 2 other members tasks. I also helped lay the foundation and preparation for our first sprint next week.
+That being estimating and planning what all members should work on in the upcomming sprint.
+
+what is my contribution towards the team’s deliveries?
+This week we mostly laid the foundation of our project. I helped create various epics, user stories and estimating how much time each of those user stories should take. 
+We also agreed on a clearer picture of what our end result for the project should be. We decided to devide the group into subgroups of 2. 
+Me and Anton were decided to be one of those subgroups. Me and Anton have been working on and understanding creating an interactable map using javaFX.
+
+--------- Week 4 -----------
+
