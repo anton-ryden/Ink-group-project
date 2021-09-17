@@ -24,3 +24,17 @@ We have not yet started using Scrum.
 
 * What is my contribution towards the team’s deliveries?
 I helped the team to brainstorm ideas on what our project is going to be, such as having an interactive map for our app.
+
+
+Week 3:
+* What do I want to learn or understand better?
+In order to start working on my assigned tasks, I want to refresh my knowledge about SQL and databases. I also want to learn more about JavaFX to design the data input menu.
+
+* How can I help someone else, or the entire team, to learn something new?
+Me and Michael are going to be working more closely together and I see us bouncing ideas with each other (whenever we get started) to learn new things.
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the group set up the Scrum board by creating and assigning user stories and estimating how long they will take.
+
+* What is my contribution towards the team’s deliveries?
+Besides setting up our Scrum board, I helped the team to create a UML diagram to get a better idea of what our code structure will look like, I contributed to the team reflection, and I looked at different options for our map.
