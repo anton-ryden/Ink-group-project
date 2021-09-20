@@ -379,10 +379,6 @@ public class World extends Region {
     public Ikon getLocationIconCode() { return locationIconCode; }
     public void setLocationIconCode(final Ikon ICON_CODE) { locationIconCode = ICON_CODE; }
 
-
-
-
-
     public void zoomToCountry(final Country COUNTRY) {
         if (!isZoomEnabled()) return;
         if (null != getSelectedCountry()) {
