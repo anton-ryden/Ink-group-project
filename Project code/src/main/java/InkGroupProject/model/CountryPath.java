@@ -41,4 +41,6 @@ public class CountryPath extends SVGPath {
 
     // ******************** Methods *******************************************
     public String getName() { return NAME; }
+
+    public String getDisplayName() {return LOCALE.getDisplayCountry();}
 }
