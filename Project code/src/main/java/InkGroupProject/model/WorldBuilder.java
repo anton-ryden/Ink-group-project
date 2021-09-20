@@ -143,8 +143,6 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
                 CONTROL.setMouseReleaseHandler(((ObjectProperty<EventHandler<MouseEvent>>) properties.get(key)).get());
             } else if ("mouseExitHandler".equals(key)) {
                 CONTROL.setMouseExitHandler(((ObjectProperty<EventHandler<MouseEvent>>) properties.get(key)).get());
-            } else if ("locationIconCode".equals(key)) {
-                CONTROL.setLocationIconCode(((ObjectProperty<Ikon>) properties.get(key)).get());
             }
         }
         return CONTROL;

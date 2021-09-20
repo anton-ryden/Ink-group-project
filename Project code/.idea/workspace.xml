@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/BCryptTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/BCryptTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
