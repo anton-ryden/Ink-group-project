@@ -599,7 +599,6 @@ public class World extends Region {
             group.resize(width, height);
             group.relocate((getWidth() - width) * 0.5, (getHeight() - height) * 0.5);
 
-
             pane.setCache(false);
         }
     }

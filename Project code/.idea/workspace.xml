@@ -24,7 +24,13 @@
   <component name="ChangeListManager">
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +44,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -64,13 +77,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eu.hansolo.fx.worldheatmap.Main" />
       <module name="worldheatmap.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="eu.hansolo.fx.worldheatmap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Main" />
+      <module name="worldheatmap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InkGroupProject.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,7 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -134,30 +160,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refractor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632135680986">
+    <state x="734" y="330" width="1092" height="742" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632137820341">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632135680986" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632134198270">
+    <state x="734" y="330" width="1092" height="742" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137820341" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632139322897">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134198270" />
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom" timestamp="1632135718934">
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632139322897" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1632137241386">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632135718934" />
-    <state width="2517" height="399" key="GridCell.Tab.0.center" timestamp="1632135718933">
+    <state x="1060" y="455" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137241386" />
+    <state width="1234" height="258" key="GridCell.Tab.0.bottom" timestamp="1632141129985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632135718933" />
-    <state width="2517" height="399" key="GridCell.Tab.0.left" timestamp="1632135718933">
+    <state width="1234" height="258" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632141129985" />
+    <state width="1234" height="258" key="GridCell.Tab.0.center" timestamp="1632141129985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632135718933" />
-    <state width="2517" height="399" key="GridCell.Tab.0.right" timestamp="1632135718933">
+    <state width="1234" height="258" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632141129985" />
+    <state width="1234" height="258" key="GridCell.Tab.0.left" timestamp="1632141129985">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632135718933" />
+    <state width="1234" height="258" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632141129985" />
+    <state width="1234" height="258" key="GridCell.Tab.0.right" timestamp="1632141129985">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="258" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632141129985" />
     <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1632134367667">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
