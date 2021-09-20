@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b88c0a8c-f633-4e0a-90f6-22865a85965d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Project code/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project code/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Ink-group-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ink-group-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project code/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Project code/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +14,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +43,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Project code" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -47,18 +61,15 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632137173418">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137173418" />
-    <state x="1009" y="502" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1632137128461">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1009" y="502" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137128461" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1632137252708">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137252708" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
