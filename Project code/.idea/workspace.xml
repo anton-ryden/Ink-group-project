@@ -22,7 +22,51 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="" />
+    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/CRegion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/CountryPath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/ValueObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World$Resolution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/World.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/world/WorldBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/eu/hansolo/fx/worldheatmap/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/eu/hansolo/fx/world/custom-styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/eu/hansolo/fx/world/hires.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/eu/hansolo/fx/world/lores.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/eu/hansolo/fx/world/world.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/eu/hansolo/fx/worldheatmap/cities.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/CRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/CRegion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/CountryPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/CountryPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/ValueObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/ValueObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/world/WorldBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/world/WorldBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/hansolo/fx/worldheatmap/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/worldheatmap/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eu/hansolo/fx/world/custom-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/world/custom-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eu/hansolo/fx/world/hires.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/world/hires.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eu/hansolo/fx/world/lores.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/world/lores.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eu/hansolo/fx/world/world.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/world/world.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eu/hansolo/fx/worldheatmap/cities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/worldheatmap/cities.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +105,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eu.hansolo.fx.worldheatmap.Main" />
       <module name="worldheatmap.main" />
@@ -75,8 +119,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Main" />
+      <module name="worldheatmap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InkGroupProject.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -102,5 +160,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2517" height="399" key="GridCell.Tab.0.bottom" timestamp="1632133884806">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="399" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632133884806" />
+    <state width="2517" height="399" key="GridCell.Tab.0.center" timestamp="1632133884805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="399" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632133884805" />
+    <state width="2517" height="399" key="GridCell.Tab.0.left" timestamp="1632133884805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="399" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632133884805" />
+    <state width="2517" height="399" key="GridCell.Tab.0.right" timestamp="1632133884806">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="399" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632133884806" />
   </component>
 </project>
