@@ -68,10 +68,6 @@ import static javafx.scene.input.MouseEvent.MOUSE_EXITED;
 import static javafx.scene.input.MouseEvent.MOUSE_PRESSED;
 import static javafx.scene.input.MouseEvent.MOUSE_RELEASED;
 
-
-/**
- * Created by hansolo on 22.11.16.
- */
 @DefaultProperty("children")
 public class World extends Region {
     public enum Resolution { HI_RES, LO_RES };

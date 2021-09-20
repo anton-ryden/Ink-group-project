@@ -31,10 +31,6 @@ import org.kordamp.ikonli.Ikon;
 
 import java.util.HashMap;
 
-
-/**
- * Created by hansolo on 21.11.16.
- */
 public class WorldBuilder<B extends WorldBuilder<B>> {
     private HashMap<String, Property> properties = new HashMap<>();
     private Resolution                resolution = Resolution.HI_RES;

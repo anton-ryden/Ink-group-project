@@ -16,19 +16,9 @@
 
 package InkGroupProject.model;
 
-import javafx.scene.paint.Color;
-
 import java.util.List;
 
-
-/**
- * Created by hansolo on 01.12.16.
- */
 public interface CRegion {
-
-    String name();
-
     List<Country> getCountries();
 
-    void setColor(final Color COLOR);
 }

@@ -21,10 +21,6 @@ import javafx.scene.shape.SVGPath;
 
 import java.util.Locale;
 
-
-/**
- * Created by hansolo on 20.09.16.
- */
 public class CountryPath extends SVGPath {
     private final String  NAME;
     private final Locale  LOCALE;
