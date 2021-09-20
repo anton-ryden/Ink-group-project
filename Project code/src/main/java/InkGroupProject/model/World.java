@@ -50,8 +50,6 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.shape.Shape;
-import org.kordamp.ikonli.Ikon;
-import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -108,7 +106,6 @@ public class World extends Region {
     private              double                          zoomSceneY;
     private              double                          width;
     private              double                          height;
-    private              Ikon                            locationIconCode;
     private              Pane                            pane;
     private              Group                           group;
     private              Map<String, List<CountryPath>>  countryPaths;
@@ -219,7 +216,6 @@ public class World extends Region {
         eventRadius          = EVENT_RADIUS;
         fadeColors           = FADE_COLORS;
 
-        locationIconCode     = MaterialDesign.MDI_CHECKBOX_BLANK_CIRCLE;
         pane                 = new Pane();
         group                = new Group();
 
@@ -375,9 +371,6 @@ public class World extends Region {
         group.setTranslateX(0);
         group.setTranslateY(0);
     }
-
-    public Ikon getLocationIconCode() { return locationIconCode; }
-    public void setLocationIconCode(final Ikon ICON_CODE) { locationIconCode = ICON_CODE; }
 
     public void zoomToCountry(final Country COUNTRY) {
         if (!isZoomEnabled()) return;
