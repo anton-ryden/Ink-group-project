@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor" />
+    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +37,31 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="worldheatmap" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="worldheatmap" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,11 +97,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="eu.hansolo.fx.worldheatmap.Main" />
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Main" />
       <module name="worldheatmap.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="eu.hansolo.fx.worldheatmap.*" />
+          <option name="PATTERN" value="InkGroupProject.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,10 +178,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refractor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="330" width="1092" height="742" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632137820341">
+    <state x="734" y="330" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632148013629">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="330" width="1092" height="742" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137820341" />
+    <state x="734" y="330" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632148013629" />
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632139322897">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

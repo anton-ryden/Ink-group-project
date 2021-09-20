@@ -1,4 +1,6 @@
-package main.java.InkGroupProject;
+package InkGroupProject;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class BCryptTest {
     public BCryptTest() {
