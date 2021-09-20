@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="" />
+    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +104,14 @@
       <option name="presentableId" value="Default" />
       <updated>1631794968558</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refractor">
+      <created>1632134356177</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632134356177</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,26 +126,34 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refractor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refractor" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632134198270">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134198270" />
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom" timestamp="1632134216136">
+    <state width="2517" height="399" key="GridCell.Tab.0.bottom" timestamp="1632134334685">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134216136" />
-    <state width="2517" height="399" key="GridCell.Tab.0.center" timestamp="1632134216136">
+    <state width="2517" height="399" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134334685" />
+    <state width="2517" height="399" key="GridCell.Tab.0.center" timestamp="1632134334684">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134216136" />
-    <state width="2517" height="399" key="GridCell.Tab.0.left" timestamp="1632134216136">
+    <state width="2517" height="399" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134334684" />
+    <state width="2517" height="399" key="GridCell.Tab.0.left" timestamp="1632134334684">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134216136" />
-    <state width="2517" height="399" key="GridCell.Tab.0.right" timestamp="1632134216136">
+    <state width="2517" height="399" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134334684" />
+    <state width="2517" height="399" key="GridCell.Tab.0.right" timestamp="1632134334685">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="399" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134216136" />
+    <state width="2517" height="399" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134334685" />
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1632134367667">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134367667" />
   </component>
 </project>
