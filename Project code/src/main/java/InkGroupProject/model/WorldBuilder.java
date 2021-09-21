@@ -35,10 +35,8 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
     private HashMap<String, Property> properties = new HashMap<>();
     private Resolution                resolution = Resolution.HI_RES;
 
-
     // ******************** Constructors **************************************
     protected WorldBuilder() {}
-
 
     // ******************** Methods *******************************************
     public static final WorldBuilder create() { return new WorldBuilder(); }
@@ -63,20 +61,14 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
         return (B)this;
     }
 
-
     public final B fadeColors(final boolean FADE_COLORS) {
         properties.put("fadeColors", new SimpleBooleanProperty(FADE_COLORS));
         return (B)this;
     }
 
-
-
     public final World build() {
         double              eventRadius         = properties.containsKey("eventRadius") ? ((DoubleProperty) properties.get("eventRadius")).get() : 5;
         boolean             fadeColors          = properties.containsKey("fadeColors") ? ((BooleanProperty) properties.get("fadeColors")).get() : false;
-
-
-
         final World CONTROL = new World(resolution, eventRadius, fadeColors);
 
         for (String key : properties.keySet()) {

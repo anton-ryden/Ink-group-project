@@ -38,12 +38,10 @@ public class Main extends Application {
         Button nextBtn = new Button("Next");
 
         root.getChildren().addAll(prevBtn, worldMap, nextBtn);
-
     }
 
     @Override public void start(Stage stage) {
         Scene scene = new Scene(root);
-
         stage.setTitle("Interactive map");
         stage.setScene(scene);
         stage.show();
