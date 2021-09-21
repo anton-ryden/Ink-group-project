@@ -7,7 +7,9 @@ import InkGroupProject.model.World;
 import InkGroupProject.model.World.Resolution;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
@@ -18,7 +20,7 @@ import java.awt.*;
 
 public class Main extends Application {
     private World         worldMap;
-    private HBox root;
+    private GridPane root;
 
     @Override public void init() {
 
@@ -30,14 +32,19 @@ public class Main extends Application {
                                .fadeColors(true)
                                .build();
 
-        root = new HBox(5);
-        root.setPadding(new Insets(5));
-        root.setAlignment(Pos.BASELINE_RIGHT);
+        root = new GridPane();
+        root.setPadding(new Insets(10, 10, 10, 10));
+        root.setAlignment(Pos.CENTER);
 
         Button prevBtn = new Button("Previous");
         Button nextBtn = new Button("Next");
 
-        root.getChildren().addAll(prevBtn, worldMap, nextBtn);
+        root.add(prevBtn, 0,0);
+        root.add(worldMap, 1,0);
+        root.add(nextBtn, 2,0);
+        GridPane.setHgrow(worldMap, Priority.ALWAYS);
+        GridPane.setVgrow(worldMap, Priority.ALWAYS);
+
     }
 
     @Override public void start(Stage stage) {

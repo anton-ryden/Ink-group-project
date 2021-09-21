@@ -456,14 +456,13 @@ public class World extends Region {
             }
         } else if (MOUSE_PRESSED == TYPE) {
             if (isSelectionEnabled()) {
-                Color color;
                 System.out.println("The country you pressed was: " + COUNTRY_FULLNAME);
+                zoomToCountry(COUNTRY);
+                Color color;
+
                 if (null == getSelectedCountry()) {
                     setSelectedCountry(COUNTRY);
                     color = getSelectedColor();
-                    if (getSelectedCountry() != null){
-                        zoomToCountry(getSelectedCountry());
-                    }
                 } else {
                     color = null == getSelectedCountry().getColor() ? getFillColor() : getSelectedCountry().getColor();
                 }
