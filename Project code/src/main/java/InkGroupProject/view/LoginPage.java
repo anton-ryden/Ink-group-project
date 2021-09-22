@@ -48,6 +48,11 @@ public class LoginPage extends Parent implements IScene {
         GridPane.setConstraints(login, 1, 0);
         grid.getChildren().add(login);
 
+        Hyperlink createAccount = new Hyperlink("Create an account");
+        createAccount.setFocusTraversable(false);
+        GridPane.setConstraints(createAccount, 0, 2);
+        grid.getChildren().add(createAccount);
+
         final Label infoLabel = new Label();
         GridPane.setConstraints(infoLabel, 0, 3);
         GridPane.setColumnSpan(infoLabel, 2);
@@ -70,16 +75,23 @@ public class LoginPage extends Parent implements IScene {
                 }
             }
         });
-    }
 
-    public Parent getRoot() {
-        return grid;
+        createAccount.setOnAction(e -> {
+            createAccount.setVisited(false);
+            Main app = new Main();
+            app.changeScene(new CreateAccount());
+        });
     }
 
     public void start(Stage stage) {
         Scene loginScene = new Scene(grid);
         stage.setTitle("Login");
+        stage.setResizable(false);
         stage.setScene(loginScene);
         stage.show();
+    }
+
+    public Parent getRoot() {
+        return grid;
     }
 }

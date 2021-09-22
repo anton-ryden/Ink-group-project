@@ -14,8 +14,7 @@ public class Database {
         }
     }
 
-    public void createAccount(String firstName, String lastName, String email, String password) {
-        System.out.println("Creating account...");
+    public boolean createAccount(String firstName, String lastName, String email, String password) {
         try {
             PreparedStatement insertInfo = connection.prepareStatement("INSERT INTO accounts (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
             insertInfo.setString(1, firstName);
@@ -23,9 +22,10 @@ public class Database {
             insertInfo.setString(3, email);
             insertInfo.setString(4, encryptPassword(password));
             insertInfo.execute();
+            return true;
         } catch (SQLException ex) {
-            System.out.println("something went wrong...");
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getMessage());
+            return false;
         }
     }
 

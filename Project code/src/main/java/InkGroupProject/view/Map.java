@@ -41,6 +41,7 @@ public class Map extends Parent implements IScene {
     public void start(Stage stage) {
         Scene loginScene = new Scene(root);
         stage.setTitle("Interactive Map");
+        stage.setResizable(true);
         stage.setScene(loginScene);
         stage.show();
     }

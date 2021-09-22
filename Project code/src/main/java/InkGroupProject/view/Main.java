@@ -17,6 +17,7 @@ public class Main extends Application {
         LoginPage loginPage = new LoginPage();
         Scene loginScene = new Scene(loginPage.getRoot());
         primaryStage.setTitle("Login");
+        primaryStage.setResizable(false);
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
