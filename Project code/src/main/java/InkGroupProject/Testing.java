@@ -10,6 +10,6 @@ public class Testing {
         db.getAccount("gusgartlu@student.gu.se");
         db.getAccount("test@test.com");
         System.out.println("\nLogin test:");
-        System.out.println(db.login("gusgartlu@student.gu.se", "hejhej1223"));
+        System.out.println(db.login("gusgartlu@student.gu.se", "hejhej123"));
     }
 }
