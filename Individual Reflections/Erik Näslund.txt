@@ -48,3 +48,15 @@ Me and Anton were decided to be one of those subgroups. Me and Anton have been w
 
 --------- Week 4 -----------
 
+what do I want to learn or understand better?
+I want to learn how to use data sources better which relates to my task in the upcomming sprint.
+
+how can I help someone else, or the entire team, to learn something new?
+This week I learned a lot about the map we are using for the project and also JavaFX. The information I've learned will allow
+me to help others when they have questions relating those.
+
+what is my contribution towards the team’s use of Scrum?
+I helped book meetings and helped plan the upcomming sprint. 
+
+what is my contribution towards the team’s deliveries?
+This week I worked with Anton to create the visible and interactable map. I also helped verify other group members tasks.
