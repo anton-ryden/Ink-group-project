@@ -38,3 +38,17 @@ I helped the group set up the Scrum board by creating and assigning user stories
 
 * What is my contribution towards the team’s deliveries?
 Besides setting up our Scrum board, I helped the team to create a UML diagram to get a better idea of what our code structure will look like, I contributed to the team reflection, and I looked at different options for our map.
+
+
+Week 4:
+* What do I want to learn or understand better?
+I want to learn how to create a user session in a JavaFX application so that we can access a user's information after they have logged in to the map.
+
+* How can I help someone else, or the entire team, to learn something new?
+By sharing the things I learn during our team meetings. This sprint, for example, I learnt how to create new JavaFX scenes and how to switch between different scenes.
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the team to go over our user stories and to plan for the next sprint.
+
+* What is my contribution towards the team’s deliveries?
+In addition to the team meetings where we worked on the Scrum board and wrote the team reflection, I also worked together with Michael to set up a database, created JavaFX interfaces to login and create accounts, and implemented the code to execute SQL queries to our database to manage account data.
