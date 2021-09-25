@@ -34,35 +34,43 @@ public class Database {
         return encryptedPassword;
     }
 
-    public void getAccount(String email) {
+    public User getAccount(String email) {
+        User account = null;
         try {
-            Statement query = connection.createStatement();
-            ResultSet result = query.executeQuery("SELECT * FROM accounts WHERE email = '" + email + "'");
-            while (result.next()) {
-                String firstName = result.getString("first_name");
-                String lastName = result.getString("last_name");
-                String _email = result.getString("email");
-                String registerDate = result.getString("date_created");
-                System.out.println("Name: " + firstName + " " + lastName + "\nEmail: " + _email);
-                System.out.println("Signed up on " + registerDate);
-            }
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM accounts WHERE email = ?");
+            query.setString(1, email);
+            ResultSet result = query.executeQuery();
+
+            int id = result.getInt("id");
+            String firstName = result.getString("first_name");
+            String lastName = result.getString("last_name");
+            String _email = result.getString("email");
+            String registerDate = result.getString("date_created");
+
+            account = new User(id, firstName, lastName, _email, registerDate);
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+
+        return account;
     }
 
     public boolean login(String email, String password) {
-        boolean result = false;
+        boolean isLoggedIn = false;
         try {
-            Statement query = connection.createStatement();
-            ResultSet encrypted_password = query.executeQuery("SELECT password FROM accounts WHERE email = '" + email + "'");
-            BCrypt.Result bcrypt_result = BCrypt.verifyer().verify(password.toCharArray(), encrypted_password.getString("password"));
+            PreparedStatement query = connection.prepareStatement("SELECT password FROM accounts WHERE email = ?");
+            query.setString(1, email);
+            ResultSet result = query.executeQuery();
+            String encrypted_password = result.getString("password");
+
+            BCrypt.Result bcrypt_result = BCrypt.verifyer().verify(password.toCharArray(), encrypted_password);
             if (bcrypt_result.verified)
-                result = true;
+                isLoggedIn = true;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
-        return result;
+        return isLoggedIn;
     }
 }

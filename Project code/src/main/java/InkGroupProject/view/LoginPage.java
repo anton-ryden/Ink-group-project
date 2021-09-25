@@ -1,6 +1,8 @@
 package InkGroupProject.view;
 
 import InkGroupProject.model.Database;
+import InkGroupProject.model.User;
+import InkGroupProject.model.UserSession;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -67,6 +69,11 @@ public class LoginPage extends Parent implements IScene {
                 if (db.login(email.getText(), password.getText())) {
                     infoLabel.setTextFill(Color.GREEN);
                     infoLabel.setText("Login successful!");
+
+                    // Create user session
+                    User account = db.getAccount(email.getText());
+                    UserSession.login(account);
+
                     Main app = new Main();
                     app.changeScene(new Map());
                 } else {

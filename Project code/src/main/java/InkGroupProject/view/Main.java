@@ -12,7 +12,8 @@ public class Main extends Application {
         launch(args);
     }
 
-    @Override public void start(Stage primaryStage) {
+    @Override
+    public void start(Stage primaryStage) {
         stage = primaryStage;
         LoginPage loginPage = new LoginPage();
         Scene loginScene = new Scene(loginPage.getRoot());
@@ -27,7 +28,8 @@ public class Main extends Application {
         scene.start(stage);
     }
 
-    @Override public void stop() {
+    @Override
+    public void stop() {
         System.exit(0);
     }
 }

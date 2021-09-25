@@ -28,13 +28,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +249,9 @@
       <option name="presentableId" value="Default" />
       <updated>1631794968558</updated>
       <workItem from="1632179694169" duration="288000" />
-      <workItem from="1632180148923" duration="32639000" />
+      <workItem from="1632180148923" duration="40120000" />
+      <workItem from="1632507672766" duration="695000" />
+      <workItem from="1632599567479" duration="4233000" />
     </task>
     <task id="LOCAL-00001" summary="Refractor">
       <created>1632134356177</created>
