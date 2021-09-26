@@ -17,6 +17,7 @@
 package InkGroupProject.model;
 
 
+
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
@@ -231,9 +232,9 @@ public class World extends Region {
             scale           = evt.getDeltaY() < 0 ? scale / delta : scale * delta;
             scale           = clamp( 1, 10, scale);
             double factor   = (scale / oldScale) - 1;
+            zoomSceneX = evt.getSceneX();
+            zoomSceneY = evt.getSceneY();
             if (Double.compare(1, getScaleFactor()) == 0) {
-                zoomSceneX = evt.getSceneX();
-                zoomSceneY = evt.getSceneY();
                 resetZoom();
             }
             double deltaX = (zoomSceneX - (getBoundsInParent().getWidth() / 2 + getBoundsInParent().getMinX()));
@@ -252,7 +253,7 @@ public class World extends Region {
     // ******************** Initialization ************************************
     private void initGraphics() {
         if (Double.compare(getPrefWidth(), 0.0) <= 0 || Double.compare(getPrefHeight(), 0.0) <= 0 ||
-            Double.compare(getWidth(), 0.0) <= 0 || Double.compare(getHeight(), 0.0) <= 0) {
+                Double.compare(getWidth(), 0.0) <= 0 || Double.compare(getHeight(), 0.0) <= 0) {
             if (getPrefWidth() > 0 && getPrefHeight() > 0) {
                 setPrefSize(getPrefWidth(), getPrefHeight());
             } else {
@@ -261,7 +262,6 @@ public class World extends Region {
         }
 
         getStyleClass().add("world");
-
         Color fill   = getFillColor();
         Color stroke = getStrokeColor();
 
@@ -278,12 +278,8 @@ public class World extends Region {
             });
             pane.getChildren().addAll(pathList);
         });
-
         group.getChildren().add(pane);
-
-
         getChildren().setAll(group);
-
         setBackground(new Background(new BackgroundFill(getBackgroundColor(), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
@@ -292,8 +288,6 @@ public class World extends Region {
         heightProperty().addListener(o -> resize());
         sceneProperty().addListener(o -> {
             if (isZoomEnabled()) { getScene().addEventFilter( ScrollEvent.ANY, new WeakEventHandler<>(_scrollEventHandler)); }
-
-
         });
     }
 
@@ -363,7 +357,6 @@ public class World extends Region {
     public void setScaleFactor(final double FACTOR) { scaleFactor.set(FACTOR); }
     public DoubleProperty scaleFactorProperty() { return scaleFactor; }
 
-
     public void resetZoom() {
         setScaleFactor(1.0);
         setTranslateX(0);
@@ -418,10 +411,10 @@ public class World extends Region {
     private void zoomToArea(final double[] BOUNDS) {
         group.setTranslateX(0);
         group.setTranslateY(0);
-        double      areaWidth   = BOUNDS[2] - BOUNDS[0];
-        double      areaHeight  = BOUNDS[3] - BOUNDS[1];
-        double      areaCenterX = BOUNDS[0] + areaWidth * 0.5;
-        double      areaCenterY = BOUNDS[1] + areaHeight * 0.5;
+        double      areaWidth   = 3*(BOUNDS[2] - BOUNDS[0]);
+        double      areaHeight  = 3*(BOUNDS[3] - BOUNDS[1]);
+        double      areaCenterX = BOUNDS[0] + areaWidth/3 * 0.5;
+        double      areaCenterY = BOUNDS[1] + areaHeight/3 * 0.5;
         Orientation orientation = areaWidth < areaHeight ? Orientation.VERTICAL : Orientation.HORIZONTAL;
         double sf = 1.0;
         switch(orientation) {
@@ -451,6 +444,7 @@ public class World extends Region {
     private void handleMouseEvent(final MouseEvent EVENT, final EventHandler<MouseEvent> HANDLER) {
         final CountryPath       COUNTRY_PATH = (CountryPath) EVENT.getSource();
         final String            COUNTRY_NAME = COUNTRY_PATH.getName();
+        final String            COUNTRY_FULLNAME = COUNTRY_PATH.getDisplayName();
         final Country           COUNTRY      = Country.valueOf(COUNTRY_NAME);
         final List<CountryPath> PATHS        = countryPaths.get(COUNTRY_NAME);
 
@@ -462,8 +456,10 @@ public class World extends Region {
             }
         } else if (MOUSE_PRESSED == TYPE) {
             if (isSelectionEnabled()) {
+                System.out.println("The country you pressed was: " + COUNTRY_FULLNAME);
+                zoomToCountry(COUNTRY);
                 Color color;
-                System.out.println("The country you pressed was: " + COUNTRY_PATH.getDisplayName());
+
                 if (null == getSelectedCountry()) {
                     setSelectedCountry(COUNTRY);
                     color = getSelectedColor();
@@ -476,6 +472,7 @@ public class World extends Region {
                     for (SVGPath path : PATHS) { path.setFill(getPressedColor()); }
                 }
             }
+
         } else if (MOUSE_RELEASED == TYPE) {
             Color color;
             if (isSelectionEnabled()) {
@@ -501,7 +498,6 @@ public class World extends Region {
                 }
             }
         }
-
         if (null != HANDLER) HANDLER.handle(EVENT);
     }
 
@@ -585,10 +581,9 @@ public class World extends Region {
 
             pane.setScaleX(width / PREFERRED_WIDTH);
             pane.setScaleY(height / PREFERRED_HEIGHT);
-
             group.resize(width, height);
-            group.relocate((getWidth() - width) * 0.5, (getHeight() - height) * 0.5);
 
+            group.relocate((getWidth() - width) * 0.5, (getHeight() - height) * 0.5);
             pane.setCache(false);
         }
     }
