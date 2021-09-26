@@ -26,7 +26,6 @@ public class CountryPath extends SVGPath {
     private final Locale  LOCALE;
     private final Tooltip TOOLTIP;
 
-
     // ******************** Constructors **************************************
     public CountryPath(final String NAME, final String CONTENT) {
         super();
@@ -37,7 +36,6 @@ public class CountryPath extends SVGPath {
         if (null == CONTENT) return;
         setContent(CONTENT);
     }
-
 
     // ******************** Methods *******************************************
     public String getName() { return NAME; }

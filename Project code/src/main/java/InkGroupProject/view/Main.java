@@ -35,12 +35,12 @@ public class Main extends Application {
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
         root.setAlignment(Pos.CENTER);
-
+        root.setStyle("-fx-background-color: #3f3f4f");
         Button prevBtn = new Button("Previous");
         Button nextBtn = new Button("Next");
 
-        root.add(prevBtn, 0,0);
         root.add(worldMap, 1,0);
+        root.add(prevBtn, 0,0);
         root.add(nextBtn, 2,0);
         GridPane.setHgrow(worldMap, Priority.ALWAYS);
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
