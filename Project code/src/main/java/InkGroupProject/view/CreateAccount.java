@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class CreateAccount extends Parent implements IScene {
+public class CreateAccount implements IScene {
     private GridPane root;
     private Database db;
 

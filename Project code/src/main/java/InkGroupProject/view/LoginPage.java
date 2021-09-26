@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class LoginPage extends Parent implements IScene {
+public class LoginPage implements IScene {
     private GridPane grid;
     private Database db;
 
