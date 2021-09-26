@@ -25,9 +25,18 @@
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/WorldBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/WorldBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +57,43 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="worldheatmap" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="worldheatmap" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -81,16 +114,37 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.5" />
+    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DatabaseTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.DatabaseTest" />
       <module name="worldheatmap.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="InkGroupProject.view.*" />
+          <option name="PATTERN" value="InkGroupProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.LoginPage" />
+      <module name="worldheatmap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InkGroupProject.view.Main" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,11 +153,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="eu.hansolo.fx.worldheatmap.Main" />
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Main" />
       <module name="worldheatmap.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="eu.hansolo.fx.worldheatmap.*" />
+          <option name="PATTERN" value="InkGroupProject.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,11 +191,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Map" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.view.Map" />
+      <module name="worldheatmap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InkGroupProject.view.Main" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InkGroupProject.Testing" />
+      <module name="worldheatmap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="InkGroupProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Project code" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Project code" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.LoginPage" />
+        <item itemvalue="Application.Testing" />
+        <item itemvalue="Application.DatabaseTest" />
+        <item itemvalue="Application.Map" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +248,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631794968558</updated>
+      <workItem from="1632179694169" duration="288000" />
+      <workItem from="1632180148923" duration="40120000" />
+      <workItem from="1632507672766" duration="695000" />
+      <workItem from="1632599567479" duration="4233000" />
     </task>
     <task id="LOCAL-00001" summary="Refractor">
       <created>1632134356177</created>
@@ -163,6 +262,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -180,38 +282,8 @@
     <MESSAGE value="Refractor" />
     <option name="LAST_COMMIT_MESSAGE" value="Refractor" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="734" y="330" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632154264365">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="734" y="330" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632154264365" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632139322897">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632139322897" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1632137241386">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632137241386" />
-    <state width="1234" height="260" key="GridCell.Tab.0.bottom" timestamp="1632159269344">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="260" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632159269344" />
-    <state width="1234" height="260" key="GridCell.Tab.0.center" timestamp="1632159269344">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="260" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632159269344" />
-    <state width="1234" height="260" key="GridCell.Tab.0.left" timestamp="1632159269344">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="260" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632159269344" />
-    <state width="1234" height="260" key="GridCell.Tab.0.right" timestamp="1632159269344">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="260" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632159269344" />
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1632134367667">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1632134367667" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

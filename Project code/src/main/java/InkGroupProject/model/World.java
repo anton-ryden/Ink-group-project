@@ -372,9 +372,6 @@ public class World extends Region {
         group.setTranslateY(0);
     }
 
-
-
-
     public void zoomToCountry(final Country COUNTRY) {
         if (!isZoomEnabled()) return;
         if (null != getSelectedCountry()) {
