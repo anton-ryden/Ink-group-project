@@ -74,8 +74,8 @@ public class LoginPage implements IScene {
                     User account = db.getAccount(email.getText());
                     UserSession.login(account);
 
-                    Main app = new Main();
-                    app.changeScene(new Map());
+                    Map mapScene = new Map();
+                    mapScene.start(Main.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
                     infoLabel.setText("Invalid email or password.");
@@ -85,8 +85,8 @@ public class LoginPage implements IScene {
 
         createAccount.setOnAction(e -> {
             createAccount.setVisited(false);
-            Main app = new Main();
-            app.changeScene(new CreateAccount());
+            CreateAccount createAccountScene = new CreateAccount();
+            createAccountScene.start(Main.getStage());
         });
     }
 

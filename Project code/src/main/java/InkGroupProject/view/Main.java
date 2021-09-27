@@ -1,8 +1,6 @@
 package InkGroupProject.view;
 
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -19,8 +17,8 @@ public class Main extends Application {
         loginPage.start(stage);
     }
 
-    public void changeScene(IScene scene) {
-        scene.start(stage);
+    public static Stage getStage() {
+        return stage;
     }
 
     @Override
