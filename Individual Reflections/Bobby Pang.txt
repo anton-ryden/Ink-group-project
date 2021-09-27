@@ -28,3 +28,11 @@ Week 2
 
 4. Ive helped make the preview and shared a few of my thoughts and helped write the project scope.
 ----------------------------------------------------------------------
+1. I want to learn a bit more about creating UIs on JAVAFX
+
+2. Try to make a good UI layout for the others to use as reference.
+
+3. Helped lay down the foundation of the User stories and scrum board. 
+
+4. Found a reliable data source and started extracting and filtering the information that we want to use. 
+----------------------------------------------------------------------

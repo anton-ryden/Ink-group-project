@@ -16,7 +16,7 @@ Right now, none since we are at the start and I'm just getting used to it and fi
 
 What is my contribution towards the team’s deliveries?
 This week we only had the Social Contract to send in so I've been working with the team to come up with a Social Contract that we all agree on.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 2:
 
 What do I want to learn or understand better?
@@ -33,3 +33,38 @@ Right now, none since we are at the start and I'm just getting used to it and fi
 
 What is my contribution towards the team’s deliveries?
 Been helping the team with our business model canvas and balling ideas for our project.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEEK 3:
+
+What do I want to learn or understand better?
+I want to understand scrum better since we just started using it.
+
+
+How can I help someone else, or the entire team, to learn something new?
+By figuring stuff out together since we are just about to start programming.
+
+
+What is my contribution towards the team’s use of Scrum?
+Been helping the team with constructing our scrum board and getting it all together so we can start our programming process.
+
+
+What is my contribution towards the team’s deliveries?
+Helped the team with our first team reflection.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEEK 4:
+
+What do I want to learn or understand better?
+I want to learn how to use github to merge things effectively since we are going to start doing it.
+
+
+How can I help someone else, or the entire team, to learn something new?
+By sharing my solutions and thoughts about problems we encounter to the other group members.
+
+
+What is my contribution towards the team’s use of Scrum?
+Planned meetings and kept on working on the scrum board.
+
+
+What is my contribution towards the team’s deliveries?
+Helping with questions regarding our project for the supervision and also writing down our team reflection.
