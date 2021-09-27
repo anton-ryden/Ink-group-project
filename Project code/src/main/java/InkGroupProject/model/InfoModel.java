@@ -17,8 +17,6 @@ public class InfoModel {
     private static String population;
     private static String[] poverty = new String[3];
 
-
-
     public static String getInfo(String c, String by) throws FileNotFoundException {
         List<String> result = Arrays.asList(".ERROR".split("\","));;
         Scanner scanner = new Scanner(file);

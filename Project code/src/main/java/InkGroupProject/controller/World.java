@@ -270,7 +270,15 @@ public class World extends Region {
 
         countryPaths.forEach((name, pathList) -> {
             Country country = Country.valueOf(name);
+
             pathList.forEach(path -> {
+                //********Set color of country********
+                try {
+                    setCountryColor(country, path);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
                 path.setFill(null == country.getColor() ? fill : country.getColor());
                 path.setStroke(stroke);
                 path.setStrokeWidth(0.2);
@@ -476,7 +484,9 @@ public class World extends Region {
                 } else {
                     color = null == getSelectedCountry().getColor() ? getFillColor() : getSelectedCountry().getColor();
                 }
-                for (SVGPath path : countryPaths.get(getSelectedCountry().getName())) { path.setFill(color); }
+                for (SVGPath path : countryPaths.get(getSelectedCountry().getName())) {
+                    path.setFill(color);
+                }
             } else {
                 if (isHoverEnabled()) {
                     for (SVGPath path : PATHS) { path.setFill(getPressedColor()); }
@@ -601,5 +611,42 @@ public class World extends Region {
     public void linkInformationPanel(InfoModel model, InkGroupProject.view.Map map) {
         this.model = model;
         this.map = map;
+    }
+
+    private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
+        int G = 255;
+        int B = 255;
+
+        InfoModel.updateInfo(path.getDisplayName());
+        int population;
+        double poverty;
+        double red;
+        try {
+            /*
+            population = Integer.valueOf(InfoModel.getPopulation());
+            poverty = Integer.valueOf(InfoModel.getPoverty(0));
+            red = Math.round(poverty * 100 / population);
+            if(red > 0){
+                G = G*red;
+                B = B*red;
+                country.setColor(Color.rgb(255, G, B));
+            }
+            */
+
+            population = Integer.parseInt(InfoModel.getPopulation());
+            poverty = (Double.parseDouble(InfoModel.getPoverty(0))) * 1000000;
+            red =  (poverty)/ population;
+
+            if (red < 0){
+                country.setColor(Color.WHITE);
+            }else if(red > .1){
+                country.setColor(new Color(red, 0, 0, 1));
+            }
+
+
+
+        }catch (NumberFormatException e){
+            country.setColor(Color.WHITE);
+        }
     }
 }

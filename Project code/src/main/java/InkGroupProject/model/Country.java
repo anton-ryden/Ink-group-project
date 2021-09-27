@@ -47,6 +47,7 @@ public enum Country {
 
     private Color color;
 
+
     // ******************** Constructors **************************************
     Country() {
         color = null;
