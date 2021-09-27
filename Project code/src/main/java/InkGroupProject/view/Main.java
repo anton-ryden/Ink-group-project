@@ -1,8 +1,6 @@
 package InkGroupProject.view;
 
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -16,16 +14,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         stage = primaryStage;
         LoginPage loginPage = new LoginPage();
-        Scene loginScene = new Scene(loginPage.getRoot());
-        primaryStage.setTitle("Login");
-        primaryStage.setResizable(false);
-        primaryStage.setScene(loginScene);
-        primaryStage.show();
+        loginPage.start(stage);
     }
 
-    public void changeScene(IScene scene) {
-        stage.getScene().setRoot((Parent)scene);
-        scene.start(stage);
+    public static Stage getStage() {
+        return stage;
     }
 
     @Override

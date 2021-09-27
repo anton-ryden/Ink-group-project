@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
 
-public class Map extends Parent implements IScene {
+public class Map implements IScene {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
