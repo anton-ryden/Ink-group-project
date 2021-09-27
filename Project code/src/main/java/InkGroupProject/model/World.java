@@ -18,6 +18,7 @@ package InkGroupProject.model;
 
 
 
+import InkGroupProject.view.Main;
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
@@ -43,15 +44,12 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.shape.Shape;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -125,6 +123,8 @@ public class World extends Region {
     private              EventHandler<MouseEvent>        mouseReleaseHandler;
     private              EventHandler<MouseEvent>        mouseExitHandler;
 
+    private InfoModel model;
+    private InkGroupProject.view.Map map;
 
     // ******************** Constructors **************************************
     public World() {
@@ -456,9 +456,16 @@ public class World extends Region {
             }
         } else if (MOUSE_PRESSED == TYPE) {
             if (isSelectionEnabled()) {
-                System.out.println("The country you pressed was: " + COUNTRY_FULLNAME);
                 zoomToCountry(COUNTRY);
                 Color color;
+
+                /* InfoPanel */
+                try {
+                    model.updateInfo(COUNTRY_PATH.getDisplayName());
+                } catch (FileNotFoundException e){
+
+                }
+                map.updateInfoPanel();
 
                 if (null == getSelectedCountry()) {
                     setSelectedCountry(COUNTRY);
@@ -586,5 +593,11 @@ public class World extends Region {
             group.relocate((getWidth() - width) * 0.5, (getHeight() - height) * 0.5);
             pane.setCache(false);
         }
+    }
+
+    // ***************** Information Panel ****************************//
+    public void linkInformationPanel(InfoModel model, InkGroupProject.view.Map map) {
+        this.model = model;
+        this.map = map;
     }
 }
