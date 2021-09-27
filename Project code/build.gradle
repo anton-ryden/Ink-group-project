@@ -1,0 +1,18 @@
+group 'eu.hansolo.fx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.kordamp.ikonli:ikonli-core:1.9.0'
+    compile 'org.kordamp.ikonli:ikonli-javafx:1.9.0'
+    compile 'org.kordamp.ikonli:ikonli-materialdesign-pack:1.9.0'
+    compile 'at.favre.lib:bcrypt:0.9.0'
+    compile group:'org.xerial', name:'sqlite-jdbc', version:'3.36.0.3'
+}

@@ -23,3 +23,18 @@ what is my contribution towards the team’s use of Scrum?
 
 what is my contribution towards the team’s deliveries?
 	Speaking about potential ideas
+
+	WEEK 3
+what do I want to learn or understand better?
+	I want to understand how to use JavaFx and use it for our application. 
+	Absorb as much knowledge as possible.
+
+how can I help someone else, or the entire team, to learn something new?
+	Share my prior knowledge of working in group and programming knowledge if nessecary.
+
+what is my contribution towards the team’s use of Scrum?
+	Talking alot and making sure everyone has a say but also scheule meetings
+
+what is my contribution towards the team’s deliveries?
+	Making sure the meetings actually happens and participating in all aspects. Latly we have been organizing and 
+	discussing possible solution, making user stories etc.  
