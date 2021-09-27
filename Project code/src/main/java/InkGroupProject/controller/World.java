@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package InkGroupProject.model;
+package InkGroupProject.controller;
 
 
 
-import InkGroupProject.view.Main;
+import InkGroupProject.model.CRegion;
+import InkGroupProject.model.Country;
+import InkGroupProject.model.CountryPath;
+import InkGroupProject.model.InfoModel;
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;

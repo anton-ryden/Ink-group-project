@@ -1,14 +1,12 @@
 package InkGroupProject.view;
 
 import InkGroupProject.model.InfoModel;
-import InkGroupProject.model.UserSession;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import InkGroupProject.model.WorldBuilder;
-import InkGroupProject.model.World;
-import InkGroupProject.model.World.Resolution;
+import InkGroupProject.controller.World;
+import InkGroupProject.controller.World.Resolution;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
