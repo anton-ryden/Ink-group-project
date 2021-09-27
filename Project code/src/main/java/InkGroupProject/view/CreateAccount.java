@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class CreateAccount extends Parent implements IScene {
+public class CreateAccount implements IScene {
     private GridPane root;
     private Database db;
 
@@ -99,8 +99,8 @@ public class CreateAccount extends Parent implements IScene {
                 } else if (db.createAccount(firstName.getText(), lastName.getText(), email.getText(), password.getText())) {
                     infoLabel.setTextFill(Color.GREEN);
                     infoLabel.setText("Account created successfully!");
-                    Main app = new Main();
-                    app.changeScene(new LoginPage());
+                    LoginPage loginPage = new LoginPage();
+                    loginPage.start(Main.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
                     infoLabel.setText("Account already exists.");
@@ -111,8 +111,8 @@ public class CreateAccount extends Parent implements IScene {
         // Click event for go back button
         goBack.setOnAction(e -> {
             goBack.setVisited(false);
-            Main app = new Main();
-            app.changeScene(new LoginPage());
+            LoginPage loginPage = new LoginPage();
+            loginPage.start(Main.getStage());
         });
     }
 

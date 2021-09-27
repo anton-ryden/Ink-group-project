@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package InkGroupProject.model;
+package InkGroupProject.controller;
 
 
 
-import InkGroupProject.view.Main;
+import InkGroupProject.model.CRegion;
+import InkGroupProject.model.Country;
+import InkGroupProject.model.CountryPath;
+import InkGroupProject.model.InfoModel;
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
@@ -69,8 +72,8 @@ import static javafx.scene.input.MouseEvent.MOUSE_RELEASED;
 public class World extends Region {
     public enum Resolution { HI_RES, LO_RES };
     private static final StyleablePropertyFactory<World> FACTORY          = new StyleablePropertyFactory<>(Region.getClassCssMetaData());
-    private static final String                          HIRES_PROPERTIES = "InkGroupProject/model/hires.properties";
-    private static final String                          LORES_PROPERTIES = "InkGroupProject/model/lores.properties";
+    private static final String                          HIRES_PROPERTIES = "InkGroupProject/controller/hires.properties";
+    private static final String                          LORES_PROPERTIES = "InkGroupProject/controller/lores.properties";
     private static final double                          PREFERRED_WIDTH  = 1009;
     private static final double                          PREFERRED_HEIGHT = 665;
     private static final double                          MINIMUM_WIDTH    = 100;
@@ -557,7 +560,6 @@ public class World extends Region {
         });
         return countryPaths;
     }
-
 
     // ******************** Style related *************************************
     @Override public String getUserAgentStylesheet() {

@@ -16,7 +16,8 @@
 
 package InkGroupProject.model;
 
-import InkGroupProject.model.World.Resolution;
+import InkGroupProject.controller.World;
+import InkGroupProject.controller.World.Resolution;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
@@ -27,7 +28,6 @@ import javafx.geometry.Dimension2D;
 import javafx.geometry.Insets;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import org.kordamp.ikonli.Ikon;
 
 import java.util.HashMap;
 
