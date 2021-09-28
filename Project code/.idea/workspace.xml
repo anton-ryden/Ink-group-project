@@ -25,25 +25,15 @@
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World$Resolution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/World.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/CreateAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/CreateAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/db/database.db" afterDir="false" />
     </list>
     <list id="75ce244e-d019-4cdd-b4d1-10924bd050d8" name="Changes by ekang" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,6 +217,13 @@
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Project code" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,6 +231,33 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Project code" />
       <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

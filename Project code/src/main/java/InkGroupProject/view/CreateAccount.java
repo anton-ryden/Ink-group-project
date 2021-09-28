@@ -1,12 +1,15 @@
 package InkGroupProject.view;
 
 import InkGroupProject.model.Database;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -113,6 +116,51 @@ public class CreateAccount implements IScene {
             goBack.setVisited(false);
             LoginPage loginPage = new LoginPage();
             loginPage.start(Main.getStage());
+        });
+
+        firstName.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    lastName.requestFocus();
+                }
+            }
+        });
+
+        lastName.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    email.requestFocus();
+                }
+            }
+        });
+
+        email.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    password.requestFocus();
+                }
+            }
+        });
+
+        password.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    rePassword.requestFocus();
+                }
+            }
+        });
+
+        rePassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    firstName.requestFocus();
+                }
+            }
         });
     }
 

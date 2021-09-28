@@ -7,9 +7,13 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyEvent;
 
 public class LoginPage implements IScene {
     private GridPane grid;
@@ -36,12 +40,14 @@ public class LoginPage implements IScene {
         GridPane.setConstraints(email, 0, 0);
         grid.getChildren().add(email);
 
+
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
         GridPane.setConstraints(password, 0, 1);
         grid.getChildren().add(password);
+
 
         // Login button
         Button login = new Button("Login");
@@ -87,6 +93,24 @@ public class LoginPage implements IScene {
             createAccount.setVisited(false);
             CreateAccount createAccountScene = new CreateAccount();
             createAccountScene.start(Main.getStage());
+        });
+
+        email.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    password.requestFocus();
+                }
+            }
+        });
+
+        password.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.TAB) {
+                    email.requestFocus();
+                }
+            }
         });
     }
 
