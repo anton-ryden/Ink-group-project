@@ -1,7 +1,6 @@
 package InkGroupProject.view;
 
 import InkGroupProject.model.Database;
-import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
@@ -9,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -22,7 +20,7 @@ public class CreateAccount implements IScene {
         init();
     }
 
-    public void init() {
+    private void init() {
         db = new Database(":resource:InkGroupProject/db/database.db");
 
         // GridPane container

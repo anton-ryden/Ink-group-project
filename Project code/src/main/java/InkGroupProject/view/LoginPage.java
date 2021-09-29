@@ -8,12 +8,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
 
 public class LoginPage implements IScene {
     private GridPane grid;
@@ -23,7 +20,7 @@ public class LoginPage implements IScene {
         init();
     }
 
-    public void init() {
+    private void init() {
         db = new Database(":resource:InkGroupProject/db/database.db");
 
         // GridPane container
