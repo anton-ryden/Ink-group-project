@@ -1,0 +1,10 @@
+git/
+Individual Reflections/
+Project code/.gradle/
+Project code/.idea
+Project code/build
+Project code/gradle
+Project code/build.gradle
+Project code/gradlew
+Project code/gradlew.bat
+Project code/settings.gradle

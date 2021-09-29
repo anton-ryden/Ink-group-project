@@ -25,16 +25,7 @@
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/InfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/InfoModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/InfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/InfoModel.java" afterDir="false" />
     </list>
     <list id="75ce244e-d019-4cdd-b4d1-10924bd050d8" name="Changes by ekang" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -287,6 +278,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refractor" />
     <option name="LAST_COMMIT_MESSAGE" value="Refractor" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java</url>
+          <line>570</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
