@@ -252,7 +252,6 @@ public class World extends Region {
         registerListeners();
     }
 
-
     // ******************** Initialization ************************************
     private void initGraphics() {
         if (Double.compare(getPrefWidth(), 0.0) <= 0 || Double.compare(getPrefHeight(), 0.0) <= 0 ||
