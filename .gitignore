@@ -3,11 +3,11 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-Project\ code/Project\ code/.idea/**/workspace.xml
-Project\ code/Project\ code/.idea/**/tasks.xml
-Project\ code/Project\ code/.idea/**/usage.statistics.xml
-Project\ code/Project\ code/.idea/**/dictionaries
-Project\ code/Project\ code/.idea/**/shelf
+Project\ code/.idea/**/workspace.xml
+Project\ code/.idea/**/tasks.xml
+Project\ code/.idea/**/usage.statistics.xml
+Project\ code/.idea/**/dictionaries
+Project\ code/.idea/**/shelf
 
 # Generated files
 Project\ code/.idea/**/contentModel.xml
