@@ -25,7 +25,7 @@ public class Map implements IScene {
         init();
     }
 
-    public void init() {
+    private void init() {
         worldMap = WorldBuilder.create()
                 .resolution(Resolution.HI_RES)
                 .zoomEnabled(true)
