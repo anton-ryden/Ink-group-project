@@ -1,9 +1,0 @@
-CREATE TABLE "accounts" (
-	"id"	INTEGER,
-	"first_name"	TEXT NOT NULL,
-	"last_name"	TEXT NOT NULL,
-	"email"	TEXT NOT NULL UNIQUE,
-	"password"	TEXT NOT NULL,
-	"date_created"	DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY("id" AUTOINCREMENT)
-);
