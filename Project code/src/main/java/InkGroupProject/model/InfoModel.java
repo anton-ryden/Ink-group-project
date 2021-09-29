@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
 //48 = data value on year 2018
 
 public class InfoModel {
@@ -36,7 +35,6 @@ public class InfoModel {
 
         }
         return "Error - No data found";
-
     }
 
     public static void updateInfo(String c) throws FileNotFoundException {
