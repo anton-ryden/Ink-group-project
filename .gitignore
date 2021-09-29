@@ -4,3 +4,7 @@
 "Project code/build"
 "Project code/gradlew"
 "Project code/gradlew.bat"
+.idea
+.gradle
+gradle
+build
