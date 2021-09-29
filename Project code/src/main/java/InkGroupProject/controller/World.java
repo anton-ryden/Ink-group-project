@@ -129,6 +129,7 @@ public class World extends Region {
     private InfoModel model;
     private InkGroupProject.view.Map map;
 
+
     // ******************** Constructors **************************************
     public World() {
         this(Resolution.HI_RES, 5, false );
@@ -562,12 +563,18 @@ public class World extends Region {
 
     private Map<String, List<CountryPath>> createCountryPaths() {
         Map<String, List<CountryPath>> countryPaths = new HashMap<>();
+
         resolutionProperties.forEach((key, value) -> {
-            String            name     = key.toString();
+            String name = key.toString();
             List<CountryPath> pathList = new ArrayList<>();
             for (String path : value.toString().split(";")) { pathList.add(new CountryPath(name, path)); }
             countryPaths.put(name, pathList);
         });
+        try {
+            this.countryPaths = InfoModel.addData(countryPaths);
+        } catch (FileNotFoundException e){
+
+            }
         return countryPaths;
     }
 
@@ -616,10 +623,8 @@ public class World extends Region {
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
         int G = 255;
         int B = 255;
-
-        InfoModel.updateInfo(path.getDisplayName());
         int population;
-        double poverty;
+        int poverty;
         double red;
         try {
             /*
@@ -633,20 +638,24 @@ public class World extends Region {
             }
             */
 
-            population = Integer.parseInt(InfoModel.getPopulation());
-            poverty = (Double.parseDouble(InfoModel.getPoverty(0))) * 1000000;
-            red =  (poverty)/ population;
+            if(country.getColor() == null) {
 
-            if (red < 0){
-                country.setColor(Color.WHITE);
-            }else if(red > .1){
-                country.setColor(new Color(red, 0, 0, 1));
+                population = path.getPopulation();
+                poverty = path.getPoverty();
+                red = ((double) (poverty)) / ((double) population);
+                if (population == 0) {
+                    country.setColor(Color.BLUE);
+
+                } else {
+                    country.setColor(new Color(Math.min(red*1.5,1), Math.max(1 - red*5, 0), 0, 1));
+                }
             }
 
 
 
-        }catch (NumberFormatException e){
-            country.setColor(Color.WHITE);
+
+        } catch (NumberFormatException e) {
+            country.setColor(Color.BLUE);
         }
     }
 }

@@ -23,18 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
+      <change beforePath="$PROJECT_DIR$/../Individual Reflections/Anders Troung.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Individual Reflections/Anders Troung.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/controller/World.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/CountryPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/CountryPath.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/InfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/InfoModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/WorldBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/InkGroupProject/model/PovStatsData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/InkGroupProject/model/PovStatsData.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/controller/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/CountryPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/CountryPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/InfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/InfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InkGroupProject/model/PovStatsData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InkGroupProject/model/PovStatsData.csv" afterDir="false" />
     </list>
     <list id="75ce244e-d019-4cdd-b4d1-10924bd050d8" name="Changes by ekang" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +88,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -218,6 +227,13 @@
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Project code" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -225,6 +241,33 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Project code" />
       <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

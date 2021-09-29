@@ -44,9 +44,7 @@ public class Map implements IScene {
         informationPanel = new VBox();
         model = new InfoModel();
         worldMap.linkInformationPanel(model, this);
-        Text population = new Text( "Population: ");
         informationPanel.setPrefWidth(200);
-        informationPanel.getChildren().add(population);
 
         root.add(worldMap, 1,0);
         root.add(prevBtn, 0,0);
