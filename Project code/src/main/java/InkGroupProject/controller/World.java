@@ -302,7 +302,6 @@ public class World extends Region {
         });
     }
 
-
     // ******************** Methods *******************************************
     @Override protected double computeMinWidth(final double HEIGHT)  { return MINIMUM_WIDTH; }
     @Override protected double computeMinHeight(final double WIDTH)  { return MINIMUM_HEIGHT; }
