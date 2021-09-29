@@ -95,22 +95,14 @@ public class LoginPage implements IScene {
             createAccountScene.start(Main.getStage());
         });
 
-        email.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    password.requestFocus();
-                }
-            }
+        email.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB)
+                password.requestFocus();
         });
 
-        password.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    email.requestFocus();
-                }
-            }
+        password.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB && e.isShiftDown())
+                email.requestFocus();
         });
     }
 

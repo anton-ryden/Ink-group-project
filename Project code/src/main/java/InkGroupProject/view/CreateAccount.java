@@ -118,49 +118,41 @@ public class CreateAccount implements IScene {
             loginPage.start(Main.getStage());
         });
 
-        firstName.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    lastName.requestFocus();
-                }
-            }
+        firstName.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB)
+                lastName.requestFocus();
         });
 
-        lastName.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    email.requestFocus();
-                }
-            }
-        });
-
-        email.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    password.requestFocus();
-                }
-            }
-        });
-
-        password.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
-                    rePassword.requestFocus();
-                }
-            }
-        });
-
-        rePassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.TAB) {
+        lastName.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
                     firstName.requestFocus();
-                }
+                else
+                    email.requestFocus();
             }
+        });
+
+        email.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
+                    lastName.requestFocus();
+                else
+                    password.requestFocus();
+            }
+        });
+
+        password.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
+                    email.requestFocus();
+                else
+                    rePassword.requestFocus();
+            }
+        });
+
+        rePassword.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB && e.isShiftDown())
+                password.requestFocus();
         });
     }
 
