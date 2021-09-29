@@ -4,14 +4,21 @@ import java.sql.*;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class Database {
+    private static Database database;
     private Connection connection;
 
-    public Database(String path) {
+    private Database(String path) {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:" + path);
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+    }
+
+    public static Database getInstance(String path) {
+        if (database == null)
+            database = new Database(path);
+        return database;
     }
 
     public boolean createAccount(String firstName, String lastName, String email, String password) {

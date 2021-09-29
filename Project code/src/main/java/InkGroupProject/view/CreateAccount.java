@@ -21,7 +21,7 @@ public class CreateAccount implements IScene {
     }
 
     private void init() {
-        db = new Database(":resource:InkGroupProject/db/database.db");
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
 
         // GridPane container
         root = new GridPane();
