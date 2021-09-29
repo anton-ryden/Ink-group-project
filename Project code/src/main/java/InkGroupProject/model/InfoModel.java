@@ -45,7 +45,6 @@ public class InfoModel {
         poverty[2] = getInfo(c, "Number of poor at $5.50 a day (2011 PPP) (millions)");
     }
 
-
     public static String getCountry() {
         return country;
     }
