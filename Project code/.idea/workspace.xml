@@ -22,22 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor">
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/cache.properties.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.1/taskArtifacts/taskArtifacts.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/Testing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/model/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/CreateAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/CreateAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/InkGroupProject/view/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/InkGroupProject/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/Testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/model/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/CreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InkGroupProject/view/LoginPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="de0ad109-d066-45e3-a88f-d01f0ad921d9" name="Default Changelist" comment="Refractor" />
     <list id="75ce244e-d019-4cdd-b4d1-10924bd050d8" name="Changes by ekang" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +235,7 @@
       <workItem from="1632180148923" duration="40120000" />
       <workItem from="1632507672766" duration="695000" />
       <workItem from="1632599567479" duration="4233000" />
-      <workItem from="1632910457483" duration="6306000" />
+      <workItem from="1632910457483" duration="6473000" />
     </task>
     <task id="LOCAL-00001" summary="Refractor">
       <created>1632134356177</created>
