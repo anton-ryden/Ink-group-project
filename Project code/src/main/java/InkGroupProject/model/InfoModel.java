@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 //48 = data value on year 2018
 
+
 public class InfoModel {
     private static File file = new File("./src/main/resources/InkGroupProject/model/PovStatsData.csv");
     private static String country;
