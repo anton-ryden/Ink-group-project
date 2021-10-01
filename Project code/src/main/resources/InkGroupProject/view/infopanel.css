@@ -1,0 +1,38 @@
+.chart-bar {
+    -fx-bar-fill: red;
+}
+
+.axis-label{
+    -fx-text-fill: grey;
+}
+
+.label{
+-fx-margin-left: 50px;
+-fx-text-fill: grey;
+}
+
+.chart{
+-fx-text-fill: grey;
+}
+
+.country{
+-fx-font-size: 30px ;
+-fx-text-fill: grey;
+}
+
+.axis{
+-fx-font-size: 10px;
+-fx-tickLabelFill: grey;
+}
+
+VBox {
+-fx-max-width: 250px;
+-fx-alignment: center;
+-fx-background-color: white;
+}
+
+
+.text{
+-fx-margin-left: 50px;
+-fx-text-fill: white;
+}
