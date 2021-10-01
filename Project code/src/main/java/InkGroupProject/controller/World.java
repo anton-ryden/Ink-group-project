@@ -253,7 +253,6 @@ public class World extends Region {
         registerListeners();
     }
 
-
     // ******************** Initialization ************************************
     private void initGraphics() {
         if (Double.compare(getPrefWidth(), 0.0) <= 0 || Double.compare(getPrefHeight(), 0.0) <= 0 ||
@@ -302,7 +301,6 @@ public class World extends Region {
             if (isZoomEnabled()) { getScene().addEventFilter( ScrollEvent.ANY, new WeakEventHandler<>(_scrollEventHandler)); }
         });
     }
-
 
     // ******************** Methods *******************************************
     @Override protected double computeMinWidth(final double HEIGHT)  { return MINIMUM_WIDTH; }
