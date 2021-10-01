@@ -270,7 +270,6 @@ public class World extends Region {
 
         countryPaths.forEach((name, pathList) -> {
             Country country = Country.valueOf(name);
-
             pathList.forEach(path -> {
                 //********Set color of country********
                 try {
