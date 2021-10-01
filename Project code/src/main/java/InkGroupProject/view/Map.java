@@ -7,11 +7,8 @@ import InkGroupProject.model.WorldBuilder;
 import InkGroupProject.controller.World;
 import InkGroupProject.controller.World.Resolution;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -21,21 +18,35 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
+import javafx.application.Application;
+
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+
+import javax.xml.stream.events.StartDocument;
+import java.awt.*;
+
 
 public class Map implements IScene {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
     private InfoModel model;
-    final static String one = "1.9";
-    final static String two = "3.2";
-    final static String three = "5.5";
 
     public Map() {
         init();
     }
 
-    private void init() {
+
+    final static String one = "1.9";
+    final static String two = "3.2";
+    final static String three = "5.5";
+
+
+
+    public void init() {
         worldMap = WorldBuilder.create()
                 .resolution(Resolution.HI_RES)
                 .zoomEnabled(true)
@@ -77,6 +88,7 @@ public class Map implements IScene {
     public Parent getRoot() {
         return root;
     }
+
 
     public void startGraph() {
         informationPanel.getStyleClass();
@@ -121,6 +133,7 @@ public class Map implements IScene {
 
 
     }
+
     public void updateInfoPanel() {
 
         informationPanel.getChildren().clear();
