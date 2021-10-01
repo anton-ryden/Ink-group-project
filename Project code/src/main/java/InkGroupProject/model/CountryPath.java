@@ -25,7 +25,8 @@ public class CountryPath extends SVGPath {
     private final String  NAME;
     private final Locale  LOCALE;
     private final Tooltip TOOLTIP;
-
+    private int population;
+    private int poverty;
 
     // ******************** Constructors **************************************
     public CountryPath(final String NAME, final String CONTENT) {
@@ -39,9 +40,15 @@ public class CountryPath extends SVGPath {
         setContent(CONTENT);
     }
 
-
     // ******************** Methods *******************************************
     public String getName() { return NAME; }
 
     public String getDisplayName() {return LOCALE.getDisplayCountry();}
+
+    public void setPopulation(String a) { this.population = Integer.parseInt(a); }
+    public void setPoverty(String a) { this.poverty = (int) (Double.parseDouble(a) * 1000000); }
+
+    public int getPopulation() { return population;}
+    public int getPoverty() { return poverty;}
+
 }
