@@ -77,7 +77,22 @@ public class Database {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
         return isLoggedIn;
+    }
+
+    public CountryPath getPoveryInfo(CountryPath countryPath) {
+        String countryName = countryPath.getDisplayName();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM poverty_stats WHERE country_name = ?");
+            query.setString(1, countryName);
+            ResultSet result = query.executeQuery();
+            countryPath.setPopulation(result.getInt("population"));
+            countryPath.setNumberOfPoor19Dollar(result.getDouble("num_of_poor_1_9"));
+            countryPath.setNumberOfPoor32Dollar(result.getDouble("num_of_poor_3_2"));
+            countryPath.setNumberOfPoor55Dollar(result.getDouble("num_of_poor_5_5"));
+        } catch (SQLException ex) {
+            return countryPath;
+        }
+        return countryPath;
     }
 }

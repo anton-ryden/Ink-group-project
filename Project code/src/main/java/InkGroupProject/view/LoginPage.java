@@ -1,8 +1,7 @@
 package InkGroupProject.view;
 
-import InkGroupProject.model.Database;
-import InkGroupProject.model.User;
-import InkGroupProject.model.UserSession;
+import InkGroupProject.controller.World;
+import InkGroupProject.model.*;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -76,8 +75,15 @@ public class LoginPage implements IScene {
                     // Create user session
                     User account = db.getAccount(email.getText());
                     UserSession.login(account);
-
-                    Map mapScene = new Map();
+                    World worldMap = WorldBuilder.create()
+                            .resolution(World.Resolution.HI_RES)
+                            .zoomEnabled(true)
+                            .hoverEnabled(true)
+                            .selectionEnabled(true)
+                            .fadeColors(true)
+                            .build();
+                    Map mapScene = new Map(worldMap);
+                    worldMap.addPropertyChangeListener(mapScene);
                     mapScene.start(Main.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
@@ -114,4 +120,5 @@ public class LoginPage implements IScene {
     public Parent getRoot() {
         return grid;
     }
+
 }

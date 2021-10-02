@@ -6,22 +6,19 @@
     -fx-text-fill: grey;
 }
 
-.label{
--fx-margin-left: 50px;
--fx-text-fill: grey;
-}
-
 .chart{
--fx-text-fill: grey;
+    -fx-text-fill: grey;
+    -fx-font-size: 10px;
+    -fx-text-alignment: left;
 }
 
 .country{
--fx-font-size: 30px ;
+-fx-font-size: 25px ;
 -fx-text-fill: grey;
 }
 
 .axis{
--fx-font-size: 10px;
+-fx-font-size: 12px;
 -fx-tickLabelFill: grey;
 }
 
@@ -31,8 +28,8 @@ VBox {
 -fx-background-color: white;
 }
 
-
-.text{
--fx-margin-left: 50px;
--fx-text-fill: white;
+.root{
+    -fx-font-size: 10px;
 }
+
+
