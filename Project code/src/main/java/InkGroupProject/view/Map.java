@@ -38,11 +38,6 @@ public class Map implements IScene, PropertyChangeListener {
         init();
     }
 
-    final static String one = "1.9";
-    final static String two = "3.2";
-    final static String three = "5.5";
-
-
     public void init() {
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -96,12 +91,11 @@ public class Map implements IScene, PropertyChangeListener {
         yAxis.getStyleClass().add("axis");
         yAxis.setTickLabelFill(Color.GREY);
         xAxis.setTickLabelFill(Color.GREY);
-
         XYChart.Series series1 = new XYChart.Series();
 
-        series1.getData().add(new XYChart.Data(one,percentage));
-        series1.getData().add(new XYChart.Data(two, percentage2));
-        series1.getData().add(new XYChart.Data(three,percentage3));
+        series1.getData().add(new XYChart.Data("1.9",percentage));
+        series1.getData().add(new XYChart.Data("3.2", percentage2));
+        series1.getData().add(new XYChart.Data("5.5",percentage3));
 
         bc.getData().addAll(series1);
         informationPanel.getChildren().add(bc);

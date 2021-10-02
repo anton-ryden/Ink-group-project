@@ -591,8 +591,6 @@ public class World extends Region {
     // ***************** Information Panel ****************************//
 
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
-        int G = 255;
-        int B = 255;
         int population;
         int poverty;
         double red;
@@ -603,7 +601,6 @@ public class World extends Region {
                 red = ((double) (poverty)) / ((double) population);
                 if (population == 0) {
                     country.setColor(Color.BLUE);
-
                 } else {
                     country.setColor(new Color(Math.min(red*1.5,1), Math.max(1 - red*5, 0), 0, 1));
                 }
