@@ -18,10 +18,7 @@ package InkGroupProject.controller;
 
 
 
-import InkGroupProject.model.CRegion;
-import InkGroupProject.model.Country;
-import InkGroupProject.model.CountryPath;
-import InkGroupProject.model.InfoModel;
+import InkGroupProject.model.*;
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
@@ -52,6 +49,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.shape.Shape;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -126,9 +125,10 @@ public class World extends Region {
     private              EventHandler<MouseEvent>        mouseReleaseHandler;
     private              EventHandler<MouseEvent>        mouseExitHandler;
 
-    private InfoModel model;
-    private InkGroupProject.view.Map map;
+    private CountryPath selectedCountryPath;
+    private Database db;
 
+    private PropertyChangeSupport support;
 
     // ******************** Constructors **************************************
     public World() {
@@ -138,6 +138,9 @@ public class World extends Region {
         this(RESOLUTION,  5, false  );
     }
     public World(final Resolution RESOLUTION, final double EVENT_RADIUS, final boolean FADE_COLORS) {
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
+        support = new PropertyChangeSupport(this);
+
         resolutionProperties = readProperties(Resolution.HI_RES == RESOLUTION ? World.HIRES_PROPERTIES : World.LORES_PROPERTIES);
         backgroundColor      = new StyleableObjectProperty<Color>(BACKGROUND_COLOR.getInitialValue(World.this)) {
             @Override protected void invalidated() { setBackground(new Background(new BackgroundFill(get(), CornerRadii.EMPTY, Insets.EMPTY))); }
@@ -253,7 +256,6 @@ public class World extends Region {
         registerListeners();
     }
 
-
     // ******************** Initialization ************************************
     private void initGraphics() {
         if (Double.compare(getPrefWidth(), 0.0) <= 0 || Double.compare(getPrefHeight(), 0.0) <= 0 ||
@@ -271,7 +273,6 @@ public class World extends Region {
 
         countryPaths.forEach((name, pathList) -> {
             Country country = Country.valueOf(name);
-
             pathList.forEach(path -> {
                 //********Set color of country********
                 try {
@@ -302,7 +303,6 @@ public class World extends Region {
             if (isZoomEnabled()) { getScene().addEventFilter( ScrollEvent.ANY, new WeakEventHandler<>(_scrollEventHandler)); }
         });
     }
-
 
     // ******************** Methods *******************************************
     @Override protected double computeMinWidth(final double HEIGHT)  { return MINIMUM_WIDTH; }
@@ -434,15 +434,6 @@ public class World extends Region {
             case HORIZONTAL: sf = clamp(1.0, 10.0, 1 / (areaWidth / width)); break;
         }
 
-        /*
-        Rectangle bounds = new Rectangle(BOUNDS[0], BOUNDS[1], areaWidth, areaHeight);
-        bounds.setFill(Color.TRANSPARENT);
-        bounds.setStroke(Color.RED);
-        bounds.setStrokeWidth(0.5);
-        bounds.setMouseTransparent(true);
-        group.getChildren().add(bounds);
-        */
-
         setScaleFactor(sf);
         group.setTranslateX(width * 0.5 - (areaCenterX));
         group.setTranslateY(height * 0.5 - (areaCenterY));
@@ -454,9 +445,8 @@ public class World extends Region {
     }
 
     private void handleMouseEvent(final MouseEvent EVENT, final EventHandler<MouseEvent> HANDLER) {
-        final CountryPath       COUNTRY_PATH = (CountryPath) EVENT.getSource();
+        final CountryPath COUNTRY_PATH = (CountryPath) EVENT.getSource();
         final String            COUNTRY_NAME = COUNTRY_PATH.getName();
-        final String            COUNTRY_FULLNAME = COUNTRY_PATH.getDisplayName();
         final Country           COUNTRY      = Country.valueOf(COUNTRY_NAME);
         final List<CountryPath> PATHS        = countryPaths.get(COUNTRY_NAME);
 
@@ -467,17 +457,11 @@ public class World extends Region {
                 for (SVGPath path : PATHS) { path.setFill(color); }
             }
         } else if (MOUSE_PRESSED == TYPE) {
+            setCountryPath(COUNTRY_PATH);
+
             if (isSelectionEnabled()) {
                 zoomToCountry(COUNTRY);
                 Color color;
-
-                /* InfoPanel */
-                try {
-                    model.updateInfo(COUNTRY_PATH.getDisplayName());
-                } catch (FileNotFoundException e){
-
-                }
-                map.updateInfoPanel();
 
                 if (null == getSelectedCountry()) {
                     setSelectedCountry(COUNTRY);
@@ -528,20 +512,13 @@ public class World extends Region {
             setCountryFillAndStroke(country, null == country.getColor() ? getFillColor() : country.getColor(), getStrokeColor());
         });
     }
+
     private void setCountryFillAndStroke(final Country COUNTRY, final Color FILL, final Color STROKE) {
         List<CountryPath> paths = countryPaths.get(COUNTRY.getName());
         for (CountryPath path : paths) {
             path.setFill(FILL);
             path.setStroke(STROKE);
         }
-    }
-
-    private void addShapesToScene(final Shape... SHAPES) {
-        addShapesToScene(Arrays.asList(SHAPES));
-    }
-    private void addShapesToScene(final Collection<Shape> SHAPES) {
-        if (null == getScene()) return;
-        Platform.runLater(() -> pane.getChildren().addAll(SHAPES));
     }
 
     private double clamp(final double MIN, final double MAX, final double VALUE) {
@@ -567,14 +544,12 @@ public class World extends Region {
         resolutionProperties.forEach((key, value) -> {
             String name = key.toString();
             List<CountryPath> pathList = new ArrayList<>();
-            for (String path : value.toString().split(";")) { pathList.add(new CountryPath(name, path)); }
+            for (String path : value.toString().split(";")) {
+
+                pathList.add(loadCountryData(new CountryPath(name, path)));
+            }
             countryPaths.put(name, pathList);
         });
-        try {
-            this.countryPaths = InfoModel.addData(countryPaths);
-        } catch (FileNotFoundException e){
-
-            }
         return countryPaths;
     }
 
@@ -613,49 +588,38 @@ public class World extends Region {
             pane.setCache(false);
         }
     }
-
     // ***************** Information Panel ****************************//
-    public void linkInformationPanel(InfoModel model, InkGroupProject.view.Map map) {
-        this.model = model;
-        this.map = map;
-    }
 
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
-        int G = 255;
-        int B = 255;
         int population;
         int poverty;
         double red;
         try {
-            /*
-            population = Integer.valueOf(InfoModel.getPopulation());
-            poverty = Integer.valueOf(InfoModel.getPoverty(0));
-            red = Math.round(poverty * 100 / population);
-            if(red > 0){
-                G = G*red;
-                B = B*red;
-                country.setColor(Color.rgb(255, G, B));
-            }
-            */
-
             if(country.getColor() == null) {
-
                 population = path.getPopulation();
                 poverty = path.getPoverty();
                 red = ((double) (poverty)) / ((double) population);
                 if (population == 0) {
                     country.setColor(Color.BLUE);
-
                 } else {
                     country.setColor(new Color(Math.min(red*1.5,1), Math.max(1 - red*5, 0), 0, 1));
                 }
             }
-
-
-
-
         } catch (NumberFormatException e) {
             country.setColor(Color.BLUE);
         }
+    }
+
+    public CountryPath loadCountryData(CountryPath countryPath){
+        return db.getPoveryInfo(countryPath);
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener pcl) {
+        support.addPropertyChangeListener(pcl);
+    }
+
+    public void setCountryPath(CountryPath countryPath) {
+        support.firePropertyChange("selectedCountryPath", selectedCountryPath, countryPath);
+        this.selectedCountryPath = countryPath;
     }
 }

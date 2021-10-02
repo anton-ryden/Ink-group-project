@@ -7,6 +7,7 @@ import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -19,8 +20,8 @@ public class CreateAccount implements IScene {
         init();
     }
 
-    public void init() {
-        db = new Database(":resource:InkGroupProject/db/database.db");
+    private void init() {
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
 
         // GridPane container
         root = new GridPane();
@@ -113,6 +114,43 @@ public class CreateAccount implements IScene {
             goBack.setVisited(false);
             LoginPage loginPage = new LoginPage();
             loginPage.start(Main.getStage());
+        });
+
+        firstName.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB)
+                lastName.requestFocus();
+        });
+
+        lastName.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
+                    firstName.requestFocus();
+                else
+                    email.requestFocus();
+            }
+        });
+
+        email.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
+                    lastName.requestFocus();
+                else
+                    password.requestFocus();
+            }
+        });
+
+        password.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB) {
+                if (e.isShiftDown())
+                    email.requestFocus();
+                else
+                    rePassword.requestFocus();
+            }
+        });
+
+        rePassword.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB && e.isShiftDown())
+                password.requestFocus();
         });
     }
 
