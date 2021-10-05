@@ -83,7 +83,7 @@ public class Map implements IScene, PropertyChangeListener {
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc =
                 new BarChart<String,Number>(xAxis,yAxis);
-        bc.setTitle("Percentage of population\n living under a certain\n amount of money");
+        bc.setTitle("Percentage of population\nliving under a certain\namount of money");
         xAxis.setLabel("Living with $x money per day");
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(100);
@@ -114,13 +114,20 @@ public class Map implements IScene, PropertyChangeListener {
         Label moneyCheckText = new Label();
         informationPanel.getChildren().add(moneyCheckText);
 
+        search.focusedProperty().addListener((obs, isUnfocused, isFocused) -> {
+            if (isFocused) {
+                check.setDefaultButton(true);
+            } else {
+                check.setDefaultButton(false);
+            }
+        });
+
         check.setOnAction(e -> {
             double amount;
             try {
                 // Strip input of whitespace
                 String searchText = search.getText().replaceAll("\\s+","");
                 amount = Double.parseDouble(searchText);
-                System.out.println(amount + " for country " + countryPath.getDisplayName());
             } catch (NumberFormatException ex) {
                 amount = -1;
             }
