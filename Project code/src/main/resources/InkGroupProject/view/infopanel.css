@@ -22,7 +22,7 @@
 -fx-tickLabelFill: grey;
 }
 
-VBox {
+VBox, HBox {
 -fx-max-width: 250px;
 -fx-alignment: center;
 -fx-background-color: white;

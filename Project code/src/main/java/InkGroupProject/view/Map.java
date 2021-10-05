@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -84,8 +85,8 @@ public class Map implements IScene, PropertyChangeListener {
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc =
                 new BarChart<String,Number>(xAxis,yAxis);
-        bc.setTitle("Percentage of population\n living under a certain\n amount of money");
-        xAxis.setLabel("Living with x$ money per day");
+        bc.setTitle("Percentage of population\nliving under a certain\namount of money");
+        xAxis.setLabel("Living with $x money per day");
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(100);
         yAxis.setTickUnit(10);
@@ -103,12 +104,46 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(bc);
         informationPanel.getChildren().add(new Label("Check what your donation could purchase"));
 
+        HBox moneyCheckField = new HBox();
         final TextField search = new TextField();
-        search.setPromptText("Enter amount of $");
+        search.setPromptText("Enter amount of USD");
         search.setFocusTraversable(false);
-        informationPanel.getChildren().add(search);
+        moneyCheckField.getChildren().add(search);
         Button check = new Button("Check");
-        informationPanel.getChildren().add(check);
+        moneyCheckField.getChildren().add(check);
+        informationPanel.getChildren().add(moneyCheckField);
+
+        Label moneyCheckText = new Label();
+        informationPanel.getChildren().add(moneyCheckText);
+
+        search.focusedProperty().addListener((obs, isUnfocused, isFocused) -> {
+            if (isFocused) {
+                check.setDefaultButton(true);
+            } else {
+                check.setDefaultButton(false);
+            }
+        });
+
+        check.setOnAction(e -> {
+            double amount;
+            try {
+                // Strip input of whitespace
+                String searchText = search.getText().replaceAll("\\s+","");
+                amount = Double.parseDouble(searchText);
+            } catch (NumberFormatException ex) {
+                amount = -1;
+            }
+            double cost = countryPath.getHealthyDietCost();
+            int numberOfMeals = (int)(amount / cost);
+
+            if (amount < 0 || cost < 0) {
+                moneyCheckText.setTextFill(Color.RED);
+                moneyCheckText.setText("Invalid number");
+            } else {
+                moneyCheckText.setTextFill(Color.BLACK);
+                moneyCheckText.setText("Healthy meals: " + numberOfMeals);
+            }
+        });
     }
 
     public void updateInfoPanel(CountryPath countryPath) {
@@ -121,7 +156,7 @@ public class Map implements IScene, PropertyChangeListener {
             int population = countryPath.getPopulation();
             int poverty = countryPath.getPoverty();
             String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
-            Label text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than 1.9$ a day. " + "That is around " + percentage + "% of the population living in poverty");
+            Label text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $1.9 a day. " + "That is around " + percentage + "% of the population living in poverty");
             text.setMaxWidth(160);
             text.setWrapText(true);
             informationPanel.getChildren().add(text);

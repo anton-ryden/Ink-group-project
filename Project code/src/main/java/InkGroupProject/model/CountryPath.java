@@ -30,6 +30,7 @@ public class CountryPath extends SVGPath{
     private int numberOfPoor19Dollar;
     private int numberOfPoor32Dollar;
     private int numberOfPoor55Dollar;
+    private double healthyDietCost;
 
     // ******************** Constructors **************************************
     public CountryPath(final String NAME, final String CONTENT) {
@@ -68,6 +69,10 @@ public class CountryPath extends SVGPath{
         this.numberOfPoor55Dollar = (int)(numberOfPoor55Dollar*1000000);
     }
 
+    public void setHealthyDietCost(double healthyDietCost) {
+        this.healthyDietCost = healthyDietCost;
+    }
+
     public int getPopulation() {
         return population;
     }
@@ -82,6 +87,10 @@ public class CountryPath extends SVGPath{
 
     public int getNumberOfPoor55Dollar() {
         return numberOfPoor55Dollar;
+    }
+
+    public double getHealthyDietCost() {
+        return healthyDietCost;
     }
 
     public int getPoverty(){
