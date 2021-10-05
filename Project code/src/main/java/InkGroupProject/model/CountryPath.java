@@ -33,6 +33,7 @@ public class CountryPath extends SVGPath{
     private int numberOfPoor19Dollar;
     private int numberOfPoor32Dollar;
     private int numberOfPoor55Dollar;
+    private double healthyDietCost;
 
     // ******************** Constructors **************************************
 
@@ -102,10 +103,15 @@ public class CountryPath extends SVGPath{
         this.numberOfPoor55Dollar = (int)(numberOfPoor55Dollar*1000000);
     }
 
+
     /**
      * Returns the population of a country.
      * @return the population
      */
+
+    public void setHealthyDietCost(double healthyDietCost) {
+        this.healthyDietCost = healthyDietCost;
+    }
     public int getPopulation() {
         return population;
     }
@@ -134,10 +140,17 @@ public class CountryPath extends SVGPath{
         return numberOfPoor55Dollar;
     }
 
+
     /**
      * Returns the total number of poor people.
      * @return the total number of poor people.
      */
+
+    public double getHealthyDietCost() {
+        return healthyDietCost;
+    }
+
+
     public int getPoverty(){
         return numberOfPoor55Dollar;
     }

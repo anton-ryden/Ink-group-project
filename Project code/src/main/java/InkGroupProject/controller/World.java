@@ -17,7 +17,6 @@
 package InkGroupProject.controller;
 
 import InkGroupProject.model.*;
-import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.BooleanPropertyBase;
@@ -45,7 +44,6 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
-import javafx.scene.shape.Shape;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -54,7 +52,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -747,7 +744,7 @@ public class World extends Region {
      * @return
      */
     public CountryPath loadCountryData(CountryPath countryPath){
-        return db.getPoveryInfo(countryPath);
+        return db.getPovertyInfo(countryPath);
     }
 
     /**
