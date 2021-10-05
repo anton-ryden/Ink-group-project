@@ -52,3 +52,31 @@ I helped the team to go over our user stories and to plan for the next sprint.
 
 * What is my contribution towards the team’s deliveries?
 In addition to the team meetings where we worked on the Scrum board and wrote the team reflection, I also worked together with Michael to set up a database, created JavaFX interfaces to login and create accounts, and implemented the code to execute SQL queries to our database to manage account data.
+
+
+Week 5:
+* What do I want to learn or understand better?
+I want to get a refresher on Javadoc.
+
+* How can I help someone else, or the entire team, to learn something new?
+I show my team members my solutions to the user stories I resolve and talk about my reasonings behind the decisions I make.
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the team to go over our user stories and to plan for the next sprint.
+
+* What is my contribution towards the team’s deliveries?
+This week I created a UserSession system, moved data from CSV files into database tables, made some code improvements/cleanup, and fixed the .gitignore file.
+
+
+Week 6:
+* What do I want to learn or understand better?
+I want to learn more about lambdas.
+
+* How can I help someone else, or the entire team, to learn something new?
+I believe that thoroughly explaining your decision making when showing someone your code helps a lot for other people to perhaps learn something new.
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the team to go over our user stories and to plan for the next sprint.
+
+* What is my contribution towards the team’s deliveries?
+I implemented the functionality for checking how many meals a given donation could help a country and wrote some Javadoc documentation for the code that is already finished.
