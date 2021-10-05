@@ -51,6 +51,7 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getStylesheets().add("./InkGroupProject/view/infopanel.css");
         informationPanel.setPrefWidth(250);
         informationPanel.setMaxWidth(250);
+        informationPanel.setVisible(false);
 
         //Add BarGraph
         root.add(worldMap, 1,0);
@@ -74,6 +75,7 @@ public class Map implements IScene, PropertyChangeListener {
 
 
     public void startGraph(CountryPath countryPath) {
+        informationPanel.setVisible(true);
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
         double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
