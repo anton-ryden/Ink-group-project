@@ -460,8 +460,6 @@ public class World extends Region {
         }
 
         setScaleFactor(sf);
-        System.out.println("areaHeight: " + areaHeight);
-        System.out.println("height: " + height);
         group.setTranslateX(width * 0.5 - (areaCenterX));
         group.setTranslateY(height * 0.5 - (areaCenterY));
         lastDragX = group.getTranslateX();
