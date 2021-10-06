@@ -36,14 +36,12 @@ public class LoginPage implements IScene {
         GridPane.setConstraints(email, 0, 0);
         grid.getChildren().add(email);
 
-
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
         GridPane.setConstraints(password, 0, 1);
         grid.getChildren().add(password);
-
 
         // Login button
         Button login = new Button("Login");

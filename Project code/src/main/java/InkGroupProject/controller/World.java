@@ -446,10 +446,11 @@ public class World extends Region {
     private void zoomToArea(final double[] BOUNDS) {
         group.setTranslateX(0);
         group.setTranslateY(0);
-        double      areaWidth   = 3*(BOUNDS[2] - BOUNDS[0]);
-        double      areaHeight  = 3*(BOUNDS[3] - BOUNDS[1]);
-        double      areaCenterX = BOUNDS[0] + areaWidth/3 * 0.5;
-        double      areaCenterY = BOUNDS[1] + areaHeight/3 * 0.5;
+        double offset = width / PREFERRED_WIDTH;
+        double      areaWidth   = (BOUNDS[2] - BOUNDS[0])*offset;
+        double      areaHeight  = (BOUNDS[3] - BOUNDS[1])*offset;
+        double      areaCenterX = BOUNDS[0]*offset + areaWidth * 0.5;
+        double      areaCenterY = BOUNDS[1]*offset + areaHeight * 0.5;
         Orientation orientation = areaWidth < areaHeight ? Orientation.VERTICAL : Orientation.HORIZONTAL;
         double sf = 1.0;
         switch(orientation) {
@@ -458,10 +459,10 @@ public class World extends Region {
         }
 
         setScaleFactor(sf);
+        System.out.println("areaHeight: " + areaHeight);
+        System.out.println("height: " + height);
         group.setTranslateX(width * 0.5 - (areaCenterX));
         group.setTranslateY(height * 0.5 - (areaCenterY));
-        lastDragX = getTranslateX();
-        lastDragY = getTranslateY();
     }
 
     private void setPivot(final double X, final double Y) {
@@ -531,8 +532,6 @@ public class World extends Region {
         }
         if (null != HANDLER) HANDLER.handle(EVENT);
     }
-
-
 
     private void setFillAndStroke() {
         countryPaths.keySet().forEach(name -> {
