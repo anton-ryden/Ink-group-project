@@ -397,7 +397,7 @@ public class World extends Region {
         group.setTranslateX(0);
         group.setTranslateY(0);
         lastDragX = 0;
-        lastDragX = 0;
+        lastDragY = 0;
     }
 
     public void zoomToCountry(final Country COUNTRY) {
@@ -444,6 +444,7 @@ public class World extends Region {
     }
 
     private void zoomToArea(final double[] BOUNDS) {
+        resetZoom();
         group.setTranslateX(0);
         group.setTranslateY(0);
         double offset = width / PREFERRED_WIDTH;
@@ -463,6 +464,8 @@ public class World extends Region {
         System.out.println("height: " + height);
         group.setTranslateX(width * 0.5 - (areaCenterX));
         group.setTranslateY(height * 0.5 - (areaCenterY));
+        lastDragX = group.getTranslateX();
+        lastDragY = group.getTranslateY();
     }
 
     private void setPivot(final double X, final double Y) {
