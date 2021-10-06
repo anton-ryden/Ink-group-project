@@ -62,7 +62,6 @@ public class LoginPage implements IScene {
         GridPane.setColumnSpan(infoLabel, 2);
         grid.getChildren().add(infoLabel);
 
-
         login.setOnAction(e -> {
             if (email.getText().isEmpty() || password.getText().isEmpty()) {
                 infoLabel.setTextFill(Color.RED);

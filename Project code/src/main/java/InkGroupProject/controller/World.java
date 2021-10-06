@@ -16,8 +16,6 @@
 
 package InkGroupProject.controller;
 
-
-
 import InkGroupProject.model.*;
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
@@ -62,10 +60,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import static javafx.scene.input.MouseEvent.MOUSE_ENTERED;
-import static javafx.scene.input.MouseEvent.MOUSE_EXITED;
-import static javafx.scene.input.MouseEvent.MOUSE_PRESSED;
-import static javafx.scene.input.MouseEvent.MOUSE_RELEASED;
+import static javafx.scene.input.MouseEvent.*;
 
 @DefaultProperty("children")
 public class World extends Region {
@@ -127,6 +122,11 @@ public class World extends Region {
 
     private CountryPath selectedCountryPath;
     private Database db;
+    private double startDragX;
+    private double startDragY;
+    private double lastDragX;
+    private double lastDragY;
+    private boolean beingDragged;
 
     private PropertyChangeSupport support;
 
@@ -140,6 +140,9 @@ public class World extends Region {
     public World(final Resolution RESOLUTION, final double EVENT_RADIUS, final boolean FADE_COLORS) {
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         support = new PropertyChangeSupport(this);
+        lastDragX = 0;
+        lastDragY = 0;
+        beingDragged = false;
 
         resolutionProperties = readProperties(Resolution.HI_RES == RESOLUTION ? World.HIRES_PROPERTIES : World.LORES_PROPERTIES);
         backgroundColor      = new StyleableObjectProperty<Color>(BACKGROUND_COLOR.getInitialValue(World.this)) {
@@ -223,10 +226,25 @@ public class World extends Region {
         countryPaths         = createCountryPaths();
         eventRadius          = EVENT_RADIUS;
         fadeColors           = FADE_COLORS;
-
         pane                 = new Pane();
         group                = new Group();
 
+        setOnMousePressed(event -> {
+            startDragX = event.getSceneX() - lastDragX ;
+            startDragY = event.getSceneY() - lastDragY;
+            event.consume();
+        });
+        setOnMouseDragged(event -> {
+            beingDragged = true;
+            setTranslateX(event.getSceneX() - startDragX);
+            setTranslateY(event.getSceneY() - startDragY);
+            event.consume();
+        });
+        setOnMouseReleased(event -> {
+            lastDragX = event.getSceneX()-startDragX;
+            lastDragY = event.getSceneY()-startDragY;
+            event.consume();
+        });
         _mouseEnterHandler   = evt -> handleMouseEvent(evt, mouseEnterHandler);
         _mousePressHandler   = evt -> handleMouseEvent(evt, mousePressHandler);
         _mouseReleaseHandler = evt -> handleMouseEvent(evt, mouseReleaseHandler);
@@ -249,8 +267,11 @@ public class World extends Region {
             setScaleFactor(scale);
             setPivot(deltaX * factor, deltaY * factor);
 
+            lastDragX = getTranslateX();
+            lastDragY = getTranslateY();
             evt.consume();
         };
+
 
         initGraphics();
         registerListeners();
@@ -375,6 +396,8 @@ public class World extends Region {
         setTranslateY(0);
         group.setTranslateX(0);
         group.setTranslateY(0);
+        lastDragX = 0;
+        lastDragX = 0;
     }
 
     public void zoomToCountry(final Country COUNTRY) {
@@ -437,12 +460,15 @@ public class World extends Region {
         setScaleFactor(sf);
         group.setTranslateX(width * 0.5 - (areaCenterX));
         group.setTranslateY(height * 0.5 - (areaCenterY));
+        lastDragX = getTranslateX();
+        lastDragY = getTranslateY();
     }
 
     private void setPivot(final double X, final double Y) {
         setTranslateX(getTranslateX() - X);
         setTranslateY(getTranslateY() - Y);
     }
+
 
     private void handleMouseEvent(final MouseEvent EVENT, final EventHandler<MouseEvent> HANDLER) {
         final CountryPath COUNTRY_PATH = (CountryPath) EVENT.getSource();
@@ -451,50 +477,50 @@ public class World extends Region {
         final List<CountryPath> PATHS        = countryPaths.get(COUNTRY_NAME);
 
         final EventType TYPE = EVENT.getEventType();
-        if (MOUSE_ENTERED == TYPE) {
+        if (MOUSE_RELEASED == TYPE) {
+            if (!beingDragged){
+                setCountryPath(COUNTRY_PATH);
+                if (isSelectionEnabled()) {
+                    zoomToCountry(COUNTRY);
+                    Color color;
+                    if (null == getSelectedCountry()) {
+                        setSelectedCountry(COUNTRY);
+                        color = getSelectedColor();
+                    } else {
+                        color = null == getSelectedCountry().getColor() ? getFillColor() : getSelectedCountry().getColor();
+                    }
+                    for (SVGPath path : countryPaths.get(getSelectedCountry().getName())) {
+                        path.setFill(color);
+                    }
+                } else {
+                    if (isHoverEnabled()) {
+                        for (SVGPath path : PATHS) { path.setFill(getPressedColor()); }
+                    }
+                }
+                Color color;
+                if (isSelectionEnabled()) {
+                    if (formerSelectedCountry == COUNTRY) {
+                        setSelectedCountry(null);
+                        color = null == COUNTRY.getColor() ? getFillColor() : COUNTRY.getColor();
+                    } else {
+                        setSelectedCountry(COUNTRY);
+                        color = getSelectedColor();
+                    }
+                    formerSelectedCountry = getSelectedCountry();
+                } else {
+                    color = getHoverColor();
+                }
+                if (isHoverEnabled()) {
+                    for (SVGPath path : PATHS) { path.setFill(color); }
+                }
+            }
+            beingDragged = false;
+        } else if (MOUSE_ENTERED == TYPE) {
             if (isHoverEnabled()) {
                 Color color = isSelectionEnabled() && COUNTRY.equals(getSelectedCountry()) ? getSelectedColor() : getHoverColor();
                 for (SVGPath path : PATHS) { path.setFill(color); }
             }
-        } else if (MOUSE_PRESSED == TYPE) {
-            setCountryPath(COUNTRY_PATH);
 
-            if (isSelectionEnabled()) {
-                zoomToCountry(COUNTRY);
-                Color color;
-
-                if (null == getSelectedCountry()) {
-                    setSelectedCountry(COUNTRY);
-                    color = getSelectedColor();
-                } else {
-                    color = null == getSelectedCountry().getColor() ? getFillColor() : getSelectedCountry().getColor();
-                }
-                for (SVGPath path : countryPaths.get(getSelectedCountry().getName())) {
-                    path.setFill(color);
-                }
-            } else {
-                if (isHoverEnabled()) {
-                    for (SVGPath path : PATHS) { path.setFill(getPressedColor()); }
-                }
-            }
-
-        } else if (MOUSE_RELEASED == TYPE) {
-            Color color;
-            if (isSelectionEnabled()) {
-                if (formerSelectedCountry == COUNTRY) {
-                    setSelectedCountry(null);
-                    color = null == COUNTRY.getColor() ? getFillColor() : COUNTRY.getColor();
-                } else {
-                    setSelectedCountry(COUNTRY);
-                    color = getSelectedColor();
-                }
-                formerSelectedCountry = getSelectedCountry();
-            } else {
-                color = getHoverColor();
-            }
-            if (isHoverEnabled()) {
-                for (SVGPath path : PATHS) { path.setFill(color); }
-            }
         } else if (MOUSE_EXITED == TYPE) {
             if (isHoverEnabled()) {
                 Color color = isSelectionEnabled() && COUNTRY.equals(getSelectedCountry()) ? getSelectedColor() : getFillColor();
@@ -505,6 +531,8 @@ public class World extends Region {
         }
         if (null != HANDLER) HANDLER.handle(EVENT);
     }
+
+
 
     private void setFillAndStroke() {
         countryPaths.keySet().forEach(name -> {
@@ -622,4 +650,5 @@ public class World extends Region {
         support.firePropertyChange("selectedCountryPath", selectedCountryPath, countryPath);
         this.selectedCountryPath = countryPath;
     }
+
 }
