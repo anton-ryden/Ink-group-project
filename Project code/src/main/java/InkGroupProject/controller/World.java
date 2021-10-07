@@ -492,7 +492,7 @@ public class World extends Region {
         resetZoom();
         group.setTranslateX(0);
         group.setTranslateY(0);
-        double offset = width / PREFERRED_WIDTH;
+        double      offset      = width / PREFERRED_WIDTH;
         double      areaWidth   = (BOUNDS[2] - BOUNDS[0])*offset;
         double      areaHeight  = (BOUNDS[3] - BOUNDS[1])*offset;
         double      areaCenterX = BOUNDS[0]*offset + areaWidth * 0.5;
