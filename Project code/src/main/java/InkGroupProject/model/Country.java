@@ -53,7 +53,6 @@ public enum Country {
         color = null;
     }
 
-
     // ******************** Methods *******************************************
     public String getName() {
         return name();

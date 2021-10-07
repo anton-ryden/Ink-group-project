@@ -4,14 +4,21 @@ import java.sql.*;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class Database {
+    private static Database database;
     private Connection connection;
 
-    public Database(String path) {
+    private Database(String path) {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:" + path);
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+    }
+
+    public static Database getInstance(String path) {
+        if (database == null)
+            database = new Database(path);
+        return database;
     }
 
     public boolean createAccount(String firstName, String lastName, String email, String password) {
@@ -70,7 +77,39 @@ public class Database {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
         return isLoggedIn;
     }
+
+    public CountryPath getPovertyInfo(CountryPath countryPath) {
+        String countryName = countryPath.getDisplayName();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM poverty_stats WHERE country_name = ?");
+            query.setString(1, countryName);
+            ResultSet result = query.executeQuery();
+            countryPath.setPopulation(result.getInt("population"));
+            countryPath.setNumberOfPoor19Dollar(result.getDouble("num_of_poor_1_9"));
+            countryPath.setNumberOfPoor32Dollar(result.getDouble("num_of_poor_3_2"));
+            countryPath.setNumberOfPoor55Dollar(result.getDouble("num_of_poor_5_5"));
+            // Temporary until healthy_diet_cost has been merged into poverty_stats
+            countryPath.setHealthyDietCost(getDietCost(countryName));
+        } catch (SQLException ex) {
+            return countryPath;
+        }
+        return countryPath;
+    }
+
+    public double getDietCost (String country) {
+        double healthyDietCost;
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT cost FROM healthy_diet_cost WHERE country = ?");
+            query.setString(1, country);
+            ResultSet result = query.executeQuery();
+            healthyDietCost = result.getDouble("cost");
+        } catch (SQLException ex) {
+            healthyDietCost = -1;
+        }
+
+        return healthyDietCost;
+    }
+
 }

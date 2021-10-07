@@ -20,27 +20,80 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.shape.SVGPath;
 
 import java.util.Locale;
+import java.util.Observable;
 
-public class CountryPath extends SVGPath {
-    private final String  NAME;
-    private final Locale  LOCALE;
+public class CountryPath extends SVGPath{
+    private final String NAME;
+    private final Locale LOCALE;
     private final Tooltip TOOLTIP;
-
+    private int population;
+    private int numberOfPoor19Dollar;
+    private int numberOfPoor32Dollar;
+    private int numberOfPoor55Dollar;
+    private double healthyDietCost;
 
     // ******************** Constructors **************************************
     public CountryPath(final String NAME, final String CONTENT) {
         super();
-        this.NAME    = NAME;
-        this.LOCALE  = new Locale("", NAME);
+        this.NAME = NAME;
+        Locale.setDefault(Locale.ENGLISH);
+        this.LOCALE = new Locale("", NAME);
         this.TOOLTIP = new Tooltip(LOCALE.getDisplayCountry());
         Tooltip.install(this, TOOLTIP);
         if (null == CONTENT) return;
         setContent(CONTENT);
     }
 
-
     // ******************** Methods *******************************************
-    public String getName() { return NAME; }
+    public String getName() {
+        return NAME;
+    }
 
-    public String getDisplayName() {return LOCALE.getDisplayCountry();}
+    public String getDisplayName() {
+        return LOCALE.getDisplayCountry();
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public void setNumberOfPoor19Dollar(double numberOfPoor19Dollar) {
+        this.numberOfPoor19Dollar = (int)(numberOfPoor19Dollar*1000000);
+    }
+
+    public void setNumberOfPoor32Dollar(double numberOfPoor32Dollar) {
+        this.numberOfPoor32Dollar = (int)(numberOfPoor32Dollar*1000000);
+    }
+
+    public void setNumberOfPoor55Dollar(double numberOfPoor55Dollar) {
+        this.numberOfPoor55Dollar = (int)(numberOfPoor55Dollar*1000000);
+    }
+
+    public void setHealthyDietCost(double healthyDietCost) {
+        this.healthyDietCost = healthyDietCost;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public int getNumberOfPoor19Dollar() {
+        return numberOfPoor19Dollar;
+    }
+
+    public int getNumberOfPoor32Dollar() {
+        return numberOfPoor32Dollar;
+    }
+
+    public int getNumberOfPoor55Dollar() {
+        return numberOfPoor55Dollar;
+    }
+
+    public double getHealthyDietCost() {
+        return healthyDietCost;
+    }
+
+    public int getPoverty(){
+        return numberOfPoor55Dollar;
+    }
 }

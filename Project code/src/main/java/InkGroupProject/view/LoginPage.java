@@ -1,12 +1,12 @@
 package InkGroupProject.view;
 
-import InkGroupProject.model.Database;
-import InkGroupProject.model.User;
-import InkGroupProject.model.UserSession;
+import InkGroupProject.controller.World;
+import InkGroupProject.model.*;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -19,8 +19,8 @@ public class LoginPage implements IScene {
         init();
     }
 
-    public void init() {
-        db = new Database(":resource:InkGroupProject/db/database.db");
+    private void init() {
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
 
         // GridPane container
         grid = new GridPane();
@@ -36,12 +36,14 @@ public class LoginPage implements IScene {
         GridPane.setConstraints(email, 0, 0);
         grid.getChildren().add(email);
 
+
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
         GridPane.setConstraints(password, 0, 1);
         grid.getChildren().add(password);
+
 
         // Login button
         Button login = new Button("Login");
@@ -73,8 +75,15 @@ public class LoginPage implements IScene {
                     // Create user session
                     User account = db.getAccount(email.getText());
                     UserSession.login(account);
-
-                    Map mapScene = new Map();
+                    World worldMap = WorldBuilder.create()
+                            .resolution(World.Resolution.HI_RES)
+                            .zoomEnabled(true)
+                            .hoverEnabled(true)
+                            .selectionEnabled(true)
+                            .fadeColors(true)
+                            .build();
+                    Map mapScene = new Map(worldMap);
+                    worldMap.addPropertyChangeListener(mapScene);
                     mapScene.start(Main.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
@@ -87,6 +96,16 @@ public class LoginPage implements IScene {
             createAccount.setVisited(false);
             CreateAccount createAccountScene = new CreateAccount();
             createAccountScene.start(Main.getStage());
+        });
+
+        email.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB)
+                password.requestFocus();
+        });
+
+        password.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.TAB && e.isShiftDown())
+                email.requestFocus();
         });
     }
 
@@ -101,4 +120,5 @@ public class LoginPage implements IScene {
     public Parent getRoot() {
         return grid;
     }
+
 }

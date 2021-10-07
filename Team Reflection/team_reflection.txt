@@ -59,3 +59,32 @@ This sprint every user story have had a PO assigned to them. No user story got r
 We are all using the same IDE (Intellij) which also gives us the option to use the "Code With Me" plugin. We have been using Intellij for a long time however Code With Me was suggested by one of the team members so we learned to utilize it and it made things smoother to work on the same code.
 
 Nothing from literature however a lot from the latest guest lecture. For example, making sure everyone participate in the meetings and not being afraid of poking for answers. Do not ask yes or no questions as a Scrum master. 
+
+-------Entry 1 (WEEK 5)---------
+Customer Value and Scope:
+This sprint we have focused on mainly improving our features and small quality of life changes which includes more work with UI(Graphs displaying information, colors that signify how much a certain country is in Poverty), grabbing certain data from databases and being able to stay logged in with an account.
+
+This sprint, we encountered quite a few problem however we feel that the teamwork has been good. We aren't really happy regarding the 
+team velocity due to our user story application which resulted in slower work than usual as some stories depended on others. However this was also because everyone in the group had a chance to touch on eachothers code which takes time to get familiarized too.
+
+Like last sprint, we divided the tasks in what we felt was fair amount the team members. This week was especially heavy on communication due to several big features being merged this week and worked upon which means that a certain level of understanding of eachothers code was neccessary. This resulted in a lot of questions and people communicating about their code and purpose.
+
+This sprint was mainly adjusting the features and adding to them so that they would meet the PO's acceptance criteria and checkpoints.
+
+Nothing has changed as of last week regarding KPIs.
+
+Social Contract and Effort:
+Regarding the social contract, that hasn't been altered but we followed the same rules that we set in week 1.
+
+This week, we have put in around 20 hours of development and meetings. These hours were mostly due to meetings that involved in helping others understand eachothers code. 
+
+Design decisions and product structure:
+Our design decisions and product structures are the same as last week.
+We haven't started documenting yet which is one of our main weaknesses that would have made communication a lot easier.
+We have only discussed what kind of documentation we were gonna use which was Javadoc. We often communicate solutions during
+difficult issues and try to choose the best and most convenient solution to ensure code quality.
+
+Application of Scrum
+Nothing has changed this week in terms of our application of scrum. 
+We have however split a few user stories in to sub stories to make the user stories more independent which allowed for members to work
+on separate features. 
