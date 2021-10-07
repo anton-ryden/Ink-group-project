@@ -32,6 +32,7 @@ public class Map implements IScene, PropertyChangeListener {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
+    private VBox leftPanel;
 
     public Map(World worldMap) {
         this.worldMap = worldMap;
@@ -51,10 +52,17 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.setPrefWidth(250);
         informationPanel.setMaxWidth(250);
 
+        //leftPanel
+        leftPanel = new VBox();
+        leftPanel.setPrefWidth(250);
+        leftPanel.setMaxWidth(250);
+
+
         //Add BarGraph
         root.add(worldMap, 1,0);
         root.add(prevBtn, 0,0);
         root.add(informationPanel, 2,0);
+        root.add(leftPanel, 0,0);
         GridPane.setHgrow(worldMap, Priority.ALWAYS);
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
     }
@@ -72,12 +80,10 @@ public class Map implements IScene, PropertyChangeListener {
     }
 
     /**
-     *Calculates percentage of population living in poverty and creates and adds a graph displaying
-     * that information to the VBOX Infopanel.
+     *Calculates percentage of population living in poverty and creates and adds a graph displaying that information to the VBOX Infopanel.
      * Also adds buttons and a few rows of text to the VBOX Infopanel.
      * @param countryPath
      */
-
     public void startGraph(CountryPath countryPath) {
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
@@ -110,9 +116,13 @@ public class Map implements IScene, PropertyChangeListener {
         final TextField search = new TextField();
         search.setPromptText("Enter amount of $");
         search.setFocusTraversable(false);
-        informationPanel.getChildren().add(search);
-        Button check = new Button("Check");
-        informationPanel.getChildren().add(check);
+        leftPanel.getChildren().add(search);
+        Button donate = new Button("Donate");
+
+
+
+        leftPanel.getChildren().add(donate);
+        leftPanel.setStyle("-fx-background-color: #ffffff");
     }
 
     /**
@@ -122,9 +132,11 @@ public class Map implements IScene, PropertyChangeListener {
      */
     public void updateInfoPanel(CountryPath countryPath) {
         informationPanel.getChildren().clear();
+        leftPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
         country.getStyleClass().add("country");
 
+        leftPanel.getChildren().add(country);
         informationPanel.getChildren().add(country);
         try {
             int population = countryPath.getPopulation();
