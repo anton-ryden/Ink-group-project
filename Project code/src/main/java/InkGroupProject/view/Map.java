@@ -28,16 +28,27 @@ import javafx.scene.chart.XYChart;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * Class for the main scene where the interactive map, info-panel and donate panel is shown
+ */
 public class Map implements IScene, PropertyChangeListener {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
 
+    /**
+     * Constructor for that calls for initialization
+     * @param worldMap the interactive map thats going to be shown
+     */
     public Map(World worldMap) {
         this.worldMap = worldMap;
         init();
     }
 
+    /**
+     * Initializes all values.
+     * Adds worldmap, info-panel and donate-panel
+     */
     public void init() {
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -59,6 +70,10 @@ public class Map implements IScene, PropertyChangeListener {
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
     }
 
+    /**
+     *  Sets the scene ready for display
+     * @param stage The window that contains all the javafx applications
+     */
     public void start(Stage stage) {
         Scene mapScene = new Scene(root);
         stage.setTitle("Interactive Map");
@@ -67,11 +82,18 @@ public class Map implements IScene, PropertyChangeListener {
         stage.show();
     }
 
+    /**
+     *
+     * @return the root of the map class.
+     */
     public Parent getRoot() {
         return root;
     }
 
-
+    /**
+     * Creates the graph in the info-panel
+     * @param countryPath the country data that should be displayed
+     */
     public void startGraph(CountryPath countryPath) {
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
@@ -109,6 +131,10 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(check);
     }
 
+    /**
+     * It updates the infopanel information with the new countrypath that should be displayed
+     * @param countryPath the country data that should be displayed
+     */
     public void updateInfoPanel(CountryPath countryPath) {
         informationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
@@ -129,6 +155,10 @@ public class Map implements IScene, PropertyChangeListener {
         }
     }
 
+    /**
+     * This method gets called whenever a new country is selected on the map and new information should be displayed
+     * @param evt the event that contains the new value
+     */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         CountryPath countryPath = (CountryPath) evt.getNewValue();

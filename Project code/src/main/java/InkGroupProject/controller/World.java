@@ -62,6 +62,9 @@ import java.util.Properties;
 
 import static javafx.scene.input.MouseEvent.*;
 
+/**
+ * This class represents an interactive map
+ */
 @DefaultProperty("children")
 public class World extends Region {
     public enum Resolution { HI_RES, LO_RES };
@@ -131,12 +134,28 @@ public class World extends Region {
     private PropertyChangeSupport support;
 
     // ******************** Constructors **************************************
+
+    /**
+     * Constructor when no resolution is specified
+     */
     public World() {
         this(Resolution.HI_RES, 5, false );
     }
+
+    /**
+     * Constructor when the resolution is specified
+     * @param RESOLUTION the resolution that the map is going to be displayed in
+     */
     public World(final Resolution RESOLUTION) {
         this(RESOLUTION,  5, false  );
     }
+
+    /**
+     * Countructor for when resolution, event_radius and fade_color is specified
+     * @param RESOLUTION the resolution that the map is going to be displayed in
+     * @param EVENT_RADIUS The radius of the event
+     * @param FADE_COLORS The fade color
+     */
     public World(final Resolution RESOLUTION, final double EVENT_RADIUS, final boolean FADE_COLORS) {
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         support = new PropertyChangeSupport(this);
@@ -278,6 +297,10 @@ public class World extends Region {
     }
 
     // ******************** Initialization ************************************
+
+    /**
+     * Initializes everything that has to do with the graphics
+     */
     private void initGraphics() {
         if (Double.compare(getPrefWidth(), 0.0) <= 0 || Double.compare(getPrefHeight(), 0.0) <= 0 ||
                 Double.compare(getWidth(), 0.0) <= 0 || Double.compare(getHeight(), 0.0) <= 0) {
@@ -317,6 +340,9 @@ public class World extends Region {
         setBackground(new Background(new BackgroundFill(getBackgroundColor(), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
+    /**
+     * Registers all listeners
+     */
     private void registerListeners() {
         widthProperty().addListener(o -> resize());
         heightProperty().addListener(o -> resize());
@@ -390,6 +416,9 @@ public class World extends Region {
     public void setScaleFactor(final double FACTOR) { scaleFactor.set(FACTOR); }
     public DoubleProperty scaleFactorProperty() { return scaleFactor; }
 
+    /**
+     * Resets zoom scale and sets all translates to 0
+     */
     public void resetZoom() {
         setScaleFactor(1.0);
         setTranslateX(0);
@@ -400,6 +429,10 @@ public class World extends Region {
         lastDragY = 0;
     }
 
+    /**
+     * Zoom to a specified country
+     * @param COUNTRY Zoom to a specified country
+     */
     public void zoomToCountry(final Country COUNTRY) {
         if (!isZoomEnabled()) return;
         if (null != getSelectedCountry()) {
@@ -408,6 +441,10 @@ public class World extends Region {
         zoomToArea(getBounds(COUNTRY));
     }
 
+    /**
+     * Zoom to a specified country
+     * @param REGION Zoom to a specified country
+     */
     public void zoomToRegion(final CRegion REGION) {
         if (!isZoomEnabled()) return;
         if (null != getSelectedCountry()) {
@@ -416,14 +453,18 @@ public class World extends Region {
         zoomToArea(getBounds(REGION.getCountries()));
     }
 
-
-    public static double[] latLonToXY(final double LATITUDE, final double LONGITUDE) {
-        double x = (LONGITUDE + 180) * (PREFERRED_WIDTH / 360) + MAP_OFFSET_X;
-        double y = (PREFERRED_HEIGHT / 2) - (PREFERRED_WIDTH * (Math.log(Math.tan((Math.PI / 4) + (Math.toRadians(LATITUDE) / 2)))) / (2 * Math.PI)) + MAP_OFFSET_Y;
-        return new double[]{ x, y };
-    }
-
+    /**
+     * Method for getting the bounds of multiple countries
+     * @param COUNTRIES the countries that you want the bounds from
+     * @return bounds from COUNTRIES
+     */
     private double[] getBounds(final Country... COUNTRIES) { return getBounds(Arrays.asList(COUNTRIES)); }
+
+    /**
+     * Method for getting the bounds of multiple countries
+     * @param COUNTRIES the countries that you want the bounds from in list form
+     * @return bounds from COUNTRIES
+     */
     private double[] getBounds(final List<Country> COUNTRIES) {
         double upperLeftX  = PREFERRED_WIDTH;
         double upperLeftY  = PREFERRED_HEIGHT;
@@ -443,6 +484,10 @@ public class World extends Region {
         return new double[]{ upperLeftX, upperLeftY, lowerRightX, lowerRightY };
     }
 
+    /**
+     * Zooms to a specific area.
+     * @param BOUNDS the bounds of the area that is to be zoomed into.
+     */
     private void zoomToArea(final double[] BOUNDS) {
         resetZoom();
         group.setTranslateX(0);
@@ -466,12 +511,21 @@ public class World extends Region {
         lastDragY = group.getTranslateY();
     }
 
+    /**
+     * Sets a pivot. Mainly used when zooming.
+     * @param X the pivot in the x-axis.
+     * @param Y the pivot in the y-axis.
+     */
     private void setPivot(final double X, final double Y) {
         setTranslateX(getTranslateX() - X);
         setTranslateY(getTranslateY() - Y);
     }
 
-
+    /**
+     * Manages the mouse events by doing specific things depending on the event.
+     * @param EVENT the event registered from the users mouse.
+     * @param HANDLER the handler that is to be used from the given event.
+     */
     private void handleMouseEvent(final MouseEvent EVENT, final EventHandler<MouseEvent> HANDLER) {
         final CountryPath COUNTRY_PATH = (CountryPath) EVENT.getSource();
         final String            COUNTRY_NAME = COUNTRY_PATH.getName();
@@ -534,6 +588,9 @@ public class World extends Region {
         if (null != HANDLER) HANDLER.handle(EVENT);
     }
 
+    /**
+     * Sets the color specifications of countries.
+     */
     private void setFillAndStroke() {
         countryPaths.keySet().forEach(name -> {
             Country country = Country.valueOf(name);
@@ -541,6 +598,12 @@ public class World extends Region {
         });
     }
 
+    /**
+     * Sets the color specifications of a country.
+     * @param COUNTRY the country.
+     * @param FILL the filling color.
+     * @param STROKE the stroke color.
+     */
     private void setCountryFillAndStroke(final Country COUNTRY, final Color FILL, final Color STROKE) {
         List<CountryPath> paths = countryPaths.get(COUNTRY.getName());
         for (CountryPath path : paths) {
@@ -549,12 +612,24 @@ public class World extends Region {
         }
     }
 
+    /**
+     * Make sure no value can surpass min and max value
+     * @param MIN minimum value
+     * @param MAX maximum value
+     * @param VALUE the value you want to check
+     * @return value if it's in the region of min and max otherwise it returns min or max
+     */
     private double clamp(final double MIN, final double MAX, final double VALUE) {
         if (VALUE < MIN) return MIN;
         if (VALUE > MAX) return MAX;
         return VALUE;
     }
 
+    /**
+     * Reads properties from a file
+     * @param FILE_NAME where the properties are stored
+     * @return
+     */
     private Properties readProperties(final String FILE_NAME) {
         final ClassLoader LOADER     = Thread.currentThread().getContextClassLoader();
         final Properties  PROPERTIES = new Properties();
@@ -566,6 +641,10 @@ public class World extends Region {
         return PROPERTIES;
     }
 
+    /**
+     * Creates the country paths.
+     * @return the created country paths.
+     */
     private Map<String, List<CountryPath>> createCountryPaths() {
         Map<String, List<CountryPath>> countryPaths = new HashMap<>();
 
@@ -582,16 +661,33 @@ public class World extends Region {
     }
 
     // ******************** Style related *************************************
+
+    /**
+     * Gets the user agent style sheet.
+     * @return the user agent style sheet.
+     */
     @Override public String getUserAgentStylesheet() {
         return World.class.getResource("world.css").toExternalForm();
     }
 
+    /**
+     * gets the class css meta data
+     * @return the class css meta data
+     */
     public static List<CssMetaData<? extends Styleable, ?>> getClassCssMetaData() { return FACTORY.getCssMetaData(); }
 
+    /**
+     * gets the css meta data
+     * @return the css meta data
+     */
     @Override public List<CssMetaData<? extends Styleable, ?>> getCssMetaData() { return FACTORY.getCssMetaData(); }
 
 
     // ******************** Resizing ******************************************
+
+    /**
+     * Resizes and relocate the window
+     */
     private void resize() {
         width  = getWidth() - getInsets().getLeft() - getInsets().getRight();
         height = getHeight() - getInsets().getTop() - getInsets().getBottom();
@@ -618,6 +714,12 @@ public class World extends Region {
     }
     // ***************** Information Panel ****************************//
 
+    /**
+     * Sets the color of a country depending on how poor the country is
+     * @param country the country you want to set the coolor for
+     * @param path of the country. Contains all the information about poverty info.
+     * @throws FileNotFoundException whenever a country is not found
+     */
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
         int population;
         int poverty;
@@ -638,14 +740,28 @@ public class World extends Region {
         }
     }
 
+    // ***************** Observer pattern and database ****************************//
+    /**
+     * loads data into the instance countrypath from a database
+     * @param countryPath the country you want to get data for
+     * @return
+     */
     public CountryPath loadCountryData(CountryPath countryPath){
         return db.getPoveryInfo(countryPath);
     }
 
+    /**
+     * Adds an observer to the support list
+     * @param pcl the observer that wants to get notified when changes are done
+     */
     public void addPropertyChangeListener(PropertyChangeListener pcl) {
         support.addPropertyChangeListener(pcl);
     }
 
+    /**
+     * Sends the selected country (countrypath) to the observer support
+     * @param countryPath the country that was selected
+     */
     public void setCountryPath(CountryPath countryPath) {
         support.firePropertyChange("selectedCountryPath", selectedCountryPath, countryPath);
         this.selectedCountryPath = countryPath;

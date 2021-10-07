@@ -18,6 +18,10 @@ package InkGroupProject.model;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Public enum of all different countries.
+ */
+
 public enum Country {
     AD, AE, AF, AG, AI, AL, AM, AO, AR, AS, AT, AU, AW, AX, AZ,
     BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BN, BO, BM, BQ, BR, BS, BT, BV, BW, BY, BZ,
@@ -49,19 +53,36 @@ public enum Country {
 
 
     // ******************** Constructors **************************************
+
+    /**
+     * Constructor that sets the country's color to null.
+     */
     Country() {
         color = null;
     }
 
     // ******************** Methods *******************************************
+
+    /**
+     * Returns the name of a country.
+     * @return the name.
+     */
     public String getName() {
         return name();
     }
 
+    /**
+     * Returns the color of a country.
+     * @return the color.
+     */
     public Color getColor() {
         return color;
     }
 
+    /**
+     * Sets the color of a country
+     * @param COLOR the color.
+     */
     public void setColor(final Color COLOR) {
         color = COLOR;
     }
