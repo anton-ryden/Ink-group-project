@@ -31,6 +31,11 @@ public class CountryPath extends SVGPath{
     private int numberOfPoor32Dollar;
     private int numberOfPoor55Dollar;
 
+    /**
+     *
+     * @param NAME
+     * @param CONTENT
+     */
     // ******************** Constructors **************************************
     public CountryPath(final String NAME, final String CONTENT) {
         super();
@@ -43,47 +48,91 @@ public class CountryPath extends SVGPath{
         setContent(CONTENT);
     }
 
+    /**
+     * Return name
+     * @return
+     */
     // ******************** Methods *******************************************
     public String getName() {
         return NAME;
     }
 
+    /**
+     * Returns the countries name.
+     * @return
+     */
     public String getDisplayName() {
         return LOCALE.getDisplayCountry();
     }
 
+    /**
+     * Sets the population of a country from a database.
+     * @param population
+     */
     public void setPopulation(int population) {
         this.population = population;
     }
 
+    /**
+     *Sets the percentage of people living under 1.9 dollars and multiplies it by 1000000 to get the population.
+     * @param numberOfPoor19Dollar
+     */
     public void setNumberOfPoor19Dollar(double numberOfPoor19Dollar) {
         this.numberOfPoor19Dollar = (int)(numberOfPoor19Dollar*1000000);
     }
 
+    /**
+     *Sets the percentage of people living under 3.2 dollars and multiplies it by 1000000 to get the population.
+     * @param numberOfPoor32Dollar
+     */
     public void setNumberOfPoor32Dollar(double numberOfPoor32Dollar) {
         this.numberOfPoor32Dollar = (int)(numberOfPoor32Dollar*1000000);
     }
 
+    /**
+     *Sets the percentage of people living under 5.5 dollars and multiplies it by 1000000 to get the population.
+     * @param numberOfPoor55Dollar
+     */
     public void setNumberOfPoor55Dollar(double numberOfPoor55Dollar) {
         this.numberOfPoor55Dollar = (int)(numberOfPoor55Dollar*1000000);
     }
 
+    /**
+     * Grabs the population of a country
+     * @return
+     */
     public int getPopulation() {
         return population;
     }
 
+    /**
+     * Returns the population of people living under 1.9 dollars.
+     * @return
+     */
     public int getNumberOfPoor19Dollar() {
         return numberOfPoor19Dollar;
     }
 
+    /**
+     * Returns the population of people living under 3.2 dollars.
+     * @return
+     */
     public int getNumberOfPoor32Dollar() {
         return numberOfPoor32Dollar;
     }
 
+    /**
+     * Returns the population of people living under 5.5 dollars.
+     * @return
+     */
     public int getNumberOfPoor55Dollar() {
         return numberOfPoor55Dollar;
     }
 
+    /**
+     * Returns the population of people living under 5.5 dollars.
+     * @return
+     */
     public int getPoverty(){
         return numberOfPoor55Dollar;
     }

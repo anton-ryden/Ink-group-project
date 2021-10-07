@@ -71,6 +71,12 @@ public class Map implements IScene, PropertyChangeListener {
         return root;
     }
 
+    /**
+     *Calculates percentage of population living in poverty and creates and adds a graph displaying
+     * that information to the VBOX Infopanel.
+     * Also adds buttons and a few rows of text to the VBOX Infopanel.
+     * @param countryPath
+     */
 
     public void startGraph(CountryPath countryPath) {
         informationPanel.getStyleClass();
@@ -109,6 +115,11 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(check);
     }
 
+    /**
+     * Grabs variables and calculates different values to be used as input for the text.
+     * Adds text to the VBOX Infopanel
+     * @param countryPath
+     */
     public void updateInfoPanel(CountryPath countryPath) {
         informationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
