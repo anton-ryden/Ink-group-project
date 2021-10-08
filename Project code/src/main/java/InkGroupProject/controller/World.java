@@ -32,6 +32,7 @@ import javafx.css.Styleable;
 import javafx.css.StyleableObjectProperty;
 import javafx.css.StyleableProperty;
 import javafx.css.StyleablePropertyFactory;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.event.WeakEventHandler;
@@ -126,6 +127,8 @@ public class World extends Region {
     private Database db;
 
     private PropertyChangeSupport support;
+
+    private InkGroupProject.view.Map view;
 
     // ******************** Constructors **************************************
     public World() {
@@ -298,6 +301,13 @@ public class World extends Region {
         heightProperty().addListener(o -> resize());
         sceneProperty().addListener(o -> {
             if (isZoomEnabled()) { getScene().addEventFilter( ScrollEvent.ANY, new WeakEventHandler<>(_scrollEventHandler)); }
+        });
+    }
+
+    public void initDonations() {
+        view.donationButton.setOnAction(e -> {
+            db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), view.getDonationValue());
+            view.updateDonatedPanel(selectedCountryPath.getDisplayName());
         });
     }
 
@@ -619,4 +629,9 @@ public class World extends Region {
         support.firePropertyChange("selectedCountryPath", selectedCountryPath, countryPath);
         this.selectedCountryPath = countryPath;
     }
+
+    public void setView(InkGroupProject.view.Map view) {
+        this.view = view;
+    }
+
 }
