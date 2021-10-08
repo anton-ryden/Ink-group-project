@@ -91,7 +91,7 @@ public class Database {
             countryPath.setNumberOfPoor32Dollar(result.getDouble("num_of_poor_3_2"));
             countryPath.setNumberOfPoor55Dollar(result.getDouble("num_of_poor_5_5"));
             // Temporary until healthy_diet_cost has been merged into poverty_stats
-            countryPath.setHealthyDietCost(getDietCost(countryName));
+            countryPath.setHealthyDietCost(result.getDouble("cost"));
         } catch (SQLException ex) {
             return countryPath;
         }
