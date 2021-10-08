@@ -97,7 +97,8 @@ This sprint, there werent as many tasks to divide but we still split them up in 
 
 Our procedure hasn't changed but not everything has gone through the acceptance tests this week.
 
-Our KPIs have remained unchanged.
+We saw last week that we had a relatively low team satisfaction that we took in to account this week. We also saw a decrease in team velocity
+which resulted in the group trying to finish more tasks this sprint in order to cover more points in the team velocity.
 
 Social Contract and EFfort:
 No changes have been made to the social contract.
