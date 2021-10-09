@@ -311,6 +311,13 @@ public class World extends Region {
         });
     }
 
+    public void initDonations() {
+        view.donationButton.setOnAction(e -> {
+            db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), view.getDonationValue());
+            view.updateDonatedPanel(selectedCountryPath.getDisplayName());
+        });
+    }
+
     // ******************** Methods *******************************************
     @Override protected double computeMinWidth(final double HEIGHT)  { return MINIMUM_WIDTH; }
     @Override protected double computeMinHeight(final double WIDTH)  { return MINIMUM_HEIGHT; }
