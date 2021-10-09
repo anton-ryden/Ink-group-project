@@ -80,7 +80,6 @@ public class UserSettings implements IScene {
         // First name
         final TextField firstName = new TextField();
         firstName.setPromptText("Enter your first name");
-        firstName.setText(currentUser.getFirstName());
         firstName.setFocusTraversable(false);
         GridPane.setConstraints(firstName, 1, 1);
         root.getChildren().add(firstName);
@@ -88,7 +87,6 @@ public class UserSettings implements IScene {
         // Last name
         final TextField lastName = new TextField();
         lastName.setPromptText("Enter your last name");
-        lastName.setText(currentUser.getLastName());
         lastName.setFocusTraversable(false);
         GridPane.setConstraints(lastName, 1, 2);
         root.getChildren().add(lastName);
@@ -96,7 +94,6 @@ public class UserSettings implements IScene {
         // Email address
         final TextField email = new TextField();
         email.setPromptText("Enter your email address");
-        email.setText(currentUser.getEmail());
         email.setFocusTraversable(false);
         GridPane.setConstraints(email, 1, 3);
         root.getChildren().add(email);
@@ -107,6 +104,13 @@ public class UserSettings implements IScene {
 //        updateInfoButton.setDefaultButton(true);
         GridPane.setConstraints(updateInfoButton, 1, 4);
         root.getChildren().add(updateInfoButton);
+
+        // Update textfields with user's information
+        if (currentUser.isLoggedIn()) {
+            firstName.setText(currentUser.getFirstName());
+            lastName.setText(currentUser.getLastName());
+            email.setText(currentUser.getEmail());
+        }
     }
 
     @Override

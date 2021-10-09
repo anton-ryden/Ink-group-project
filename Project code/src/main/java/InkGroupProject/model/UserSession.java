@@ -41,4 +41,8 @@ public final class UserSession {
     public String getDateCreated() {
         return user.getDateCreated();
     }
+
+    public boolean isLoggedIn() {
+        return instance != null;
+    }
 }
