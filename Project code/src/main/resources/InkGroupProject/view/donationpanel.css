@@ -1,0 +1,13 @@
+.text-field {
+    -fx-max-width: 200px;
+}
+
+VBox {
+    -fx-alignment: center;
+}
+
+.button {
+    -fx-padding: 10px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
