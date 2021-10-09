@@ -184,6 +184,14 @@ public class Map implements IScene, PropertyChangeListener {
         Label moneyCheckText = new Label();
         informationPanel.getChildren().add(moneyCheckText);
 
+        Button hide = new Button("Hide");
+        informationPanel.getChildren().add(hide);
+        hide.setTranslateX(90); //0 is middle
+        hide.setTranslateY(-600);
+        hide.setOnAction(e -> {
+            informationPanel.setVisible(false);
+        });
+
         search.focusedProperty().addListener((obs, isUnfocused, isFocused) -> {
             if (isFocused) {
                 check.setDefaultButton(true);
