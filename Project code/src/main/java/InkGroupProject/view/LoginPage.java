@@ -72,6 +72,7 @@ public class LoginPage implements IScene {
                     // Create user session
                     User account = db.getAccount(email.getText());
                     UserSession.login(account);
+
                     World worldMap = WorldBuilder.create()
                             .resolution(World.Resolution.HI_RES)
                             .zoomEnabled(true)
@@ -79,8 +80,8 @@ public class LoginPage implements IScene {
                             .selectionEnabled(true)
                             .fadeColors(true)
                             .build();
-                    InkGroupProject.view.Map mapScene = new Map(worldMap);
 
+                    Map mapScene = new Map(worldMap);
                     worldMap.addPropertyChangeListener(mapScene);
                     mapScene.start(Main.getStage());
                 } else {
