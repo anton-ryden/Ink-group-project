@@ -28,6 +28,10 @@ VBox, HBox {
 -fx-background-color: white;
 }
 
+.hide {
+-fx-border-radius: 5px;
+}
+
 .root{
     -fx-font-size: 10px;
 }
