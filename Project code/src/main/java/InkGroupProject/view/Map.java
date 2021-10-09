@@ -41,6 +41,7 @@ public class Map implements IScene, PropertyChangeListener {
     private VBox donationPanel;
     private Button donationButton;
     private CountryPath selectedCountryPath;
+    private TextField donationValue;
     Database db;
 
     /**
@@ -57,6 +58,7 @@ public class Map implements IScene, PropertyChangeListener {
      * Adds worldmap, info-panel and donate-panel
      */
     public void init() {
+        int a = 230;
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -80,12 +82,17 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.setMaxWidth(250);
         donationPanel.setVisible(true);
 
-        TextField donationValue = new TextField();
+
+        donationValue = new TextField();
         donationValue.setPromptText("Enter how much you want to donate");
         donationPanel.getChildren().add(donationValue);
+
         donationButton = new Button("Donate");
         donationButton.setDisable(true);
         donationPanel.getChildren().add(donationButton);
+        donationButton.setTranslateY(a);
+        donationValue.setTranslateY(a);
+
         donationButton.setOnAction( e -> {
             try {
                 int value = Integer.parseInt(donationValue.getText());
@@ -143,6 +150,27 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void startGraph(CountryPath countryPath) {
+        int checkY = -5;
+        int userX = -90;
+        int userY = -275;
+        Text username = new Text("Username:" + UserSession.getInstance().getFirstName());
+        donationPanel.getChildren().add(username);
+        username.setTranslateX(userX);
+        username.setTranslateY(userY);
+
+        Button mypage = new Button("MyPage");
+        donationPanel.getChildren().add(mypage);
+        mypage.setTranslateX(userX); //0 is middle
+        mypage.setTranslateY(userY);
+        mypage.setOnAction(e -> {
+            //
+        });
+
+        Text country = new Text(countryPath.getDisplayName());
+        donationPanel.getChildren().add(country);
+        country.setTranslateY(-260);
+        country.setFont(Font.font("arial", 30));
+
         selectedCountryPath = countryPath;
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
@@ -167,8 +195,9 @@ public class Map implements IScene, PropertyChangeListener {
         series1.getData().add(new XYChart.Data("1.9",percentage));
         series1.getData().add(new XYChart.Data("3.2", percentage2));
         series1.getData().add(new XYChart.Data("5.5",percentage3));
-
         bc.getData().addAll(series1);
+
+
         informationPanel.getChildren().add(bc);
         informationPanel.getChildren().add(new Label("Check what your donation could purchase"));
 
@@ -179,10 +208,19 @@ public class Map implements IScene, PropertyChangeListener {
         moneyCheckField.getChildren().add(search);
         Button check = new Button("Check");
         moneyCheckField.getChildren().add(check);
-        informationPanel.getChildren().add(moneyCheckField);
+        search.setTranslateX(45);
+        search.setTranslateY(checkY-25);
+        check.setTranslateX(-55);
+        check.setTranslateY(checkY);
+        donationPanel.getChildren().add(moneyCheckField);
 
         Label moneyCheckText = new Label();
-        informationPanel.getChildren().add(moneyCheckText);
+        donationPanel.getChildren().add(moneyCheckText);
+
+        Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated" + " 451$ " + "so far");
+        donationsoFar.setTranslateY(50);
+        donationsoFar.setWrapText(true);
+        donationPanel.getChildren().add(donationsoFar);
 
         Button hide = new Button("Hide");
         informationPanel.getChildren().add(hide);
@@ -227,12 +265,18 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void updateInfoPanel(CountryPath countryPath) {
+        int a = 280;
         informationPanel.setVisible(true);
         informationPanel.getChildren().clear();
+        donationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
         country.getStyleClass().add("country");
-
+        donationPanel.getChildren().add(country);
         informationPanel.getChildren().add(country);
+        donationPanel.getChildren().add(donationValue);
+        donationPanel.getChildren().add(donationButton);
+        donationButton.setTranslateY(a);
+        donationValue.setTranslateY(a);
         int population = countryPath.getPopulation();
         if (population > 0) {
             int poverty = countryPath.getPoverty();
