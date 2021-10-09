@@ -31,6 +31,9 @@ import javafx.scene.paint.Color;
 
 import java.util.HashMap;
 
+/**
+ * Class that is used to build the map.
+ */
 public class WorldBuilder<B extends WorldBuilder<B>> {
     private HashMap<String, Property> properties = new HashMap<>();
     private Resolution                resolution = Resolution.HI_RES;
@@ -39,33 +42,67 @@ public class WorldBuilder<B extends WorldBuilder<B>> {
     protected WorldBuilder() {}
 
     // ******************** Methods *******************************************
+
+    /**
+     * Returns a new world builder.
+     * @return the world builder.
+     */
     public static final WorldBuilder create() { return new WorldBuilder(); }
 
+    /**
+     * Sets the resolution of the map.
+     * @param RESOLUTION the resolution.
+     * @return the world builder with the added specification of resolution.
+     */
     public final B resolution(final Resolution RESOLUTION) {
         resolution = RESOLUTION;
         return (B)this;
     }
 
+    /**
+     * Enables hover in the map.
+     * @param ENABLED Boolean true or false if hover is enabled.
+     * @return the world builder with hover.
+     */
     public final B hoverEnabled(final boolean ENABLED) {
         properties.put("hoverEnabled", new SimpleBooleanProperty(ENABLED));
         return (B)this;
     }
 
+    /**
+     * Enables selection of country in the map.
+     * @param ENABLED Boolean true or false if selection is enabled.
+     * @return the world builder with the added specification of selection.
+     */
     public final B selectionEnabled(final boolean ENABLED) {
         properties.put("selectionEnabled", new SimpleBooleanProperty(ENABLED));
         return (B)this;
     }
 
+    /**
+     * Enables zoom in the map.
+     * @param ENABLED Boolean true or false if zoom is enabled.
+     * @return the world builder with the added specification of zoom.
+     */
     public final B zoomEnabled(final boolean ENABLED) {
         properties.put("zoomEnabled", new SimpleBooleanProperty(ENABLED));
         return (B)this;
     }
 
+    /**
+     * Enables faded colors in the map.
+     * @param FADE_COLORS Boolean true or false if fade colors is enabled.
+     * @return the world builder with the added specification of faded colors.
+     */
     public final B fadeColors(final boolean FADE_COLORS) {
         properties.put("fadeColors", new SimpleBooleanProperty(FADE_COLORS));
         return (B)this;
     }
 
+    /**
+     * Builds the map with specific requirements.
+     * @return the map with the given specifications.
+     */
     public final World build() {
         double              eventRadius         = properties.containsKey("eventRadius") ? ((DoubleProperty) properties.get("eventRadius")).get() : 5;
         boolean             fadeColors          = properties.containsKey("fadeColors") ? ((BooleanProperty) properties.get("fadeColors")).get() : false;

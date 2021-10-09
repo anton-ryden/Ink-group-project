@@ -29,16 +29,27 @@ import javafx.scene.chart.XYChart;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * Class for the main scene where the interactive map, info-panel and donate panel is shown
+ */
 public class Map implements IScene, PropertyChangeListener {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
 
+    /**
+     * Constructor for that calls for initialization
+     * @param worldMap the interactive map thats going to be shown
+     */
     public Map(World worldMap) {
         this.worldMap = worldMap;
         init();
     }
 
+    /**
+     * Initializes all values.
+     * Adds worldmap, info-panel and donate-panel
+     */
     public void init() {
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -51,7 +62,6 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getStylesheets().add("./InkGroupProject/view/infopanel.css");
         informationPanel.setPrefWidth(250);
         informationPanel.setMaxWidth(250);
-        informationPanel.setVisible(false);
 
         //Add BarGraph
         root.add(worldMap, 1,0);
@@ -61,6 +71,10 @@ public class Map implements IScene, PropertyChangeListener {
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
     }
 
+    /**
+     *  Sets the scene ready for display
+     * @param stage The window that contains all the javafx applications
+     */
     public void start(Stage stage) {
         Scene mapScene = new Scene(root);
         stage.setTitle("Interactive Map");
@@ -69,13 +83,19 @@ public class Map implements IScene, PropertyChangeListener {
         stage.show();
     }
 
+    /**
+     *
+     * @return the root of the map class.
+     */
     public Parent getRoot() {
         return root;
     }
 
-
+    /**
+     * Creates the graph in the info-panel
+     * @param countryPath the country data that should be displayed
+     */
     public void startGraph(CountryPath countryPath) {
-        informationPanel.setVisible(true);
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
         double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
@@ -124,6 +144,7 @@ public class Map implements IScene, PropertyChangeListener {
             }
         });
 
+        //click event to check how many healthy meals for a certain amount of money
         check.setOnAction(e -> {
             double amount;
             try {
@@ -146,6 +167,10 @@ public class Map implements IScene, PropertyChangeListener {
         });
     }
 
+    /**
+     * It updates the infopanel information with the new countrypath that should be displayed
+     * @param countryPath the country data that should be displayed
+     */
     public void updateInfoPanel(CountryPath countryPath) {
         informationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
@@ -166,6 +191,10 @@ public class Map implements IScene, PropertyChangeListener {
         }
     }
 
+    /**
+     * This method gets called whenever a new country is selected on the map and new information should be displayed
+     * @param evt the event that contains the new value
+     */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         CountryPath countryPath = (CountryPath) evt.getNewValue();

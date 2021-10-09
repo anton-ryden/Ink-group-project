@@ -7,7 +7,7 @@ import static InkGroupProject.model.Country.*;
 
 
 /**
- * Created by hansolo on 01.12.16.
+ * Public enum for all the different business regions around the world.
  */
 public enum BusinessRegion implements CRegion {
     AMERICAS(AI, AG, AR, AW, BS, BB, BZ, BM, BO, BR, CA, KY, CL, CO, CR, CU, DM, DO, EC, SV, GF, GD, GP, GT, GY, HT, HN, JM, MQ, MX, MS, NI, PA, PY, PE, PR, BL, KN, LC, MF, PM, VC, SR, TT, TC, US, UY, VE, VG, VI),
@@ -24,7 +24,13 @@ public enum BusinessRegion implements CRegion {
     private List<Country> countries;
 
 
+
     // ******************** Constructors **************************************
+
+    /**
+     * Adds all different countries to each respective business region.
+     * @param COUNTRIES A collection of all countries.
+     */
     BusinessRegion(final Country... COUNTRIES) {
         countries = new ArrayList<>(COUNTRIES.length);
         for(Country country : COUNTRIES) { countries.add(country); }
@@ -32,8 +38,17 @@ public enum BusinessRegion implements CRegion {
 
 
     // ******************** Methods *******************************************
+
+    /**
+     * Returns all countries.
+     * @return the countries
+     */
     @Override public List<Country> getCountries() { return countries; }
 
+    /**
+     * Sets the color of all countries within a business region.
+     * @param COLOR the color that is to be set.
+     */
     @Override public void setColor(final Color COLOR) {
         for (Country country : getCountries()) { country.setColor(COLOR); }
     }

@@ -36,14 +36,12 @@ public class LoginPage implements IScene {
         GridPane.setConstraints(email, 0, 0);
         grid.getChildren().add(email);
 
-
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
         GridPane.setConstraints(password, 0, 1);
         grid.getChildren().add(password);
-
 
         // Login button
         Button login = new Button("Login");
@@ -61,7 +59,6 @@ public class LoginPage implements IScene {
         GridPane.setConstraints(infoLabel, 0, 3);
         GridPane.setColumnSpan(infoLabel, 2);
         grid.getChildren().add(infoLabel);
-
 
         login.setOnAction(e -> {
             if (email.getText().isEmpty() || password.getText().isEmpty()) {
@@ -82,7 +79,8 @@ public class LoginPage implements IScene {
                             .selectionEnabled(true)
                             .fadeColors(true)
                             .build();
-                    Map mapScene = new Map(worldMap);
+                    InkGroupProject.view.Map mapScene = new Map(worldMap);
+
                     worldMap.addPropertyChangeListener(mapScene);
                     mapScene.start(Main.getStage());
                 } else {
@@ -98,11 +96,13 @@ public class LoginPage implements IScene {
             createAccountScene.start(Main.getStage());
         });
 
+        //Move to next textfield on TAB
         email.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB)
                 password.requestFocus();
         });
 
+        //Move to previous textfield on TAB & SHIFT combined
         password.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB && e.isShiftDown())
                 email.requestFocus();

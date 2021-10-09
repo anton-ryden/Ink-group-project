@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package InkGroupProject.model;
-
-import javafx.scene.paint.Color;
-import java.util.List;
-
-/**
- * Interface that represents a region of countries. Mainly used for business regions.
- */
-public interface CRegion {
-
-    String name();
-
-    List<Country> getCountries();
-
-    void setColor(final Color COLOR);
+.world {
+    -background-color: #4aa9d7;
+    -fill-color      : #dcb36c;
+    -stroke-color    : #987028;
+    -hover-color     : #fec47e;
+    -pressed-color   : #6cee85;
+    -selected-color  : magenta;
+    -location-color  : blue;
 }
