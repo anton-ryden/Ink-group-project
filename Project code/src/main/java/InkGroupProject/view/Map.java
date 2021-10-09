@@ -1,6 +1,8 @@
 package InkGroupProject.view;
 
 import InkGroupProject.model.CountryPath;
+import InkGroupProject.model.Database;
+import InkGroupProject.model.UserSession;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import InkGroupProject.model.WorldBuilder;
@@ -36,6 +38,10 @@ public class Map implements IScene, PropertyChangeListener {
     private World worldMap;
     private GridPane root;
     private VBox informationPanel;
+    private VBox donationPanel;
+    private Button donationButton;
+    private CountryPath selectedCountryPath;
+    Database db;
 
     /**
      * Constructor for that calls for initialization
@@ -51,21 +57,62 @@ public class Map implements IScene, PropertyChangeListener {
      * Adds worldmap, info-panel and donate-panel
      */
     public void init() {
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
         root.setAlignment(Pos.CENTER);
         root.setStyle("-fx-background-color: #3f3f4f");
-        Button prevBtn = new Button("Previous");
+
 
         //***********InfoPanel***********//
         informationPanel = new VBox();
+        informationPanel.setStyle("-fx-background-color: #ffffff");
         informationPanel.getStylesheets().add("./InkGroupProject/view/infopanel.css");
         informationPanel.setPrefWidth(250);
         informationPanel.setMaxWidth(250);
+        informationPanel.setVisible(false);
+
+        //***********DonationPanel************//
+        donationPanel = new VBox();
+        donationPanel.setStyle("-fx-background-color: #ffffff");
+        donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+        donationPanel.setPrefWidth(250);
+        donationPanel.setMaxWidth(250);
+        donationPanel.setVisible(true);
+
+        TextField donationValue = new TextField();
+        donationValue.setPromptText("Enter how much you want to donate");
+        donationPanel.getChildren().add(donationValue);
+        donationButton = new Button("Donate");
+        donationButton.setDisable(true);
+        donationPanel.getChildren().add(donationButton);
+        donationButton.setOnAction( e -> {
+            try {
+                int value = Integer.parseInt(donationValue.getText());
+                if (value > 0) {
+                    db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), value);
+                    donationPanel.getChildren().clear();
+                    donationPanel.getChildren().add(donationButton);
+                    donationPanel.getChildren().add(donationValue);
+                    donationPanel.getChildren().add(new Text("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName()));
+                } else {
+                    throw new NumberFormatException("Negative value");
+                }
+            }
+
+            catch (NumberFormatException exception) {
+                donationPanel.getChildren().clear();
+                donationPanel.getChildren().add(donationButton);
+                donationPanel.getChildren().add(donationValue);
+                donationPanel.getChildren().add(new Text("An error occurred"));
+            }
+        });
+
+
 
         //Add BarGraph
         root.add(worldMap, 1,0);
-        root.add(prevBtn, 0,0);
+        root.add(donationPanel, 0,0);
         root.add(informationPanel, 2,0);
         GridPane.setHgrow(worldMap, Priority.ALWAYS);
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
@@ -96,6 +143,7 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void startGraph(CountryPath countryPath) {
+        selectedCountryPath = countryPath;
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
         double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
@@ -144,7 +192,6 @@ public class Map implements IScene, PropertyChangeListener {
             }
         });
 
-        //click event to check how many healthy meals for a certain amount of money
         check.setOnAction(e -> {
             double amount;
             try {
@@ -172,13 +219,14 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void updateInfoPanel(CountryPath countryPath) {
+        informationPanel.setVisible(true);
         informationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
         country.getStyleClass().add("country");
 
         informationPanel.getChildren().add(country);
-        try {
-            int population = countryPath.getPopulation();
+        int population = countryPath.getPopulation();
+        if (population > 0) {
             int poverty = countryPath.getPoverty();
             String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
             Label text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $1.9 a day. " + "That is around " + percentage + "% of the population living in poverty");
@@ -186,8 +234,12 @@ public class Map implements IScene, PropertyChangeListener {
             text.setWrapText(true);
             informationPanel.getChildren().add(text);
             startGraph(countryPath);
-        } catch (NumberFormatException e) {
+            donationButton.setText("Donate to " + countryPath.getDisplayName());
+            donationButton.setDisable(false);
+        } else {
             informationPanel.getChildren().add(new Label("There was an error fetching data"));
+            donationButton.setText("Donate");
+            donationButton.setDisable(true);
         }
     }
 

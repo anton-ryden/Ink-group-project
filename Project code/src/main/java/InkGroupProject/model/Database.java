@@ -58,6 +58,36 @@ public class Database {
         }
     }
 
+    public boolean createDonation(int user, String country, int value) {
+        try {
+            PreparedStatement insertInfo = connection.prepareStatement("INSERT INTO donations (user_id, country, value) VALUES (?, ?, ?)");
+            insertInfo.setInt(1, user);
+            insertInfo.setString(2, country);
+            insertInfo.setInt(3, value);
+            insertInfo.execute();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public int getTotalDonatedMoney(String country) {
+        int res = 0;
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT SUM(value) FROM donations WHERE country = ?");
+            query.setString(1, country);
+            ResultSet result = query.executeQuery();
+
+            res = result.getInt("SUM(value)");
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return res;
+    }
+
     /**
      *Encrypts the password
      * @param password the password to encrypt
