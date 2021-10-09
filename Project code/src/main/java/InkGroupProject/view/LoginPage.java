@@ -96,11 +96,13 @@ public class LoginPage implements IScene {
             createAccountScene.start(Main.getStage());
         });
 
+        //Move to next textfield on TAB
         email.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB)
                 password.requestFocus();
         });
 
+        //Move to previous textfield on TAB & SHIFT combined
         password.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB && e.isShiftDown())
                 email.requestFocus();

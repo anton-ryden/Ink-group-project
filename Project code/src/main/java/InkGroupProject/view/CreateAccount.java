@@ -116,11 +116,14 @@ public class CreateAccount implements IScene {
             loginPage.start(Main.getStage());
         });
 
+        //Move to next textfield on TAB
+
         firstName.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB)
                 lastName.requestFocus();
         });
 
+        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
         lastName.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -130,6 +133,7 @@ public class CreateAccount implements IScene {
             }
         });
 
+        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
         email.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -139,6 +143,7 @@ public class CreateAccount implements IScene {
             }
         });
 
+        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
         password.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -148,6 +153,7 @@ public class CreateAccount implements IScene {
             }
         });
 
+        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
         rePassword.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB && e.isShiftDown())
                 password.requestFocus();
