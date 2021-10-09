@@ -38,16 +38,3 @@ what is my contribution towards the team’s use of Scrum?
 what is my contribution towards the team’s deliveries?
 	Making sure the meetings actually happens and participating in all aspects. Latly we have been organizing and 
 	discussing possible solution, making user stories etc.  
-	
-	WEEK 4
-what do I want to learn or understand better?
-	I want to understand how we can make a better design pattern
-
-how can I help someone else, or the entire team, to learn something new?
-	Help with any programming problems while also developing new features for the map
-
-what is my contribution towards the team’s use of Scrum?
-	Try and act as a scrum master and ask alot of question
-
-what is my contribution towards the team’s deliveries?
-	Alot of new feautres added to the map and some changes to the software pattern. While also helping others with their problem

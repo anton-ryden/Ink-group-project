@@ -28,7 +28,6 @@ Week 2
 
 4. Ive helped make the preview and shared a few of my thoughts and helped write the project scope.
 ----------------------------------------------------------------------
-Week 3
 1. I want to learn a bit more about creating UIs on JAVAFX
 
 2. Try to make a good UI layout for the others to use as reference.
@@ -37,11 +36,3 @@ Week 3
 
 4. Found a reliable data source and started extracting and filtering the information that we want to use. 
 ----------------------------------------------------------------------
-Week 4 
-1. I want to understand more about queries and connecting to a database.
-
-2. Help with planning UIs
-
-3. Writing down everyones opinions and summarising them.
-
-4. Most things related to the UI, graphs text, what info to incorporate etc.
