@@ -41,7 +41,7 @@ public class Map implements IScene, PropertyChangeListener {
     private VBox donationPanel;
     private Button donationButton;
     private CountryPath selectedCountryPath;
-    Database db;
+    private Database db;
 
     /**
      * Constructor for that calls for initialization
