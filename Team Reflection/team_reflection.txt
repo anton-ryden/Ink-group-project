@@ -2,7 +2,7 @@ Team Reflection - Group Ink
 
 Each entry will be about 1 week apart.
 
--------Entry 1 (WEEK 3)---------
+-------(WEEK 3)---------
 
 This team reflection we discuss our application of scrum, design decisions and product structure and social contract and effort
 
@@ -24,7 +24,7 @@ This allows us to work in smaller groups and share ideas/thoughts within your su
 We used a trello board and took inspiration from a exercise session how the structure should look like. This made it possible
 to come up with various epics and user stories.
 
--------Entry 2 (WEEK 4)---------
+-------(WEEK 4)---------
 
 Customer Value and Scope:
 This sprint we have been developing the feature to create accounts and a loginpage which includes a database and GUI. We also developed the feature to see the poverty status of a country by using an open data source. We've also created a visible map where you can click and zoom on the different countries to highlight them and see the name of the country. The priority of the features were prioritized as the order in the text.
@@ -60,12 +60,11 @@ We are all using the same IDE (Intellij) which also gives us the option to use t
 
 Nothing from literature however a lot from the latest guest lecture. For example, making sure everyone participate in the meetings and not being afraid of poking for answers. Do not ask yes or no questions as a Scrum master. 
 
--------Entry 1 (WEEK 5)---------
+-------(WEEK 5)---------
 Customer Value and Scope:
 This sprint we have focused on mainly improving our features and small quality of life changes which includes more work with UI(Graphs displaying information, colors that signify how much a certain country is in Poverty), grabbing certain data from databases and being able to stay logged in with an account.
 
-This sprint, we encountered quite a few problem however we feel that the teamwork has been good. We aren't really happy regarding the 
-team velocity due to our user story application which resulted in slower work than usual as some stories depended on others. However this was also because everyone in the group had a chance to touch on eachothers code which takes time to get familiarized too.
+This sprint, we encountered quite a few problem however we feel that the teamwork has been good. We aren't really happy regarding the team velocity due to our user story application which resulted in slower work than usual as some stories depended on others. However this was also because everyone in the group had a chance to touch on eachothers code which takes time to get familiarized too.
 
 Like last sprint, we divided the tasks in what we felt was fair amount the team members. This week was especially heavy on communication due to several big features being merged this week and worked upon which means that a certain level of understanding of eachothers code was neccessary. This resulted in a lot of questions and people communicating about their code and purpose.
 
@@ -88,3 +87,39 @@ Application of Scrum
 Nothing has changed this week in terms of our application of scrum. 
 We have however split a few user stories in to sub stories to make the user stories more independent which allowed for members to work
 on separate features. 
+-------(WEEK 6)---------
+Customer Value and Scope
+This sprint mainly revolved around the group optimizing the code which included gathering most information that was spread in different files in to
+a collective database. A lot of optimizations and changes had to be made regarding code that did not use databases and instead used other files to 
+search for information such as CSV files. Some of the work this week also went in to planning the UI for our donation panel and implementing the 
+UI. An example of this is the implementation of being able to check how many meals a certain amount of donation can provide. An additional feature 
+that was incorporated to the map was a drag function that would allow you to zoom in and out at preference. A bug that involved the resizing of the 
+window was also fixed. We have also worked on adding documentation to our code this week.
+
+Compared to the previous sprints, this week has been a bit lacking in communication and we've also ran in to the same issues that occured last week 
+which was some user stories not being entirely separate which resulted in some of the user stories that were being worked on this week to be 
+reliant on other user stories to be finished.
+
+This sprint, there werent as many tasks to divide but we still split them up in what we felt was fair with peoples interest on the task in to account. As usual the effort estimation and task breakdown ensured that everyone had a task assigned that we felt was proper and fair.
+
+Our procedure hasn't changed but not everything has gone through the acceptance tests this week.
+
+We saw last week that we had a relatively low team satisfaction that we took in to account this week. We also saw a decrease in team velocity
+which resulted in the group trying to finish more tasks this sprint in order to cover more points in the team velocity.
+
+Social Contract and EFfort:
+No changes have been made to the social contract.
+
+This week a bit less work was put in which resulted in around 16-17 hours which is a decrease from the previous weeks. This was mostly due to our 
+sprint having its work revolved around existing features and mostly optimising. This meant less research in to newer things to add which decreased 
+the amount of time taken. 
+
+Design descisions and product structure:
+Nothing has changed in this area.
+We have started documenting with Javadoc quite a bit and commented on the majority of code now. Our code quality and enforcing coding standards are 
+made by the project owners overlooking that the features are easy to implement and effective to use.
+
+Application of Scrum:
+Nothing drastic has changed, mostly the addition of a few user stories as we figure out more features to incorporate and more optimizations that 
+need to be made.
+

@@ -1,0 +1,31 @@
+Index: Individual Reflections/Anders Troung.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Week 1\r\n\r\nWhat do I want to learn or understand better?\r\nCooperation in a group eficiency with an even workload for everyone.\r\n\r\nHow can I help someone else, or the entire team, to learn something new?\r\nLet everyone in the group have a voice in it and share their opinion\r\n\r\nwhat is my contribution towards the team’s use of Scrum?\r\nWe have yet not used Scram in our practices.\r\n\r\nwhat is my contribution towards the team’s\r\nWorking towards the social contracts that we all agree on together with the team
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Individual Reflections/Anders Troung.txt b/Individual Reflections/Anders Troung.txt
+--- a/Individual Reflections/Anders Troung.txt	(revision 4f8e6d21446f620aa9ee31ed36218e7026abb278)
++++ b/Individual Reflections/Anders Troung.txt	(date 1632739927715)
+@@ -10,4 +10,17 @@
+ We have yet not used Scram in our practices.
+ 
+ what is my contribution towards the team’s
+-Working towards the social contracts that we all agree on together with the team
+\ No newline at end of file
++Working towards the social contracts that we all agree on together with the team
++
++Week 2
++What do I want to learn or understand better?
++Understanding how to access and use an open data source
++
++How can I help someone else, or the entire team, to learn something new?
++Discuss with how the interactive map works and how to integrate our information panel feature with the map.
++
++what is my contribution towards the team’s use of Scrum?
++We have not begun using scrum yet.
++
++what is my contribution towards the team’s
++I gave ideas how to divide the role of members being responsible for user stories and product owners.
+\ No newline at end of file
