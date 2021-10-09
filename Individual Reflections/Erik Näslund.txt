@@ -60,3 +60,36 @@ I helped book meetings and helped plan the upcomming sprint.
 
 what is my contribution towards the team’s deliveries?
 This week I worked with Anton to create the visible and interactable map. I also helped verify other group members tasks.
+
+--------- Week 5 -----------
+
+what do I want to learn or understand better?
+I need to understand the map and the use of databases in java better in order to be able to do my tasks next week.
+
+how can I help someone else, or the entire team, to learn something new?
+I can help them by explaining more about how the map works if they need that information since i have been working on the map a lot.
+
+what is my contribution towards the team’s use of Scrum?
+This week i haven't been able to work as much as i would like to because of personal matters. So my contribution towards the
+team's use of scrum is much lower than i would like it to be but i still managed to attend the meetings and helped a little bit
+with the planning
+
+what is my contribution towards the team’s deliveries?
+Since i haven't been able to work as much this week, i wasn't able to finish my deliveries for the week. I will do better next
+week!
+
+--------- Week 6 -----------
+
+
+what do I want to learn or understand better?
+I need to learn more about JavaFX and how to change the icon of the program since those are things i'm going to be working on next sprint.
+
+how can I help someone else, or the entire team, to learn something new?
+If i learn this it will hopefully be of use for the team. Otherwise i'm stil able to help them learn about the things i've learned from the project.
+
+what is my contribution towards the team’s use of Scrum?
+This week i've helped plan meetings and seen to it that we follow our usual sprint schedule. Also planning the next sprint and asking questions to help other members paricipate more.
+
+what is my contribution towards the team’s deliveries?
+I've fixed a bug and made some improvements to the database. I also tried to help other team members as much as i could and keep communication with them to make sure we are on track.
+
