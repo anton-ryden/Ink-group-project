@@ -217,7 +217,7 @@ public class Map implements IScene, PropertyChangeListener {
         Label moneyCheckText = new Label();
         donationPanel.getChildren().add(moneyCheckText);
 
-        Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated" + " 451$ " + "so far");
+        Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated " + Database.getInstance(countryPath.getDisplayName()).getTotalDonatedMoney(countryPath.getDisplayName()) + "$ so far");
         donationsoFar.setTranslateY(50);
         donationsoFar.setWrapText(true);
         donationPanel.getChildren().add(donationsoFar);
