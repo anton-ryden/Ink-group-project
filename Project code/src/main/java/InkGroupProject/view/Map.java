@@ -1,12 +1,10 @@
 package InkGroupProject.view;
 
-import InkGroupProject.model.CountryPath;
-import InkGroupProject.model.Database;
+import InkGroupProject.model.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import InkGroupProject.model.WorldBuilder;
 import InkGroupProject.controller.World;
 import InkGroupProject.controller.World.Resolution;
 import javafx.scene.Scene;
@@ -37,8 +35,8 @@ public class Map implements IScene, PropertyChangeListener {
     private GridPane root;
     private VBox informationPanel;
     private VBox donationPanel;
-    public TextField donationValue;
-    public Button donationButton;
+    private Button donationButton;
+    private CountryPath selectedCountryPath;
     Database db;
 
     public Map(World worldMap) {
@@ -47,6 +45,7 @@ public class Map implements IScene, PropertyChangeListener {
     }
 
     public void init() {
+        db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
         root.setAlignment(Pos.CENTER);
@@ -71,12 +70,33 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.setMaxWidth(250);
         donationPanel.setVisible(true);
 
-        donationValue = new TextField();
+        TextField donationValue = new TextField();
         donationValue.setPromptText("Enter how much you want to donate");
         donationPanel.getChildren().add(donationValue);
         donationButton = new Button("Donate");
         donationButton.setDisable(true);
         donationPanel.getChildren().add(donationButton);
+        donationButton.setOnAction( e -> {
+            try {
+                int value = Integer.parseInt(donationValue.getText());
+                if (value > 0) {
+                    db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), value);
+                    donationPanel.getChildren().clear();
+                    donationPanel.getChildren().add(donationButton);
+                    donationPanel.getChildren().add(donationValue);
+                    donationPanel.getChildren().add(new Text("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName()));
+                } else {
+                    throw new NumberFormatException("Negative value");
+                }
+            }
+
+            catch (NumberFormatException exception) {
+                donationPanel.getChildren().clear();
+                donationPanel.getChildren().add(donationButton);
+                donationPanel.getChildren().add(donationValue);
+                donationPanel.getChildren().add(new Text("An error occurred"));
+            }
+        });
 
 
 
@@ -102,7 +122,7 @@ public class Map implements IScene, PropertyChangeListener {
 
 
     public void startGraph(CountryPath countryPath) {
-
+        selectedCountryPath = countryPath;
         informationPanel.getStyleClass();
         int population = countryPath.getPopulation();
         double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
@@ -199,14 +219,6 @@ public class Map implements IScene, PropertyChangeListener {
     }
 
 
-    public void updateDonatedPanel(String country) {
-        int value = getDonationValue();
-        donationPanel.getChildren().add(new Text("Thanks! "+ value + " has been donated to\n" + country));
-    }
-
-    public int getDonationValue() {
-        return Integer.parseInt(donationValue.getText());
-    }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {

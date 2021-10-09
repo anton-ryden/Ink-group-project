@@ -83,8 +83,6 @@ public class LoginPage implements IScene {
                             .fadeColors(true)
                             .build();
                     InkGroupProject.view.Map mapScene = new Map(worldMap);
-                    worldMap.setView(mapScene);
-                    worldMap.initDonations();
 
                     worldMap.addPropertyChangeListener(mapScene);
                     mapScene.start(Main.getStage());
