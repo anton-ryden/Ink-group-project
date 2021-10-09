@@ -124,6 +124,7 @@ public class Map implements IScene, PropertyChangeListener {
             }
         });
 
+        //click event to check how many healthy meals for a certain amount of money
         check.setOnAction(e -> {
             double amount;
             try {
