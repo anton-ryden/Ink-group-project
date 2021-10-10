@@ -58,7 +58,6 @@ public class Map implements IScene, PropertyChangeListener {
      * Adds worldmap, info-panel and donate-panel
      */
     public void init() {
-        int a = 230;
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -85,13 +84,9 @@ public class Map implements IScene, PropertyChangeListener {
 
         donationValue = new TextField();
         donationValue.setPromptText("Enter how much you want to donate");
-        donationPanel.getChildren().add(donationValue);
 
         donationButton = new Button("Donate");
         donationButton.setDisable(true);
-        donationPanel.getChildren().add(donationButton);
-        donationButton.setTranslateY(a);
-        donationValue.setTranslateY(a);
 
         donationButton.setOnAction( e -> {
             try {
@@ -225,7 +220,7 @@ public class Map implements IScene, PropertyChangeListener {
         Button hide = new Button("Hide");
         informationPanel.getChildren().add(hide);
         hide.setTranslateX(90); //0 is middle
-        hide.setTranslateY(-600);
+        hide.setTranslateY(-570);
         hide.setOnAction(e -> {
             informationPanel.setVisible(false);
         });
@@ -265,7 +260,7 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void updateInfoPanel(CountryPath countryPath) {
-        int a = 280;
+        int a = 300;
         informationPanel.setVisible(true);
         informationPanel.getChildren().clear();
         donationPanel.getChildren().clear();
