@@ -28,6 +28,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
+import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -145,9 +146,9 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void startGraph(CountryPath countryPath) {
-        int checkY = -5;
         int userX = -90;
         int userY = -275;
+
         Text username = new Text("Username:" + UserSession.getInstance().getFirstName());
         donationPanel.getChildren().add(username);
         username.setTranslateX(userX);
@@ -197,23 +198,13 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(new Label("Check what your donation could purchase"));
 
         HBox moneyCheckField = new HBox();
-        final TextField search = new TextField();
-        search.setPromptText("Enter amount of USD");
-        search.setFocusTraversable(false);
-        moneyCheckField.getChildren().add(search);
-        Button check = new Button("Check");
-        moneyCheckField.getChildren().add(check);
-        search.setTranslateX(45);
-        search.setTranslateY(checkY-25);
-        check.setTranslateX(-55);
-        check.setTranslateY(checkY);
         donationPanel.getChildren().add(moneyCheckField);
 
         Label moneyCheckText = new Label();
         donationPanel.getChildren().add(moneyCheckText);
 
         Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated " + Database.getInstance(countryPath.getDisplayName()).getTotalDonatedMoney(countryPath.getDisplayName()) + "$ so far");
-        donationsoFar.setTranslateY(50);
+        donationsoFar.setTranslateY(0);
         donationsoFar.setWrapText(true);
         donationPanel.getChildren().add(donationsoFar);
 
@@ -225,42 +216,36 @@ public class Map implements IScene, PropertyChangeListener {
             informationPanel.setVisible(false);
         });
 
-        search.focusedProperty().addListener((obs, isUnfocused, isFocused) -> {
-            if (isFocused) {
-                check.setDefaultButton(true);
-            } else {
-                check.setDefaultButton(false);
-            }
-        });
 
-        check.setOnAction(e -> {
+
+        donationValue.textProperty().addListener((obs, isUnfocused, isFocused) -> {
             double amount;
-            try {
-                // Strip input of whitespace
-                String searchText = search.getText().replaceAll("\\s+","");
-                amount = Double.parseDouble(searchText);
-            } catch (NumberFormatException ex) {
-                amount = -1;
-            }
-            double cost = countryPath.getHealthyDietCost();
-            int numberOfMeals = (int)(amount / cost);
 
-            if (amount < 0 || cost < 0) {
-                moneyCheckText.setTextFill(Color.RED);
-                moneyCheckText.setText("Invalid number");
-            } else {
+                try {
+                    // Strip input of whitespace
+                    String searchText = donationValue.getText().replaceAll("\\s+","");
+                    amount = Double.parseDouble(searchText);
+                } catch (NumberFormatException ex) {
+                    amount = -1;
+                }
+                double cost = countryPath.getHealthyDietCost();
+                int numberOfMeals = (int)(amount / cost);
                 moneyCheckText.setTextFill(Color.BLACK);
-                moneyCheckText.setText("Healthy meals: " + numberOfMeals);
-            }
+                moneyCheckText.setText("Amount of Healthy meals:" + "\n" + numberOfMeals);
+                moneyCheckText.setWrapText(true);
+
         });
+
     }
+
+
 
     /**
      * It updates the infopanel information with the new countrypath that should be displayed
      * @param countryPath the country data that should be displayed
      */
     public void updateInfoPanel(CountryPath countryPath) {
-        int a = 300;
+        int a = 90;
         informationPanel.setVisible(true);
         informationPanel.getChildren().clear();
         donationPanel.getChildren().clear();
@@ -272,6 +257,8 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.getChildren().add(donationButton);
         donationButton.setTranslateY(a);
         donationValue.setTranslateY(a);
+
+
         int population = countryPath.getPopulation();
         if (population > 0) {
             int poverty = countryPath.getPoverty();
