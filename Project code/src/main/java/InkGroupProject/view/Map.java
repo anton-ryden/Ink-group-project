@@ -147,7 +147,7 @@ public class Map implements IScene, PropertyChangeListener {
      */
     public void startGraph(CountryPath countryPath) {
         int userX = -90;
-        int userY = -275;
+        int userY = -295;
 
         Text username = new Text("Username:" + UserSession.getInstance().getFirstName());
         donationPanel.getChildren().add(username);
@@ -197,11 +197,14 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(bc);
         informationPanel.getChildren().add(new Label("Check what your donation could purchase"));
 
+
+
         HBox moneyCheckField = new HBox();
         donationPanel.getChildren().add(moneyCheckField);
 
         Label moneyCheckText = new Label();
         donationPanel.getChildren().add(moneyCheckText);
+        moneyCheckText.setText("" + "\n" + "\n");
 
         Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated " + Database.getInstance(countryPath.getDisplayName()).getTotalDonatedMoney(countryPath.getDisplayName()) + "$ so far");
         donationsoFar.setTranslateY(0);
@@ -215,7 +218,6 @@ public class Map implements IScene, PropertyChangeListener {
         hide.setOnAction(e -> {
             informationPanel.setVisible(false);
         });
-
 
 
         donationValue.textProperty().addListener((obs, isUnfocused, isFocused) -> {
