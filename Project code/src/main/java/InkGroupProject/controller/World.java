@@ -726,9 +726,11 @@ public class World extends Region {
         double b;
         Color myColor;
         try {
-            if(country.getColor() == null) {
+            poverty = path.getPoverty();
+            if (poverty < 0){
+                country.setColor(Color.WHITE);
+            } else if(country.getColor() == null) {
                 population = path.getPopulation();
-                poverty = path.getPoverty();
                 povertyIndex = ((double) (poverty)) / ((double) population);
                 s = povertyIndex * 2 + 0.3;
                 b = 1;

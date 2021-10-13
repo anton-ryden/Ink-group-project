@@ -161,9 +161,24 @@ public class Database {
             query.setString(1, countryName);
             ResultSet result = query.executeQuery();
             countryPath.setPopulation(result.getInt("population"));
-            countryPath.setNumberOfPoor19Dollar(result.getDouble("num_of_poor_1_9"));
-            countryPath.setNumberOfPoor32Dollar(result.getDouble("num_of_poor_3_2"));
-            countryPath.setNumberOfPoor55Dollar(result.getDouble("num_of_poor_5_5"));
+            Double temp = result.getDouble("num_of_poor_1_9");
+            if (!result.wasNull()){
+                countryPath.setNumberOfPoor19Dollar(temp);
+            }else {
+                countryPath.setNumberOfPoor19Dollar(-1);
+            }
+            temp = result.getDouble("num_of_poor_3_2");
+            if (!result.wasNull()){
+                countryPath.setNumberOfPoor32Dollar(temp);
+            }else {
+                countryPath.setNumberOfPoor32Dollar(-1);
+            }
+            temp = result.getDouble("num_of_poor_5_5");
+            if (!result.wasNull()){
+                countryPath.setNumberOfPoor55Dollar(temp);
+            }else {
+                countryPath.setNumberOfPoor55Dollar(-1);
+            }
             // Temporary until healthy_diet_cost has been merged into poverty_stats
             countryPath.setHealthyDietCost(result.getDouble("cost"));
         } catch (SQLException ex) {
