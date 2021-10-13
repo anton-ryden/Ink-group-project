@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class UserSettings implements IScene {
@@ -32,7 +33,7 @@ public class UserSettings implements IScene {
         // Go back to the User page
         Hyperlink goBack = new Hyperlink("<- Go back");
         goBack.setFocusTraversable(false);
-        GridPane.setConstraints(goBack, 0, 5);
+        GridPane.setConstraints(goBack, 0, 6);
         root.getChildren().add(goBack);
     }
 
@@ -69,6 +70,38 @@ public class UserSettings implements IScene {
 //        updatePasswordButton.setDefaultButton(true);
         GridPane.setConstraints(updatePasswordButton, 0, 4);
         root.getChildren().add(updatePasswordButton);
+
+        // User feedback label
+        final Label infoLabel = new Label();
+        GridPane.setConstraints(infoLabel, 0, 5);
+        GridPane.setColumnSpan(infoLabel, 2);
+        root.getChildren().add(infoLabel);
+
+        updatePasswordButton.setOnAction(e -> {
+            boolean isCurrentPasswordEmpty = currentPassword.getText().isEmpty();
+            boolean isNewPasswordEmpty = newPassword.getText().isEmpty();
+            boolean isRepeatNewPasswordEmpty = repeatNewPassword.getText().isEmpty();
+            if (isCurrentPasswordEmpty || isNewPasswordEmpty || isRepeatNewPasswordEmpty) {
+                infoLabel.setTextFill(Color.RED);
+                infoLabel.setText("Please fill out all the information above.");
+            } else {
+                if (!db.login(currentUser.getEmail(), currentPassword.getText())) {
+                    infoLabel.setTextFill(Color.RED);
+                    infoLabel.setText("Wrong current password.");
+                } else if (currentPassword.getText().equals(newPassword.getText())) {
+                    infoLabel.setTextFill(Color.RED);
+                    infoLabel.setText("Can't change to same password.");
+                } else if (!newPassword.getText().equals(repeatNewPassword.getText())) {
+                    infoLabel.setTextFill(Color.RED);
+                    infoLabel.setText("Passwords do not match.");
+                } else {
+                    db.updatePassword(newPassword.getText(), UserSession.getInstance().getId());
+                    infoLabel.setTextFill(Color.GREEN);
+                    infoLabel.setText("Password updated.");
+                }
+            }
+
+        } );
     }
 
     private void initUpdateUserInfo() {
@@ -111,6 +144,26 @@ public class UserSettings implements IScene {
             lastName.setText(currentUser.getLastName());
             email.setText(currentUser.getEmail());
         }
+
+        // User feedback label
+        final Label infoLabel = new Label();
+        GridPane.setConstraints(infoLabel, 1, 5);
+        GridPane.setColumnSpan(infoLabel, 2);
+        root.getChildren().add(infoLabel);
+
+        updateInfoButton.setOnAction(e -> {
+            boolean isFirstNameEmpty = firstName.getText().isEmpty();
+            boolean isLastNameEmpty = lastName.getText().isEmpty();
+            boolean isEmailEmpty = email.getText().isEmpty();
+            if ((isFirstNameEmpty || isLastNameEmpty || isEmailEmpty)) {
+                infoLabel.setTextFill(Color.RED);
+                infoLabel.setText("Please insert new info");
+            } else {
+                db.updateUserInfo(firstName.getText(), lastName.getText(), email.getText(), UserSession.getInstance().getId());
+                infoLabel.setTextFill(Color.GREEN);
+                infoLabel.setText("Information updated.");
+            }
+        });
     }
 
     @Override
