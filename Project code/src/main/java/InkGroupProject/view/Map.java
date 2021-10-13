@@ -235,13 +235,22 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().add(country);
         int population = countryPath.getPopulation();
         if (population > 0) {
-            int poverty = countryPath.getPoverty();
-            String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
-            Label text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $1.9 a day. " + "That is around " + percentage + "% of the population living in poverty");
+            Label text = null;
+            Integer poverty = countryPath.getPoverty();
+            if(poverty == null){
+                text = new Label("Population: " + population + ". There is no poverty data about this country");
+            }else {
+                String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
+                text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $5.5 a day. " + "That is around " + percentage + "% of the population living in poverty");
+            }
+
+
             text.setMaxWidth(160);
             text.setWrapText(true);
             informationPanel.getChildren().add(text);
-            startGraph(countryPath);
+            if (poverty != null){
+                startGraph(countryPath);
+            }
             donationButton.setText("Donate to " + countryPath.getDisplayName());
             donationButton.setDisable(false);
         } else {

@@ -718,19 +718,22 @@ public class World extends Region {
      * @throws FileNotFoundException whenever a country is not found
      */
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
-        int population;
-        int poverty;
+        Integer population;
+        Integer poverty;
         double povertyIndex;
         double h;
         double s;
         double b;
         Color myColor;
         try {
+            population = path.getPopulation();
             poverty = path.getPoverty();
-            if (poverty < 0){
+            if (population == 0){
+                country.setColor(Color.GREY);
+            } else if (poverty == null){
                 country.setColor(Color.WHITE);
             } else if(country.getColor() == null) {
-                population = path.getPopulation();
+
                 povertyIndex = ((double) (poverty)) / ((double) population);
                 s = povertyIndex * 2 + 0.3;
                 b = 1;
@@ -743,12 +746,8 @@ public class World extends Region {
                 if (s > 1){
                     s = 1;
                 }
-                if (population == 0) {
-                    country.setColor(Color.GREY);
-                } else{
-                    myColor = Color.hsb(h, s, b);
-                    country.setColor(myColor);
-                }
+                myColor = Color.hsb(h, s, b);
+                country.setColor(myColor);
                 //country.setColor(new Color(Math.min(povertyIndex*1.5,1), Math.max(1 - povertyIndex*5, 0), 0, 1));
             }
         } catch (NumberFormatException e) {
