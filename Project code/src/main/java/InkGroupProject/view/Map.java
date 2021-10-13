@@ -254,7 +254,7 @@ public class Map implements IScene, PropertyChangeListener {
             donationButton.setText("Donate to " + countryPath.getDisplayName());
             donationButton.setDisable(false);
         } else {
-            informationPanel.getChildren().add(new Label("There was an error fetching data"));
+            informationPanel.getChildren().add(new Label("There is no data about this country"));
             donationButton.setText("Donate");
             donationButton.setDisable(true);
         }
