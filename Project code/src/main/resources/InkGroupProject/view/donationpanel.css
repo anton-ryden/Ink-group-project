@@ -4,10 +4,11 @@
 
 VBox {
     -fx-alignment: center;
+    -fx-background-radius: 5px;
 }
 
 .button {
     -fx-padding: 10px;
     -fx-border-insets: 5px;
-    -fx-background-insets: 5px;
+
 }

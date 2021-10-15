@@ -30,9 +30,9 @@ public class CountryPath extends SVGPath{
     private final Locale LOCALE;
     private final Tooltip TOOLTIP;
     private int population;
-    private int numberOfPoor19Dollar;
-    private int numberOfPoor32Dollar;
-    private int numberOfPoor55Dollar;
+    private Integer numberOfPoor19Dollar;
+    private Integer numberOfPoor32Dollar;
+    private Integer numberOfPoor55Dollar;
     private double healthyDietCost;
 
     // ******************** Constructors **************************************
@@ -120,7 +120,7 @@ public class CountryPath extends SVGPath{
      * Returns the number of poor people that makes equal or less than 1.9 dollars per day.
      * @return the number of poor people that makes equal or less than 1.9 dollars per day.
      */
-    public int getNumberOfPoor19Dollar() {
+    public Integer getNumberOfPoor19Dollar() {
         return numberOfPoor19Dollar;
     }
 
@@ -128,7 +128,7 @@ public class CountryPath extends SVGPath{
      * Returns the number of poor people that makes equal or less than 3.2 dollars per day.
      * @return the number of poor people that makes equal or less than 3.2 dollars per day.
      */
-    public int getNumberOfPoor32Dollar() {
+    public Integer getNumberOfPoor32Dollar() {
         return numberOfPoor32Dollar;
     }
 
@@ -136,7 +136,7 @@ public class CountryPath extends SVGPath{
      * Returns the number of poor people that makes equal or less than 5.5 dollars per day.
      * @return the number of poor people that makes equal or less than 5.5 dollars per day.
      */
-    public int getNumberOfPoor55Dollar() {
+    public Integer getNumberOfPoor55Dollar() {
         return numberOfPoor55Dollar;
     }
 
@@ -151,7 +151,7 @@ public class CountryPath extends SVGPath{
     }
 
 
-    public int getPoverty(){
+    public Integer getPoverty(){
         return numberOfPoor55Dollar;
     }
 }
