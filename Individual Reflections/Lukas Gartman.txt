@@ -80,3 +80,17 @@ I helped the team to go over our user stories and to plan for the next sprint.
 
 * What is my contribution towards the team’s deliveries?
 I implemented the functionality for checking how many meals a given donation could help a country and wrote some Javadoc documentation for the code that is already finished.
+
+
+Week 7:
+* What do I want to learn or understand better?
+I want to understand how the final presentation will work out.
+
+* How can I help someone else, or the entire team, to learn something new?
+Communicating! Sharing! Et cetera...
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the team to go over our user stories.
+
+* What is my contribution towards the team’s deliveries?
+I designed the user settings page, helped out some team members, and did a thorough cleanup of the code.
