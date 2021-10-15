@@ -127,7 +127,6 @@ public class Map implements IScene, PropertyChangeListener {
                 if (value > 0) {
                     db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), value);
                     donationPanel.getChildren().clear();
-
                     donationPanel.getChildren().add(new Text("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName()));
                 } else {
                     throw new NumberFormatException("Negative value");
@@ -202,37 +201,34 @@ public class Map implements IScene, PropertyChangeListener {
         country.setTranslateY(-400);
         country.setFont(Font.font("arial", 30));
 
-        selectedCountryPath = countryPath;
-        informationPanel.getStyleClass();
-        int population = countryPath.getPopulation();
-        double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
-        double percentage2 = (Math.round((double) countryPath.getNumberOfPoor32Dollar() * 100 / population));
-        double percentage3 = (Math.round((double) countryPath.getNumberOfPoor55Dollar() * 100 / population));
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        final BarChart<String,Number> bc =
-                new BarChart<String,Number>(xAxis,yAxis);
-        bc.setTitle("Percentage of population\nliving under a certain\namount of money");
-        xAxis.setLabel("Living with $x money per day");
-        yAxis.setLowerBound(0);
-        yAxis.setUpperBound(100);
-        yAxis.setTickUnit(10);
-        yAxis.setAutoRanging(false);
-        yAxis.getStyleClass().add("axis");
-        yAxis.setTickLabelFill(Color.GREY);
-        xAxis.setTickLabelFill(Color.GREY);
-        XYChart.Series series1 = new XYChart.Series();
+        if (countryPath.getPoverty() != null){
+            selectedCountryPath = countryPath;
+            informationPanel.getStyleClass();
+            int population = countryPath.getPopulation();
+            double percentage = (Math.round((double) countryPath.getNumberOfPoor19Dollar() * 100 / population));
+            double percentage2 = (Math.round((double) countryPath.getNumberOfPoor32Dollar() * 100 / population));
+            double percentage3 = (Math.round((double) countryPath.getNumberOfPoor55Dollar() * 100 / population));
+            final CategoryAxis xAxis = new CategoryAxis();
+            final NumberAxis yAxis = new NumberAxis();
+            final BarChart<String,Number> bc =
+                    new BarChart<String,Number>(xAxis,yAxis);
+            bc.setTitle("Percentage of population\nliving under a certain\namount of money");
+            xAxis.setLabel("Living with $x money per day");
+            yAxis.setLowerBound(0);
+            yAxis.setUpperBound(100);
+            yAxis.setTickUnit(10);
+            yAxis.setAutoRanging(false);
+            yAxis.getStyleClass().add("axis");
+            yAxis.setTickLabelFill(Color.GREY);
+            xAxis.setTickLabelFill(Color.GREY);
+            XYChart.Series series1 = new XYChart.Series();
 
-        series1.getData().add(new XYChart.Data("1.9",percentage));
-        series1.getData().add(new XYChart.Data("3.2", percentage2));
-        series1.getData().add(new XYChart.Data("5.5",percentage3));
-        bc.getData().addAll(series1);
-
-
-        informationPanel.getChildren().add(bc);
-        informationPanel.getChildren().add(new Label("Check what your donation could purchase"));
-
-
+            series1.getData().add(new XYChart.Data("1.9",percentage));
+            series1.getData().add(new XYChart.Data("3.2", percentage2));
+            series1.getData().add(new XYChart.Data("5.5",percentage3));
+            bc.getData().addAll(series1);
+            informationPanel.getChildren().add(bc);
+        }
 
         HBox moneyCheckField = new HBox();
         donationPanel.getChildren().add(moneyCheckField);
@@ -240,9 +236,10 @@ public class Map implements IScene, PropertyChangeListener {
         Label moneyCheckText = new Label();
         donationPanel.getChildren().add(moneyCheckText);
         moneyCheckText.setText("" + "\n" + "\n");
+        moneyCheckText.setTranslateY(-30);
 
         Label donationsoFar = new Label(countryPath.getDisplayName() + " has been donated " + Database.getInstance(countryPath.getDisplayName()).getTotalDonatedMoney(countryPath.getDisplayName()) + "$ so far");
-        donationsoFar.setTranslateY(0);
+        donationsoFar.setTranslateY(-100);
         donationsoFar.setWrapText(true);
         donationPanel.getChildren().add(donationsoFar);
 
@@ -257,7 +254,6 @@ public class Map implements IScene, PropertyChangeListener {
 
         donationValue.textProperty().addListener((obs, isUnfocused, isFocused) -> {
             double amount;
-
                 try {
                     // Strip input of whitespace
                     String searchText = donationValue.getText().replaceAll("\\s+","");
@@ -270,9 +266,7 @@ public class Map implements IScene, PropertyChangeListener {
                 moneyCheckText.setTextFill(Color.BLACK);
                 moneyCheckText.setText("Amount of Healthy meals:" + "\n" + numberOfMeals);
                 moneyCheckText.setWrapText(true);
-
         });
-
     }
 
     /**
@@ -280,7 +274,6 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     public void updateInfoPanel(CountryPath countryPath) {
-        int a = 90;
         informationPanel.setVisible(true);
         informationPanel.getChildren().clear();
         donationPanel.getChildren().clear();
@@ -294,8 +287,6 @@ public class Map implements IScene, PropertyChangeListener {
             drawCountry(countryPath);
             donationPanel.getChildren().add(donationValue);
             donationPanel.getChildren().add(donationButton);
-            donationButton.setTranslateY(a);
-            donationValue.setTranslateY(a);
             Label text = null;
             Integer poverty = countryPath.getPoverty();
             if(poverty == null){
