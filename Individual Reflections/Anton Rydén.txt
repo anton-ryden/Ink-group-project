@@ -1,4 +1,4 @@
-WEEK 1
+*********************WEEK 1*********************
 what do I want to learn or understand better?
 	Learn how a group cooperate at the best of their ability. And get to know the group better.
 
@@ -11,7 +11,7 @@ what is my contribution towards the team’s use of Scrum?
 what is my contribution towards the team’s deliveries?
 	Being on time and doing whats expected
 	
-	WEEK 2
+*********************WEEK 2*********************
 what do I want to learn or understand better?
 	What sort of application we want to build
 
@@ -24,7 +24,7 @@ what is my contribution towards the team’s use of Scrum?
 what is my contribution towards the team’s deliveries?
 	Speaking about potential ideas
 
-	WEEK 3
+*********************WEEK 3*********************
 what do I want to learn or understand better?
 	I want to understand how to use JavaFx and use it for our application. 
 	Absorb as much knowledge as possible.
@@ -39,7 +39,7 @@ what is my contribution towards the team’s deliveries?
 	Making sure the meetings actually happens and participating in all aspects. Latly we have been organizing and 
 	discussing possible solution, making user stories etc.  
 	
-	WEEK 4
+*********************WEEK 4*********************
 what do I want to learn or understand better?
 	I want to understand how we can make a better design pattern
 
@@ -51,3 +51,46 @@ what is my contribution towards the team’s use of Scrum?
 
 what is my contribution towards the team’s deliveries?
 	Alot of new feautres added to the map and some changes to the software pattern. While also helping others with their problem
+	
+*********************Week 5*********************
+
+what do I want to learn or understand better?
+	I want to learn more about JavaFx
+
+how can I help someone else, or the entire team, to learn something new?
+	Teach about good and bad pratices while explaining possible solution for the weeks user stories
+
+what is my contribution towards the team’s use of Scrum?
+	Ask questions. Make sure everyone is comfortable and understand their user stories. And helping with potential problems
+
+what is my contribution towards the team’s deliveries?
+	This week i have been implementing a zoom function, worked on the map rezising correctly and mkaing it possible to select a country.
+
+*********************Week 6*********************
+
+what do I want to learn or understand better?
+	I need to have a deeper understanding of svg paths and how java handels translets on javafx components.
+
+how can I help someone else, or the entire team, to learn something new?
+	Basically a combination from the previous week. 
+
+what is my contribution towards the team’s use of Scrum?
+	Talking and asking question since most of the members are mostly silent. Make sure everyone is participating and comforatable in the group and with their user story.
+
+what is my contribution towards the team’s deliveries?
+	This week i have been working ALOT. I have made some querys and for the database and making sure the information from the database is interpreted in the right way in 	the application. I discoverd 2 bugs last week which i took care of while also implementing a drag function for the map.
+	
+	*********************Week 7*********************
+
+what do I want to learn or understand better?
+	I gained alot of knowledge on svg path last week but since i will be working alot with it this week also it would be nice to gain more knowledge. Specificly how you can make svq path have a "size" so other components does not take the same place in the panels
+
+how can I help someone else, or the entire team, to learn something new?
+	Same as previous weeks. Acting like a sounding board.
+
+what is my contribution towards the team’s use of Scrum?
+	Same as previous week and scheduling 
+
+what is my contribution towards the team’s deliveries?
+	I have made some small changes with ui and helping erik with the gradient line. The main thing I have been working on is the painting of a country in the donation panel when you select it on the map
+
