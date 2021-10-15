@@ -122,4 +122,27 @@ made by the project owners overlooking that the features are easy to implement a
 Application of Scrum:
 Nothing drastic has changed, mostly the addition of a few user stories as we figure out more features to incorporate and more optimizations that 
 need to be made.
+-------(WEEK 7)---------
+Customer Value and Scope
+This sprint was fixing up the last details which was doing small adjustments such as adding a Hide button to give the option of hiding the information panel, adjustments to the color scheme in displaying different levels of property has been changed to more fitting colors. An additional gradient line for the color codes has been added to make it easier for the user to be able to see the different grades of poverty depending on color. Touching up the UI with more information to cover up empty space such as adding an image of the country your clicking on in to the UI. A whole new scene has also been made which shows your User page in which you can see your total donations, which countries you have donated to and how many healthy meals your donations have contributed with. 
 
+The success critera for the team was the most important part this week as it pushed for these adjustments and additional features to be made in order for the project owners success criterias to be fulfilled. Communication has been better this week but it is also because we have learnt the importance of splitting up User stories to be independent which lowered the required communication between groups. 
+
+As this was the last week for coding, the remaining tasks werent that big and mostly some small additional features and adjustments to the different panels. This resulted in that it may not have been the most fair distribution of work but the difference was negligible and we still split up the tasks so that everyone so that most user stories were independent of eachother.
+
+Acceptance tests is mainly our PO meetings where we check on the progress made but it went quite well this week as the majority 
+of the features and adjustments 
+
+Recently we have had quite a stable team velocity and our team satisfaction has been rising. With these few weeks and the results from the team velocity and sprint burndown chart, i believe that we have gotten a better grasp of understanding our groups effort estimation which we use to make sure we don't go overboard with amount of features and changes.
+
+Social Contract and Effort
+Nothing has arised that has made us want to change our social countract. 
+We have spent around 20 with meetings and programming. 
+
+Design decisions and product structure
+Nothing has changed regarding our design deecisions. 
+We have used Javadoc to comment on the majority of our code. 
+Anyone who changes anything within functions keep sure to add neccesary Javadoc adjustments later on however we will also make sure that all code will be properly javadocumented before the final turn-in. THis will also enforce the code quality and coding standard towards the end of the sprint. 
+
+Application of Scrum
+We are all mostly working individually on user stories assigned at meetings and we've had 3 meetings this week in order to make sure that everything is progressing smoothly. Splitting up the project in to different epics has certainly helped us a lot as it makes it easier to see what user stories fit in what category. It also made it easier to make user stories independent which was also one of the things that helped our group the most this week. Nothing else about our application of scrum has really changed.  We are still utilising the trello boards to make our application of scrum easier and we still use PO's at every meeting to make sure all success criterias are being met. Everyone is learning a different aspect of using and learning differnt tools and technologies with Javafx which makes it easier for everyone to help eachother deepen eachothers knowledge as everyone needs to understand the code to a certain extent. 
