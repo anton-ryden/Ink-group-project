@@ -718,22 +718,40 @@ public class World extends Region {
      * @throws FileNotFoundException whenever a country is not found
      */
     private void setCountryColor(Country country, CountryPath path) throws FileNotFoundException {
-        int population;
-        int poverty;
-        double red;
+        Integer population;
+        Integer poverty;
+        double povertyIndex;
+        double h;
+        double s;
+        double b;
+        Color myColor;
         try {
-            if(country.getColor() == null) {
-                population = path.getPopulation();
-                poverty = path.getPoverty();
-                red = ((double) (poverty)) / ((double) population);
-                if (population == 0) {
-                    country.setColor(Color.BLUE);
-                } else {
-                    country.setColor(new Color(Math.min(red*1.5,1), Math.max(1 - red*5, 0), 0, 1));
+            population = path.getPopulation();
+            poverty = path.getPoverty();
+            if (population == 0){
+                country.setColor(Color.GREY);
+            } else if (poverty == null){
+                country.setColor(Color.WHITE);
+            } else if(country.getColor() == null) {
+
+                povertyIndex = ((double) (poverty)) / ((double) population);
+                s = povertyIndex * 2 + 0.3;
+                b = 1;
+                //h = 90 - (povertyIndex)*90;
+                if(povertyIndex >= 0.2) {
+                    h = 54 - povertyIndex * 54 * 0.85;
+                }else{
+                    h = 90 - (povertyIndex*2)*90;
                 }
+                if (s > 1){
+                    s = 1;
+                }
+                myColor = Color.hsb(h, s, b);
+                country.setColor(myColor);
+                //country.setColor(new Color(Math.min(povertyIndex*1.5,1), Math.max(1 - povertyIndex*5, 0), 0, 1));
             }
         } catch (NumberFormatException e) {
-            country.setColor(Color.BLUE);
+            country.setColor(Color.GREY);
         }
     }
 
