@@ -104,3 +104,21 @@ Planned meetings and kept on working on the scrum board.
 
 What is my contribution towards the team’s deliveries?
 Working on a feature to check how many healthy meals a day can be provided from an amount of money and see total amount donated to a country. Also worked with the team reflections.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEEK 7:
+
+What do I want to learn or understand better?
+I want to learn more about how to finish off a product with the help of scrum.
+
+
+How can I help someone else, or the entire team, to learn something new?
+By sharing my knowledge about features and implementations I've worked with this week.
+
+
+What is my contribution towards the team’s use of Scrum?
+Planned meetings and kept on working on the scrum board.
+
+
+What is my contribution towards the team’s deliveries?
+Implemented the feature to change user settings.
