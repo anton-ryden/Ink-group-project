@@ -3,7 +3,9 @@ package InkGroupProject.view;
 import InkGroupProject.model.CountryPath;
 import InkGroupProject.model.Database;
 import InkGroupProject.model.UserSession;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import InkGroupProject.model.WorldBuilder;
 import InkGroupProject.controller.World;
@@ -11,14 +13,12 @@ import InkGroupProject.controller.World.Resolution;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
@@ -43,6 +43,9 @@ public class Map implements IScene, PropertyChangeListener {
     private Button donationButton;
     private CountryPath selectedCountryPath;
     private TextField donationValue;
+    private VBox gradientLine;
+    private CountryPath countryToDraw;
+    private StackPane s;
     Database db;
 
     /**
@@ -74,6 +77,35 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.setMaxWidth(250);
         informationPanel.setVisible(false);
 
+        //***********GradientLine***********
+        HBox gradientBar = new HBox();
+        gradientBar.setPrefHeight(20);
+        gradientBar.setMaxHeight(20);
+        gradientBar.setPrefWidth(300);
+        gradientBar.setMaxWidth(300);
+        gradientBar.setStyle("-fx-background-color: linear-gradient(to right, #D9FFB3, #FF8C1A, #FF0000);");
+
+
+        gradientBar.setSpacing(50);
+        gradientBar.getChildren().add(new Text("0%"));
+        gradientBar.getChildren().add(new Text("25%"));
+        gradientBar.getChildren().add(new Text("50%"));
+        gradientBar.getChildren().add(new Text("75%"));
+        gradientBar.getChildren().add(new Text("100%"));
+        gradientBar.setVisible(true);
+
+
+        gradientLine = new VBox();
+        gradientLine.setPrefHeight(40);
+        gradientLine.setMaxHeight(40);
+        gradientLine.setPrefWidth(300);
+        gradientLine.setMaxWidth(300);
+        gradientLine.getChildren().add(gradientBar);
+        Text text = new Text("Percentage of population being poor");
+        text.setStyle("-fx-font-size: 15px; -fx-stroke: white; -fx-stroke-width: 1px");
+        gradientLine.setAlignment(Pos.CENTER);
+        gradientLine.getChildren().add(text);
+
         //***********DonationPanel************//
         donationPanel = new VBox();
         donationPanel.setStyle("-fx-background-color: #ffffff");
@@ -95,8 +127,7 @@ public class Map implements IScene, PropertyChangeListener {
                 if (value > 0) {
                     db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), value);
                     donationPanel.getChildren().clear();
-                    donationPanel.getChildren().add(donationButton);
-                    donationPanel.getChildren().add(donationValue);
+
                     donationPanel.getChildren().add(new Text("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName()));
                 } else {
                     throw new NumberFormatException("Negative value");
@@ -111,12 +142,13 @@ public class Map implements IScene, PropertyChangeListener {
             }
         });
 
-
-
         //Add BarGraph
         root.add(worldMap, 1,0);
         root.add(donationPanel, 0,0);
         root.add(informationPanel, 2,0);
+        root.add(gradientLine, 1, 0);
+        GridPane.setHalignment(gradientLine, HPos.CENTER);
+        GridPane.setValignment(gradientLine, VPos.BOTTOM);
         GridPane.setHgrow(worldMap, Priority.ALWAYS);
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
     }
@@ -127,11 +159,14 @@ public class Map implements IScene, PropertyChangeListener {
      */
     public void start(Stage stage) {
         Scene mapScene = new Scene(root);
+        stage.setX(Screen.getPrimary().getBounds().getWidth()/5);
+        stage.setY(Screen.getPrimary().getBounds().getHeight()/5);
         stage.setTitle("Interactive Map");
         stage.setResizable(true);
         stage.setScene(mapScene);
         stage.show();
     }
+
 
     /**
      *
@@ -147,7 +182,7 @@ public class Map implements IScene, PropertyChangeListener {
      */
     public void startGraph(CountryPath countryPath) {
         int userX = -90;
-        int userY = -295;
+        int userY = -420;
 
         Text username = new Text("Username:" + UserSession.getInstance().getFirstName());
         donationPanel.getChildren().add(username);
@@ -164,7 +199,7 @@ public class Map implements IScene, PropertyChangeListener {
 
         Text country = new Text(countryPath.getDisplayName());
         donationPanel.getChildren().add(country);
-        country.setTranslateY(-260);
+        country.setTranslateY(-400);
         country.setFont(Font.font("arial", 30));
 
         selectedCountryPath = countryPath;
@@ -240,8 +275,6 @@ public class Map implements IScene, PropertyChangeListener {
 
     }
 
-
-
     /**
      * It updates the infopanel information with the new countrypath that should be displayed
      * @param countryPath the country data that should be displayed
@@ -255,18 +288,22 @@ public class Map implements IScene, PropertyChangeListener {
         country.getStyleClass().add("country");
         donationPanel.getChildren().add(country);
         informationPanel.getChildren().add(country);
-        donationPanel.getChildren().add(donationValue);
-        donationPanel.getChildren().add(donationButton);
-        donationButton.setTranslateY(a);
-        donationValue.setTranslateY(a);
-
 
         int population = countryPath.getPopulation();
         if (population > 0) {
-            int poverty = countryPath.getPoverty();
-            String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
-            Label text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $1.9 a day. " + "That is around " + percentage + "% of the population living in poverty");
-            text.setMaxWidth(160);
+            drawCountry(countryPath);
+            donationPanel.getChildren().add(donationValue);
+            donationPanel.getChildren().add(donationButton);
+            donationButton.setTranslateY(a);
+            donationValue.setTranslateY(a);
+            Label text = null;
+            Integer poverty = countryPath.getPoverty();
+            if(poverty == null){
+                text = new Label("Population: " + population + ". There is no poverty data about this country");
+            }else {
+                String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
+                text = new Label("Population: " + population + " Around " + poverty + " lives with a salary less than $5.5 a day. " + "That is around " + percentage + "% of the population living in poverty");
+            }text.setMaxWidth(160);
             text.setWrapText(true);
             informationPanel.getChildren().add(text);
             startGraph(countryPath);
@@ -287,5 +324,35 @@ public class Map implements IScene, PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         CountryPath countryPath = (CountryPath) evt.getNewValue();
         updateInfoPanel(countryPath);
+    }
+    private void drawCountry(CountryPath countryPath){
+        countryToDraw = new CountryPath("", countryPath.getContent());
+        countryToDraw.setStroke(Color.BLACK);
+        countryToDraw.setFill(Color.WHITE);
+        double countryHeight = countryToDraw.prefWidth(-1);
+        Double scale = null;
+        if (donationPanel.getWidth()/countryHeight < donationPanel.getWidth()/countryToDraw.prefHeight(countryHeight)){
+            scale = donationPanel.getWidth()/countryHeight;
+        }else {
+            scale = donationPanel.getWidth()/countryToDraw.prefHeight(countryHeight);
+        }
+        countryToDraw.setScaleX(scale);
+        countryToDraw.setScaleY(scale);
+
+        double REQUIRED_WIDTH = 100.0;
+        double REQUIRED_HEIGHT = 100.0;
+
+        final Region svgShape = new Region();
+        svgShape.setShape(countryToDraw);
+        svgShape.setMinSize(REQUIRED_WIDTH, REQUIRED_HEIGHT);
+        svgShape.setPrefSize(REQUIRED_WIDTH, REQUIRED_HEIGHT);
+        svgShape.setMaxSize(REQUIRED_WIDTH, REQUIRED_HEIGHT);
+        svgShape.setStyle("-fx-background-color: black;");
+        if (s != null){
+            donationPanel.getChildren().remove(s);
+        }
+        s = new StackPane(countryToDraw);
+        s.setMinSize(donationPanel.getWidth(), donationPanel.getWidth());
+        donationPanel.getChildren().add(s);
     }
 }
