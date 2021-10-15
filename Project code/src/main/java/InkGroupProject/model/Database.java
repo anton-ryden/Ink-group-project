@@ -1,6 +1,8 @@
 package InkGroupProject.model;
 
 import java.sql.*;
+
+import InkGroupProject.view.UserSettings;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 /**
@@ -198,6 +200,34 @@ public class Database {
         }
 
         return healthyDietCost;
+    }
+
+    public boolean updatePassword(String newPassword, int user_id) {
+        try {
+            PreparedStatement updatePassword = connection.prepareStatement("UPDATE accounts SET password =?  WHERE id =?");
+            updatePassword.setString(1, encryptPassword(newPassword));
+            updatePassword.setInt(2, user_id);
+            updatePassword.execute();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public boolean updateUserInfo(String firstName, String lastName, String email, int user_id) {
+        try {
+            PreparedStatement updateUserInfo = connection.prepareStatement("UPDATE accounts SET first_name =?, last_name =?, email =? WHERE id =?");
+            updateUserInfo.setString(1, firstName);
+            updateUserInfo.setString(2, lastName);
+            updateUserInfo.setString(3, email);
+            updateUserInfo.setInt(4, user_id);
+            updateUserInfo.execute();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return false;
+        }
     }
 
 }
