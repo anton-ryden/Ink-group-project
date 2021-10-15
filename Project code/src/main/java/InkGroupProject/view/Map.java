@@ -1,11 +1,12 @@
 package InkGroupProject.view;
 
-import InkGroupProject.model.CountryPath;
+import InkGroupProject.model.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import InkGroupProject.model.Database;
 import InkGroupProject.model.UserSession;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import InkGroupProject.model.WorldBuilder;
 import InkGroupProject.controller.World;
 import InkGroupProject.controller.World.Resolution;
 import javafx.scene.Scene;
@@ -37,6 +38,7 @@ import java.beans.PropertyChangeListener;
 public class Map implements IScene, PropertyChangeListener {
     private World worldMap;
     private GridPane root;
+    private UserPage userPage;
     private VBox informationPanel;
     private VBox donationPanel;
     private Button donationButton;
@@ -63,6 +65,12 @@ public class Map implements IScene, PropertyChangeListener {
         root.setAlignment(Pos.CENTER);
         root.setStyle("-fx-background-color: #3f3f4f");
 
+        //***********UserPage************//
+        userPage = new UserPage();
+        userPage.setPadding(new Insets(10, 10, 10, 10));
+        userPage.setAlignment(Pos.CENTER);
+        userPage.add(new Text(db.getFirstName(UserSession.getInstance().getId())),0,0);
+
 
         //***********InfoPanel***********//
         informationPanel = new VBox();
@@ -86,27 +94,25 @@ public class Map implements IScene, PropertyChangeListener {
         donationButton = new Button("Donate");
         donationButton.setDisable(true);
         donationPanel.getChildren().add(donationButton);
+        Text donationMessage = new Text();
+        donationPanel.getChildren().add(donationMessage);
         donationButton.setOnAction( e -> {
             try {
                 int value = Integer.parseInt(donationValue.getText());
                 if (value > 0) {
                     db.createDonation(UserSession.getInstance().getId(), selectedCountryPath.getDisplayName(), value);
-                    donationPanel.getChildren().clear();
-                    donationPanel.getChildren().add(donationButton);
-                    donationPanel.getChildren().add(donationValue);
-                    donationPanel.getChildren().add(new Text("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName()));
+                    donationMessage.setText("Thanks! "+ donationValue.getText() + "$ has been donated to\n" + selectedCountryPath.getDisplayName());
                 } else {
                     throw new NumberFormatException("Negative value");
                 }
             }
 
             catch (NumberFormatException exception) {
-                donationPanel.getChildren().clear();
-                donationPanel.getChildren().add(donationButton);
-                donationPanel.getChildren().add(donationValue);
-                donationPanel.getChildren().add(new Text("An error occurred"));
+                donationMessage.setText("An error occurred");
             }
         });
+
+
 
 
 
@@ -116,6 +122,8 @@ public class Map implements IScene, PropertyChangeListener {
         root.add(informationPanel, 2,0);
         GridPane.setHgrow(worldMap, Priority.ALWAYS);
         GridPane.setVgrow(worldMap, Priority.ALWAYS);
+
+
     }
 
     /**
@@ -128,6 +136,20 @@ public class Map implements IScene, PropertyChangeListener {
         stage.setResizable(true);
         stage.setScene(mapScene);
         stage.show();
+
+        //***********UserPage************//
+        Scene userScene = new Scene(userPage);
+        Button toMap = new Button("Back");
+        userPage.add(toMap, 1,0);
+        toMap.setOnAction( e -> {
+            stage.setScene(mapScene);
+        });
+        Button toUserPage = new Button("User Page");
+        toUserPage.setOnAction( e -> {
+            userPage.update();
+            stage.setScene(userScene);
+        });
+        donationPanel.getChildren().add(toUserPage);
     }
 
     /**
@@ -223,7 +245,6 @@ public class Map implements IScene, PropertyChangeListener {
         informationPanel.getChildren().clear();
         Text country = new Text(countryPath.getDisplayName());
         country.getStyleClass().add("country");
-
         informationPanel.getChildren().add(country);
         int population = countryPath.getPopulation();
         if (population > 0) {
@@ -243,6 +264,8 @@ public class Map implements IScene, PropertyChangeListener {
         }
     }
 
+
+
     /**
      * This method gets called whenever a new country is selected on the map and new information should be displayed
      * @param evt the event that contains the new value
@@ -252,4 +275,6 @@ public class Map implements IScene, PropertyChangeListener {
         CountryPath countryPath = (CountryPath) evt.getNewValue();
         updateInfoPanel(countryPath);
     }
+
+
 }
