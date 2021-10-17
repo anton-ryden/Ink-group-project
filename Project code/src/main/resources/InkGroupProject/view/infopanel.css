@@ -2,37 +2,36 @@
     -fx-bar-fill: red;
 }
 
-.axis-label{
+.axis-label {
     -fx-text-fill: grey;
 }
 
-.chart{
+.chart {
     -fx-text-fill: grey;
     -fx-font-size: 10px;
     -fx-text-alignment: left;
 }
 
-.country{
--fx-font-size: 25px ;
--fx-text-fill: grey;
+.info-header {
+    -fx-font-size: 25px;
+    -fx-text-alignment: center;
 }
 
-.axis{
--fx-font-size: 12px;
--fx-tickLabelFill: grey;
+.axis {
+    -fx-font-size: 12px;
+    -fx-tickLabelFill: grey;
 }
 
-VBox, HBox {
--fx-max-width: 250px;
--fx-alignment: center;
--fx-background-color: white;
+GridPane {
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+    -fx-background-radius: 5px;
+    -fx-background-color: white;
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
 }
 
-.hide {
--fx-border-radius: 5px;
-}
-
-.root{
+.root {
     -fx-font-size: 10px;
 }
 
