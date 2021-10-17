@@ -1,8 +1,8 @@
 package InkGroupProject.model;
 
 import java.sql.*;
+import java.util.HashMap;
 
-import InkGroupProject.view.UserSettings;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 /**
@@ -77,11 +77,61 @@ public class Database {
     public int getTotalDonatedMoney(String country) {
         int res = 0;
         try {
-            PreparedStatement query = connection.prepareStatement("SELECT SUM(value) FROM donations WHERE country = ?");
+            PreparedStatement query = connection.prepareStatement("SELECT SUM(value) AS value FROM donations WHERE country = ?");
             query.setString(1, country);
             ResultSet result = query.executeQuery();
 
-            res = result.getInt("SUM(value)");
+            res = result.getInt("value");
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return res;
+    }
+
+    public int getTotalDonatedMoneyByUser(int user) {
+        int res = 0;
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT SUM(value) AS value FROM donations WHERE user_id = ?");
+            query.setString(1, String.valueOf(user));
+            ResultSet result = query.executeQuery();
+
+            res = result.getInt("value");
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return res;
+    }
+
+    public HashMap<String,Integer> getDonatedMoneyByUser(int user) {
+        HashMap<String, Integer> res = new HashMap<String, Integer>();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT country, SUM(value) as value FROM donations WHERE user_id = ? GROUP BY country");
+            query.setString(1, String.valueOf(user));
+            ResultSet result = query.executeQuery();
+            res.put(result.getString("country"),result.getInt("value"));
+            while (result.next()) {
+                res.put(result.getString("country"),result.getInt("value"));
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return res;
+    }
+
+    public String getFirstName(int user) {
+        String res = "";
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT first_name FROM accounts WHERE id = ?");
+            query.setString(1, String.valueOf(user));
+            ResultSet result = query.executeQuery();
+
+            res = result.getString("first_name");
 
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -163,18 +213,9 @@ public class Database {
             query.setString(1, countryName);
             ResultSet result = query.executeQuery();
             countryPath.setPopulation(result.getInt("population"));
-            Double temp = result.getDouble("num_of_poor_1_9");
-            if (!result.wasNull()){
-                countryPath.setNumberOfPoor19Dollar(temp);
-            }
-            temp = result.getDouble("num_of_poor_3_2");
-            if (!result.wasNull()){
-                countryPath.setNumberOfPoor32Dollar(temp);
-            }
-            temp = result.getDouble("num_of_poor_5_5");
-            if (!result.wasNull()){
-                countryPath.setNumberOfPoor55Dollar(temp);
-            }
+            countryPath.setNumberOfPoor19Dollar(result.getDouble("num_of_poor_1_9"));
+            countryPath.setNumberOfPoor32Dollar(result.getDouble("num_of_poor_3_2"));
+            countryPath.setNumberOfPoor55Dollar(result.getDouble("num_of_poor_5_5"));
             // Temporary until healthy_diet_cost has been merged into poverty_stats
             countryPath.setHealthyDietCost(result.getDouble("cost"));
         } catch (SQLException ex) {
@@ -182,6 +223,8 @@ public class Database {
         }
         return countryPath;
     }
+
+
 
     /**
      *
@@ -191,43 +234,16 @@ public class Database {
     public double getDietCost (String country) {
         double healthyDietCost;
         try {
-            PreparedStatement query = connection.prepareStatement("SELECT cost FROM poverty_stats WHERE country = ?");
+            PreparedStatement query = connection.prepareStatement("SELECT cost FROM poverty_stats WHERE country_name = ?");
             query.setString(1, country);
             ResultSet result = query.executeQuery();
             healthyDietCost = result.getDouble("cost");
         } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
             healthyDietCost = -1;
         }
 
         return healthyDietCost;
-    }
-
-    public boolean updatePassword(String newPassword, int user_id) {
-        try {
-            PreparedStatement updatePassword = connection.prepareStatement("UPDATE accounts SET password =?  WHERE id =?");
-            updatePassword.setString(1, encryptPassword(newPassword));
-            updatePassword.setInt(2, user_id);
-            updatePassword.execute();
-            return true;
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-            return false;
-        }
-    }
-
-    public boolean updateUserInfo(String firstName, String lastName, String email, int user_id) {
-        try {
-            PreparedStatement updateUserInfo = connection.prepareStatement("UPDATE accounts SET first_name =?, last_name =?, email =? WHERE id =?");
-            updateUserInfo.setString(1, firstName);
-            updateUserInfo.setString(2, lastName);
-            updateUserInfo.setString(3, email);
-            updateUserInfo.setInt(4, user_id);
-            updateUserInfo.execute();
-            return true;
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-            return false;
-        }
     }
 
 }
