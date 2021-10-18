@@ -1,12 +1,3 @@
 "Project code/.idea"
-"Project code/.gradle"
-"Project code/gradle"
-"Project code/build"
-"Project code/gradlew"
-"Project code/gradlew.bat"
-.idea
-.gradle
-gradle
-build
-out
-data
+"Project code/target"
+
