@@ -50,7 +50,6 @@ public class Map implements IScene, PropertyChangeListener {
 
     /**
      * Constructor for that calls for initialization
-     * @param worldMap the interactive map that is going to be shown
      */
     public Map() {
         this.worldMap = createWorld();
