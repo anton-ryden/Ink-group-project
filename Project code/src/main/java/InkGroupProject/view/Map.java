@@ -210,6 +210,7 @@ public class Map implements IScene, PropertyChangeListener {
         gradientBar.setMaxWidth(300);
         gradientBar.setSpacing(50);
         gradientBar.setStyle("-fx-background-color: linear-gradient(to right, #D9FFB3, #FF8C1A, #FF0000);");
+        gradientBar.setPadding(new Insets(1, 5, 1, 5));
 
         gradientBar.getChildren().add(new Text("0%"));
         gradientBar.getChildren().add(new Text("25%"));
