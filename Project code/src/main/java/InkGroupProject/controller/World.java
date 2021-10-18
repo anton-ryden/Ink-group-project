@@ -246,7 +246,7 @@ public class World extends Region {
         group                = new Group();
 
         setOnMousePressed(event -> {
-            startDragX = event.getSceneX() - lastDragX ;
+            startDragX = event.getSceneX() - lastDragX;
             startDragY = event.getSceneY() - lastDragY;
             event.consume();
         });
@@ -283,8 +283,8 @@ public class World extends Region {
             setScaleFactor(scale);
             setPivot(deltaX * factor, deltaY * factor);
 
-            lastDragX = getTranslateX();
-            lastDragY = getTranslateY();
+            lastDragX = deltaX * factor;
+            lastDragY = deltaY * factor;
             evt.consume();
         };
 
