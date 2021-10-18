@@ -124,22 +124,6 @@ public class Database {
         return res;
     }
 
-    public String getFirstName(int user) {
-        String res = "";
-        try {
-            PreparedStatement query = connection.prepareStatement("SELECT first_name FROM accounts WHERE id = ?");
-            query.setString(1, String.valueOf(user));
-            ResultSet result = query.executeQuery();
-
-            res = result.getString("first_name");
-
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-
-        return res;
-    }
-
     /**
      *Encrypts the password
      * @param password the password to encrypt
@@ -193,7 +177,7 @@ public class Database {
 
     public boolean updateUserInfo(String firstName, String lastName, String email, int user_id) {
         try {
-            PreparedStatement updateUserInfo = connection.prepareStatement("UPDATE accounts SET first_name =?, last_name =?, email =? WHERE id =?");
+            PreparedStatement updateUserInfo = connection.prepareStatement("UPDATE accounts SET first_name = ?, last_name = ?, email = ? WHERE id = ?");
             updateUserInfo.setString(1, firstName);
             updateUserInfo.setString(2, lastName);
             updateUserInfo.setString(3, email);

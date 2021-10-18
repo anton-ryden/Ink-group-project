@@ -42,6 +42,11 @@ public final class UserSession {
         return user.getDateCreated();
     }
 
+    public void updateUserInfo(String firstName, String lastName, String email) {
+        User newUser = new User(user.getId(), firstName, lastName, email, user.getDateCreated());
+        user = newUser;
+    }
+
     public boolean isLoggedIn() {
         return instance != null;
     }

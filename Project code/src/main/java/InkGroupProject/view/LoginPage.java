@@ -112,5 +112,4 @@ public class LoginPage implements IScene {
     public Parent getRoot() {
         return grid;
     }
-
 }
