@@ -73,16 +73,7 @@ public class LoginPage implements IScene {
                     User account = db.getAccount(email.getText());
                     UserSession.login(account);
 
-                    World worldMap = WorldBuilder.create()
-                            .resolution(World.Resolution.HI_RES)
-                            .zoomEnabled(true)
-                            .hoverEnabled(true)
-                            .selectionEnabled(true)
-                            .fadeColors(true)
-                            .build();
-
-                    Map mapScene = new Map(worldMap);
-                    worldMap.addPropertyChangeListener(mapScene);
+                    Map mapScene = new Map();
                     mapScene.start(Main.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);

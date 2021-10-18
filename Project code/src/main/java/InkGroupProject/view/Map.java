@@ -3,6 +3,7 @@ package InkGroupProject.view;
 import InkGroupProject.model.CountryPath;
 import InkGroupProject.model.Database;
 import InkGroupProject.model.UserSession;
+import InkGroupProject.model.WorldBuilder;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -51,18 +52,31 @@ public class Map implements IScene, PropertyChangeListener {
      * Constructor for that calls for initialization
      * @param worldMap the interactive map that is going to be shown
      */
-    public Map(World worldMap) {
-        this.worldMap = worldMap;
+    public Map() {
+        this.worldMap = createWorld();
         init();
         initDonationPanel();
         initInformationPanel();
         initGradientLine();
     }
 
+    private World createWorld() {
+        World worldMap = WorldBuilder.create()
+                .resolution(World.Resolution.HI_RES)
+                .zoomEnabled(true)
+                .hoverEnabled(true)
+                .selectionEnabled(true)
+                .fadeColors(true)
+                .build();
+        worldMap.addPropertyChangeListener(this);
+
+        return worldMap;
+    }
+
     /**
      * Initializes the root pane.
      */
-    public void init() {
+    private void init() {
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
 
         root = new GridPane();
@@ -96,7 +110,8 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.getChildren().add(myPageButton);
         GridPane.setConstraints(myPageButton, 0, 1);
         myPageButton.setOnAction(e -> {
-            //
+            UserPage userPage = new UserPage();
+            userPage.start(Main.getStage());
         });
 
         donationPanelHeader = new Label();
@@ -171,7 +186,6 @@ public class Map implements IScene, PropertyChangeListener {
             // todo: also deselect the CountryPath (see mouse events in World)
         });
         informationPanel.getChildren().add(hideButton);
-
         GridPane.setConstraints(hideButton, 1, 0);
         GridPane.setHalignment(hideButton, HPos.RIGHT);
 
