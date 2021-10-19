@@ -24,6 +24,10 @@ This allows us to work in smaller groups and share ideas/thoughts within your su
 We used a trello board and took inspiration from a exercise session how the structure should look like. This made it possible
 to come up with various epics and user stories.
 
+What we want it to be (B & C)
+At this point we wished we would have had more features in mind for the project as it currently feels small for the amount of sprints we would have available for this. We also wished that we had started working at this point.
+The plan to do this would have been to start working with the features we already had planned earlier even though we still felt like the project was lacking in size. If we started working earlier, we would have been able to experience a lot more of our limitations in terms of amount of work done per sprint and new features would have been easier to plan.
+
 -------(WEEK 4)---------
 
 Customer Value and Scope:
@@ -60,6 +64,10 @@ We are all using the same IDE (Intellij) which also gives us the option to use t
 
 Nothing from literature however a lot from the latest guest lecture. For example, making sure everyone participate in the meetings and not being afraid of poking for answers. Do not ask yes or no questions as a Scrum master. 
 
+
+What we want it to be (B & C)
+For this week we felt as if we got a massive amount of work and progress done in the project. However we do feel like it was too much for a single sprint and we would have rather split the amount of week atleast between the previous sprint and the current sprint. This could have been done if we focused on getting the project going the previous weeks.
+
 -------(WEEK 5)---------
 Customer Value and Scope:
 This sprint we have focused on mainly improving our features and small quality of life changes which includes more work with UI(Graphs displaying information, colors that signify how much a certain country is in Poverty), grabbing certain data from databases and being able to stay logged in with an account.
@@ -87,6 +95,10 @@ Application of Scrum
 Nothing has changed this week in terms of our application of scrum. 
 We have however split a few user stories in to sub stories to make the user stories more independent which allowed for members to work
 on separate features. 
+
+What we want it to be (B & C)
+This week we wished the work progressed more smoothly however this wasnt the case due to certain user stories relying on other user stories to be completed. This made it so that some user stories had to be put on hold and some peoples work got delayed. The fact that everyone had to get familiarised with eachothers code also contributed. We also wished that we had documeneted a lot more this week as our project currently lacks documentation. This would have been fixed if we had decided early on that what we would document with and started documenting from the beginning. The user story issue would have been solved had we focused more properly on separating our user stories in to more independent user stories. 
+
 -------(WEEK 6)---------
 Customer Value and Scope
 This sprint mainly revolved around the group optimizing the code which included gathering most information that was spread in different files in to
@@ -122,6 +134,11 @@ made by the project owners overlooking that the features are easy to implement a
 Application of Scrum:
 Nothing drastic has changed, mostly the addition of a few user stories as we figure out more features to incorporate and more optimizations that 
 need to be made.
+
+
+What we want it to be (B & C)
+Unfortunately we ran in to the same issues last week due to the user stories entanglement that made it difficult to progress some user stories. This time wasn't as bad seeing as everyone had been more familiarised with eachothers code and could start working on other user stories if the user story they were progressing on was being halted due to another user story not being finished. As we previously mentioned it would be an easy fix if we had properly altered our user stories to be more independent. 
+
 -------(WEEK 7)---------
 Customer Value and Scope
 This sprint was fixing up the last details which was doing small adjustments such as adding a Hide button to give the option of hiding the information panel, adjustments to the color scheme in displaying different levels of property has been changed to more fitting colors. An additional gradient line for the color codes has been added to make it easier for the user to be able to see the different grades of poverty depending on color. Touching up the UI with more information to cover up empty space such as adding an image of the country your clicking on in to the UI. A whole new scene has also been made which shows your User page in which you can see your total donations, which countries you have donated to and how many healthy meals your donations have contributed with. 
@@ -146,3 +163,7 @@ Anyone who changes anything within functions keep sure to add neccesary Javadoc 
 
 Application of Scrum
 We are all mostly working individually on user stories assigned at meetings and we've had 3 meetings this week in order to make sure that everything is progressing smoothly. Splitting up the project in to different epics has certainly helped us a lot as it makes it easier to see what user stories fit in what category. It also made it easier to make user stories independent which was also one of the things that helped our group the most this week. Nothing else about our application of scrum has really changed.  We are still utilising the trello boards to make our application of scrum easier and we still use PO's at every meeting to make sure all success criterias are being met. Everyone is learning a different aspect of using and learning differnt tools and technologies with Javafx which makes it easier for everyone to help eachother deepen eachothers knowledge as everyone needs to understand the code to a certain extent. 
+
+
+What we want it to be (B & C)
+This week has been the best week besides week 3 in terms of team satisfaction as we believe that we have learnt a lot from our mistakes, especially with user stories being more independent making the progress this week the most smooth. Not quite sure what we would have wanted to change this week as most people were very satisfied with few issues. 
