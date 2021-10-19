@@ -19,12 +19,10 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
-
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -40,6 +38,9 @@ public class Map implements IScene, PropertyChangeListener {
     private Label infoPanelHeader;
     private Label moneyCheckText;
     private Label donationSoFar;
+    private Text welcomeText;
+    private Button myPageButton;
+    private Button hideShowButton;
     private Button donationButton;
     private CountryPath selectedCountryPath;
     private TextField donationValue;
@@ -55,6 +56,7 @@ public class Map implements IScene, PropertyChangeListener {
         this.worldMap = createWorld();
         init();
         initDonationPanel();
+        hideDonationPanel();
         initInformationPanel();
         initGradientLine();
     }
@@ -94,6 +96,7 @@ public class Map implements IScene, PropertyChangeListener {
     private void initDonationPanel() {
         donationPanel = new GridPane();
         donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+        donationPanel.getStyleClass().add("donation-panel");
         donationPanel.setMinWidth(250);
         donationPanel.setMaxWidth(250);
         donationPanel.setPrefWidth(250);
@@ -101,41 +104,52 @@ public class Map implements IScene, PropertyChangeListener {
 
         UserSession user = UserSession.getInstance();
         String userFullName = user.getFirstName() + " " + user.getLastName();
-        Text welcomeText = new Text("Welcome, " + userFullName + "!");
-        donationPanel.getChildren().add(welcomeText);
-        GridPane.setConstraints(welcomeText, 0, 0);
+        welcomeText = new Text("Welcome, " + userFullName + "!");
+        donationPanel.add(welcomeText, 0, 0);
 
-        Button myPageButton = new Button("My page");
-        donationPanel.getChildren().add(myPageButton);
-        GridPane.setConstraints(myPageButton, 0, 1);
+        myPageButton = new Button("My page");
+        donationPanel.add(myPageButton, 0, 1);
         myPageButton.setOnAction(e -> {
             UserPage userPage = new UserPage();
             userPage.start(Main.getStage());
         });
 
+        hideShowButton = new Button("˄");
+        donationPanel.add(hideShowButton, 1, 0);
+        GridPane.setHalignment(hideShowButton, HPos.RIGHT);
+
+        if (selectedCountryPath == null)
+            hideShowButton.setDisable(true);
+
+        hideShowButton.setOnAction(e -> {
+            if (hideShowButton.getText().equals("˄")) {
+                hideShowButton.setText("˅");
+                updateDonationPanel(selectedCountryPath);
+            } else {
+                hideShowButton.setText("˄");
+                hideDonationPanel();
+            }
+        });
+
         donationPanelHeader = new Label();
         donationPanelHeader.getStyleClass().add("donation-header");
         donationPanelHeader.setWrapText(true);
-        donationPanel.getChildren().add(2, donationPanelHeader);
-        GridPane.setConstraints(donationPanelHeader, 0, 3, 2, 1);
+        donationPanel.add(donationPanelHeader, 0, 3, 2, 1);
         GridPane.setHalignment(donationPanelHeader, HPos.CENTER);
 
         stackPane = new StackPane();
         stackPane.setMinSize(donationPanel.getPrefWidth(), donationPanel.getPrefWidth());
-        donationPanel.getChildren().add(3, stackPane);
-        GridPane.setConstraints(stackPane, 0, 4, 2, 1);
+        donationPanel.add(stackPane, 0, 4, 2, 1);
         GridPane.setHalignment(stackPane, HPos.CENTER);
 
         donationValue = new TextField();
         donationValue.setPromptText("Enter how much you want to donate");
         donationValue.setVisible(false);
-        donationPanel.getChildren().add(donationValue);
-        GridPane.setConstraints(donationValue, 0, 5, 2, 1);
+        donationPanel.add(donationValue, 0, 5, 2, 1);
 
         donationButton = new Button("Donate");
         donationButton.setVisible(false);
-        donationPanel.getChildren().add(donationButton);
-        GridPane.setConstraints(donationButton, 0, 6, 2, 1);
+        donationPanel.add(donationButton, 0, 6, 2, 1);
         GridPane.setHalignment(donationButton, HPos.CENTER);
 
         donationButton.setOnAction(e -> {
@@ -160,13 +174,11 @@ public class Map implements IScene, PropertyChangeListener {
         });
 
         moneyCheckText = new Label();
-        donationPanel.getChildren().add(moneyCheckText);
-        GridPane.setConstraints(moneyCheckText, 0, 7, 2, 1);
+        donationPanel.add(moneyCheckText, 0, 7, 2, 1);
 
         donationSoFar = new Label();
         donationSoFar.setWrapText(true);
-        donationPanel.getChildren().add(donationSoFar);
-        GridPane.setConstraints(donationSoFar, 0, 8, 2, 1);
+        donationPanel.add(donationSoFar, 0, 8, 2, 1);
 
         root.add(donationPanel, 0,0);
     }
@@ -184,15 +196,13 @@ public class Map implements IScene, PropertyChangeListener {
             informationPanel.setVisible(false);
             // todo: also deselect the CountryPath (see mouse events in World)
         });
-        informationPanel.getChildren().add(hideButton);
-        GridPane.setConstraints(hideButton, 1, 0);
+        informationPanel.add(hideButton, 1, 0);
         GridPane.setHalignment(hideButton, HPos.RIGHT);
 
         infoPanelHeader = new Label();
         infoPanelHeader.getStyleClass().add("info-header");
         infoPanelHeader.setWrapText(true);
-        informationPanel.getChildren().add(infoPanelHeader);
-        GridPane.setConstraints(infoPanelHeader, 0, 1, 2, 1);
+        informationPanel.add(infoPanelHeader, 0, 1, 2, 1);
         GridPane.setHalignment(infoPanelHeader, HPos.CENTER);
 
         root.add(informationPanel, 2,0);
@@ -236,28 +246,6 @@ public class Map implements IScene, PropertyChangeListener {
     }
 
     /**
-     *  Sets the scene ready for display
-     * @param stage The window that contains all the javafx applications
-     */
-    public void start(Stage stage) {
-        Scene mapScene = new Scene(root);
-        stage.setX(Screen.getPrimary().getBounds().getWidth()/5);
-        stage.setY(Screen.getPrimary().getBounds().getHeight()/5);
-        stage.setTitle("Interactive Map");
-        stage.setResizable(true);
-        stage.setScene(mapScene);
-        stage.show();
-    }
-
-    /**
-     *
-     * @return the root of the map class.
-     */
-    public Parent getRoot() {
-        return root;
-    }
-
-    /**
      * Creates the graph in the info-panel
      * @param countryPath the country data that should be displayed
      */
@@ -292,10 +280,22 @@ public class Map implements IScene, PropertyChangeListener {
         series1.getData().add(new XYChart.Data("3.2", percentage2));
         series1.getData().add(new XYChart.Data("5.5", percentage3));
         barChart.getData().addAll(series1);
-        informationPanel.getChildren().add(barChart);
-
-        GridPane.setConstraints(barChart, 0, 3, 2, 1);
+        informationPanel.add(barChart, 0, 3, 2, 1);
         GridPane.setHalignment(barChart, HPos.CENTER);
+    }
+
+    private void hideDonationPanel() {
+        root.getChildren().remove(donationPanel);
+        donationPanel = new GridPane();
+        donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+        donationPanel.getStyleClass().add("donation-panel");
+        donationPanel.getStyleClass().add("donation-panel-hidden");
+        donationPanel.add(welcomeText, 0, 0);
+        GridPane.setHgrow(welcomeText, Priority.ALWAYS);
+        donationPanel.add(myPageButton, 0, 1);
+        donationPanel.add(hideShowButton, 1, 0);
+        root.add(donationPanel, 0, 0);
+        GridPane.setValignment(donationPanel, VPos.TOP);
     }
 
     /**
@@ -303,8 +303,11 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the selected country.
      */
     private void updateDonationPanel(CountryPath countryPath) {
-        donationPanel.getChildren().clear();
+        hideDonationPanel();
         initDonationPanel();
+
+        hideShowButton.setText("˅");
+        hideShowButton.setDisable(false);
 
         String countryName = countryPath.getDisplayName();
         donationPanelHeader.setText(countryName);
@@ -374,9 +377,7 @@ public class Map implements IScene, PropertyChangeListener {
         }
         text.setMaxWidth(200);
         text.setWrapText(true);
-        informationPanel.getChildren().add(text);
-
-        GridPane.setConstraints(text, 0, 2, 2, 1);
+        informationPanel.add(text, 0, 2, 2, 1);
         GridPane.setHalignment(text, HPos.CENTER);
 
         startGraph(countryPath);
@@ -429,8 +430,29 @@ public class Map implements IScene, PropertyChangeListener {
         stackPane = new StackPane(countryToDraw);
         stackPane.setMinSize(dpWidth, dpWidth);
         stackPane.setMaxSize(dpWidth, dpWidth);
-        donationPanel.getChildren().add(stackPane);
-        GridPane.setConstraints(stackPane, 0, 4, 2, 1);
+        donationPanel.add(stackPane, 0, 4, 2, 1);
         GridPane.setHalignment(stackPane, HPos.CENTER);
+    }
+
+    /**
+     *  Sets the scene ready for display
+     * @param stage The window that contains all the javafx applications
+     */
+    public void start(Stage stage) {
+        Scene mapScene = new Scene(root);
+        stage.setX(Screen.getPrimary().getBounds().getWidth()/5);
+        stage.setY(Screen.getPrimary().getBounds().getHeight()/5);
+        stage.setTitle("Interactive Map");
+        stage.setResizable(true);
+        stage.setScene(mapScene);
+        stage.show();
+    }
+
+    /**
+     *
+     * @return the root of the map class.
+     */
+    public Parent getRoot() {
+        return root;
     }
 }

@@ -2,14 +2,19 @@
     -fx-max-width: 230px;
 }
 
-GridPane {
+.donation-panel {
     -fx-min-width: 250px;
     -fx-max-width: 250px;
+    -fx-pref-width: 250px;
     -fx-padding: 10px;
-    /*-fx-spacing: 10px;*/
+    -fx-vgap: 10px;
     -fx-background-radius: 5px;
     -fx-background-color: white;
-    -fx-vgap: 10px;
+}
+
+.donation-panel-hidden {
+    -fx-min-height: 90px;
+    -fx-max-height: 90px;
 }
 
 .donation-header {
