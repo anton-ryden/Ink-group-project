@@ -100,12 +100,17 @@ public class UserPage implements IScene {
         TableColumn<HashMap.Entry<String,Integer>, Integer> healthyMeals      = new TableColumn("Healthy Meals");
 
         countryColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getKey()));
-        donationSumColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getValue()));
+        donationSumColumn.setCellValueFactory(donationsParam -> {
+            int donationTotal = donationsParam.getValue().getValue();
+            String donationTotalString = String.format("%,d", donationTotal);
+            return new SimpleObjectProperty(donationTotalString);
+        });
         healthyMeals.setCellValueFactory(donationsParam -> {
             int donationTotal = donationsParam.getValue().getValue();
             String country = donationsParam.getValue().getKey();
             double dietCost = db.getDietCost(country);
-            return new SimpleObjectProperty((int)(donationTotal / dietCost));
+            String healthyMealsString = String.format("%,d", (int)(donationTotal / dietCost));
+            return new SimpleObjectProperty(healthyMealsString);
         });
 
         ObservableList<HashMap.Entry<String,Integer>> items = FXCollections.observableArrayList(donations.entrySet());

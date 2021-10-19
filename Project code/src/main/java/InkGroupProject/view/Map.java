@@ -4,6 +4,7 @@ import InkGroupProject.model.CountryPath;
 import InkGroupProject.model.Database;
 import InkGroupProject.model.UserSession;
 import InkGroupProject.model.WorldBuilder;
+import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -157,12 +158,13 @@ public class Map implements IScene, PropertyChangeListener {
                 int value = Integer.parseInt(donationValue.getText());
                 if (value > 0) {
                     String countryName = selectedCountryPath.getDisplayName();
+                    String donationAmountString = String.format("%,d", Integer.parseInt(donationValue.getText()));
                     db.createDonation(UserSession.getInstance().getId(), countryName, value);
                     donationPanel.getChildren().clear();
                     donationPanel.setAlignment(Pos.CENTER);
                     Label confirmationText = new Label();
                     confirmationText.setTextFill(Color.GREEN);
-                    confirmationText.setText("Thanks! $" + donationValue.getText() + " has been donated to\n" + countryName);
+                    confirmationText.setText("Thanks! $" + donationAmountString + " has been donated to\n" + countryName);
                     donationPanel.getChildren().add(confirmationText);
                 } else {
                     throw new NumberFormatException("Negative value");
@@ -318,9 +320,14 @@ public class Map implements IScene, PropertyChangeListener {
         donationValue.textProperty().addListener((obs, isUnfocused, isFocused) -> {
             double amount;
             try {
-                // Strip input of whitespace
-                String searchText = donationValue.getText().replaceAll("\\s+","");
+                // Strip input of non-numeric characters
+                String searchText = donationValue.getText().replaceAll("[^\\d.]", "");
                 amount = Double.parseDouble(searchText);
+                String amountString = String.format("%,d", (int)amount);
+                Platform.runLater(() -> {
+                    donationValue.setText(amountString);
+                    donationValue.positionCaret(amountString.length());
+                });
             } catch (NumberFormatException ex) {
                 amount = -1;
             }
@@ -328,9 +335,10 @@ public class Map implements IScene, PropertyChangeListener {
             int numberOfMeals = (int)(amount / cost);
             if (numberOfMeals < 0)
                 numberOfMeals = 0;
+            String numberOfMealsString = String.format("%,d", numberOfMeals);
             if (cost > 0) {
                 moneyCheckText.setTextFill(Color.BLACK);
-                moneyCheckText.setText("Number of healthy meals: " + numberOfMeals);
+                moneyCheckText.setText("Number of healthy meals: " + numberOfMealsString);
             }
         });
 
@@ -345,7 +353,8 @@ public class Map implements IScene, PropertyChangeListener {
             moneyCheckText.setText("No price data for healthy meals was found for " + countryName);
             moneyCheckText.setWrapText(true);
         }
-        donationSoFar.setText(countryName + " has been donated $" + db.getTotalDonatedMoney(countryName) + " so far");
+        String totalDonationString = String.format("%,d", db.getTotalDonatedMoney(countryName));
+        donationSoFar.setText(countryName + " has been donated $" + totalDonationString + " so far");
     }
 
     /**
@@ -361,18 +370,20 @@ public class Map implements IScene, PropertyChangeListener {
         infoPanelHeader.setText(countryName);
 
         int population = countryPath.getPopulation();
+        String populationString = String.format("%,d", population);
         Label text = new Label();
         Integer poverty = countryPath.getPoverty();
+        String povertyString = String.format("%,d", poverty);
         if (poverty == null) {
             text.setTextFill(Color.RED);
             text.setText("No poverty data was found for " + countryName + ".");
         } else if (poverty == 0) {
             text.setTextFill(Color.BLACK);
-            text.setText("Population: " + population + "\nThere are no records of poverty for " + countryName + ".");
+            text.setText("Population: " + populationString + "\nThere are no records of poverty for " + countryName + ".");
         } else {
             text.setTextFill(Color.BLACK);
             String percentage = String.valueOf(Math.round((double) poverty * 100 / population));
-            text.setText("Population: " + population + "\nAround " + poverty + " lives with a salary less than $5.5 a day. "
+            text.setText("Population: " + populationString + "\nAround " + povertyString + " lives with a salary less than $5.5 a day. "
                     + "That is around " + percentage + "% of the population living in poverty.");
         }
         text.setMaxWidth(200);
