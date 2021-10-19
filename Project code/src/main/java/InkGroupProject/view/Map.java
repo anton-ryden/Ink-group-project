@@ -236,7 +236,7 @@ public class Map implements IScene, PropertyChangeListener {
         gradientLine.getChildren().add(gradientBar);
         gradientLine.setAlignment(Pos.CENTER);
 
-        Text text = new Text("Percentage of population being poor");
+        Text text = new Text("Percentage of population living in poverty");
         text.setStyle("-fx-font-size: 15px; -fx-stroke: white; -fx-stroke-width: 1px");
         gradientLine.getChildren().add(text);
 
