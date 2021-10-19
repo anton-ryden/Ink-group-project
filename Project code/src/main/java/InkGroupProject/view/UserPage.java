@@ -101,7 +101,12 @@ public class UserPage implements IScene {
 
         countryColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getKey()));
         donationSumColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getValue()));
-        healthyMeals.setCellValueFactory(donationsParam -> new SimpleObjectProperty((int)db.getDietCost(donationsParam.getValue().getKey())));
+        healthyMeals.setCellValueFactory(donationsParam -> {
+            int donationTotal = donationsParam.getValue().getValue();
+            String country = donationsParam.getValue().getKey();
+            double dietCost = db.getDietCost(country);
+            return new SimpleObjectProperty((int)(donationTotal / dietCost));
+        });
 
         ObservableList<HashMap.Entry<String,Integer>> items = FXCollections.observableArrayList(donations.entrySet());
 
