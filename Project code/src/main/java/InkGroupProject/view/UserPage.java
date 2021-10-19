@@ -95,16 +95,18 @@ public class UserPage implements IScene {
     }
 
     private TableView createTable(HashMap<String,Integer> donations) {
-        TableColumn<HashMap.Entry<String,Integer>, String>  countryColumn     = new TableColumn<>("Country");
-        TableColumn<HashMap.Entry<String,Integer>, Integer> donationSumColumn = new TableColumn<>("Donation Total");
+        TableColumn<HashMap.Entry<String,Integer>, String>  countryColumn     = new TableColumn("Country");
+        TableColumn<HashMap.Entry<String,Integer>, Integer> donationSumColumn = new TableColumn("Donation Total");
+        TableColumn<HashMap.Entry<String,Integer>, Integer> healthyMeals      = new TableColumn("Healthy Meals");
 
-        countryColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty<>(donationsParam.getValue().getKey()));
-        donationSumColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty<>(donationsParam.getValue().getValue()));
+        countryColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getKey()));
+        donationSumColumn.setCellValueFactory(donationsParam -> new SimpleObjectProperty(donationsParam.getValue().getValue()));
+        healthyMeals.setCellValueFactory(donationsParam -> new SimpleObjectProperty((int)db.getDietCost(donationsParam.getValue().getKey())));
 
         ObservableList<HashMap.Entry<String,Integer>> items = FXCollections.observableArrayList(donations.entrySet());
 
         TableView table = new TableView(items);
-        table.getColumns().setAll(countryColumn, donationSumColumn);
+        table.getColumns().setAll(countryColumn, donationSumColumn, healthyMeals);
         return table;
     }
 }
