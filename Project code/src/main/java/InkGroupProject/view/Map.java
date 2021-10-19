@@ -353,7 +353,7 @@ public class Map implements IScene, PropertyChangeListener {
      * @param countryPath the country data that should be displayed
      */
     private void updateInfoPanel(CountryPath countryPath) {
-        informationPanel.getChildren().clear();
+        root.getChildren().remove(informationPanel);
         initInformationPanel();
         informationPanel.setVisible(true);
 
