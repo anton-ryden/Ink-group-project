@@ -66,8 +66,8 @@ import static javafx.scene.input.MouseEvent.*;
 public class World extends Region {
     public enum Resolution { HI_RES, LO_RES };
     private static final StyleablePropertyFactory<World> FACTORY          = new StyleablePropertyFactory<>(Region.getClassCssMetaData());
-    private static final String                          HIRES_PROPERTIES = "InkGroupProject/controller/hires.properties";
-    private static final String                          LORES_PROPERTIES = "InkGroupProject/controller/lores.properties";
+    private static final String                          HIRES_PROPERTIES = "main/resources/InkGroupProject/controller/hires.properties";
+    private static final String                          LORES_PROPERTIES = "main/resources/InkGroupProject/controller/lores.properties";
     private static final double                          PREFERRED_WIDTH  = 1009;
     private static final double                          PREFERRED_HEIGHT = 665;
     private static final double                          MINIMUM_WIDTH    = 100;
@@ -664,7 +664,7 @@ public class World extends Region {
      * @return the user agent style sheet.
      */
     @Override public String getUserAgentStylesheet() {
-        return World.class.getResource("world.css").toExternalForm();
+        return World.class.getResource("/main/resources/InkGroupProject/controller/world.css").toExternalForm();
     }
 
     /**

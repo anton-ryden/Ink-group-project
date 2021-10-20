@@ -97,7 +97,8 @@ public class Map implements IScene, PropertyChangeListener {
      */
     private void initDonationPanel() {
         donationPanel = new GridPane();
-        donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+//        donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+        donationPanel.getStylesheets().add(getClass().getResource("/main/resources/InkGroupProject/view/donationpanel.css").toExternalForm());
         donationPanel.getStyleClass().add("donation-panel");
         donationPanel.setMinWidth(250);
         donationPanel.setMaxWidth(250);
@@ -156,10 +157,10 @@ public class Map implements IScene, PropertyChangeListener {
 
         donationButton.setOnAction(e -> {
             try {
-                int value = Integer.parseInt(donationValue.getText());
+                int value = Integer.parseInt(donationValue.getText().replace(",", ""));
                 if (value > 0) {
                     String countryName = selectedCountryPath.getDisplayName();
-                    String donationAmountString = String.format("%,d", Integer.parseInt(donationValue.getText()));
+                    String donationAmountString = String.format("%,d", value);
                     db.createDonation(UserSession.getInstance().getId(), countryName, value);
                     donationPanel.getChildren().clear();
                     donationPanel.setAlignment(Pos.CENTER);
@@ -191,7 +192,7 @@ public class Map implements IScene, PropertyChangeListener {
      */
     private void initInformationPanel() {
         informationPanel = new GridPane();
-        informationPanel.getStylesheets().add("./InkGroupProject/view/infopanel.css");
+        informationPanel.getStylesheets().add(getClass().getResource("/main/resources/InkGroupProject/view/infopanel.css").toExternalForm());
         informationPanel.setVisible(false);
 
         Button hideButton = new Button("Hide");
@@ -290,7 +291,7 @@ public class Map implements IScene, PropertyChangeListener {
     private void hideDonationPanel() {
         root.getChildren().remove(donationPanel);
         donationPanel = new GridPane();
-        donationPanel.getStylesheets().add("./InkGroupProject/view/donationpanel.css");
+        donationPanel.getStylesheets().add(getClass().getResource("/main/resources/InkGroupProject/view/donationpanel.css").toExternalForm());
         donationPanel.getStyleClass().add("donation-panel");
         donationPanel.getStyleClass().add("donation-panel-hidden");
         donationPanel.add(welcomeText, 0, 0);
