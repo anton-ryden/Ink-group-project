@@ -38,26 +38,22 @@ public class UserPage implements IScene {
 
         Label donationHistory = new Label("Donation History");
         donationHistory.setFont(new Font("Arial", 16));
-        root.getChildren().add(donationHistory);
-        GridPane.setConstraints(donationHistory, 0,0);
+        root.add(donationHistory, 0, 0);
 
         HashMap<String,Integer> donations = db.getDonatedMoneyByUser(currentUser.getId());
         TableView table = createTable(donations);
-        root.getChildren().add(table);
-        GridPane.setConstraints(table, 0, 1, 3, 1);
+        root.add(table, 0, 1, 3, 1);
 
         // Go back to the map
         Hyperlink goBack = new Hyperlink("<- Go back");
-        root.getChildren().add(goBack);
-        GridPane.setConstraints(goBack, 0, 2);
+        root.add(goBack, 0, 2);
         goBack.setOnAction(e -> {
             Map mapScene = new Map();
             mapScene.start(Main.getStage());
         });
 
         Button userSettingsButton = new Button("Account settings");
-        root.getChildren().add(userSettingsButton);
-        GridPane.setConstraints(userSettingsButton, 1, 2);
+        root.add(userSettingsButton, 1, 2);
         userSettingsButton.setOnAction(e -> {
             UserSettings userSettingsScene = new UserSettings();
             userSettingsScene.start(Main.getStage());
@@ -65,8 +61,7 @@ public class UserPage implements IScene {
 
         Button logoutButton = new Button("Logout");
         logoutButton.setTextFill(Color.RED);
-        root.getChildren().add(logoutButton);
-        GridPane.setConstraints(logoutButton, 2, 2);
+        root.add(logoutButton, 2, 2);
         logoutButton.setOnAction(e -> {
             currentUser.logout();
             LoginPage loginPageScene = new LoginPage();

@@ -33,8 +33,7 @@ public class UserSettings implements IScene {
         // Go back to the User page
         Hyperlink goBack = new Hyperlink("<- Go back");
         goBack.setFocusTraversable(false);
-        GridPane.setConstraints(goBack, 0, 6);
-        root.getChildren().add(goBack);
+        root.add(goBack, 0, 6);
 
         goBack.setOnAction(e -> {
             UserPage userPage = new UserPage();
@@ -45,42 +44,34 @@ public class UserSettings implements IScene {
     private void initUpdatePassword() {
         // -- Update password --
         Label updatePasswordLabel = new Label("Update password");
-        GridPane.setConstraints(updatePasswordLabel, 0, 0);
-        root.getChildren().add(updatePasswordLabel);
+        root.add(updatePasswordLabel, 0, 0);
 
         // Current password
         final TextField currentPassword = new PasswordField();
         currentPassword.setPromptText("Enter current password");
         currentPassword.setFocusTraversable(false);
-        GridPane.setConstraints(currentPassword, 0, 1);
-        root.getChildren().add(currentPassword);
+        root.add(currentPassword, 0, 1);
 
         // New password
         final TextField newPassword = new PasswordField();
         newPassword.setPromptText("Enter new password");
         newPassword.setFocusTraversable(false);
-        GridPane.setConstraints(newPassword, 0, 2);
-        root.getChildren().add(newPassword);
+        root.add(newPassword, 0, 2);
 
         // Repeat new password
         final TextField repeatNewPassword = new PasswordField();
         repeatNewPassword.setPromptText("Re-enter new password");
         repeatNewPassword.setFocusTraversable(false);
-        GridPane.setConstraints(repeatNewPassword, 0, 3);
-        root.getChildren().add(repeatNewPassword);
+        root.add(repeatNewPassword, 0, 3);
 
         // Update password button
         Button updatePasswordButton = new Button("Update password");
         updatePasswordButton.setFocusTraversable(false);
-//        updatePasswordButton.setDefaultButton(true);
-        GridPane.setConstraints(updatePasswordButton, 0, 4);
-        root.getChildren().add(updatePasswordButton);
+        root.add(updatePasswordButton, 0, 4);
 
         // User feedback label
         final Label infoLabel = new Label();
-        GridPane.setConstraints(infoLabel, 0, 5);
-        GridPane.setColumnSpan(infoLabel, 2);
-        root.getChildren().add(infoLabel);
+        root.add(infoLabel, 0, 5, 2, 1);
 
         updatePasswordButton.setOnAction(e -> {
             boolean isCurrentPasswordEmpty = currentPassword.getText().isEmpty();
@@ -112,38 +103,32 @@ public class UserSettings implements IScene {
     private void initUpdateUserInfo() {
         // -- Update user info --
         Label updateUserInfo = new Label("Update user information");
-        GridPane.setConstraints(updateUserInfo, 1, 0);
-        root.getChildren().add(updateUserInfo);
+        root.add(updateUserInfo, 1, 0);
 
         // First name
         final TextField firstNameField = new TextField();
         firstNameField.setPromptText("Enter your first name");
         firstNameField.setFocusTraversable(false);
-        GridPane.setConstraints(firstNameField, 1, 1);
-        root.getChildren().add(firstNameField);
+        root.add(firstNameField, 1, 1);
 
         // Last name
         final TextField lastNameField = new TextField();
         lastNameField.setPromptText("Enter your last name");
         lastNameField.setFocusTraversable(false);
-        GridPane.setConstraints(lastNameField, 1, 2);
-        root.getChildren().add(lastNameField);
+        root.add(lastNameField, 1, 2);
 
         // Email address
         final TextField emailField = new TextField();
         emailField.setPromptText("Enter your email address");
         emailField.setFocusTraversable(false);
-        GridPane.setConstraints(emailField, 1, 3);
-        root.getChildren().add(emailField);
+        root.add(emailField, 1, 3);
 
         // Update info button
         Button updateInfoButton = new Button("Update info");
         updateInfoButton.setFocusTraversable(false);
-//        updateInfoButton.setDefaultButton(true);
-        GridPane.setConstraints(updateInfoButton, 1, 4);
-        root.getChildren().add(updateInfoButton);
+        root.add(updateInfoButton, 1, 4);
 
-        // Update textfields with user's information
+        // Update TextFields with user's information
         if (currentUser.isLoggedIn()) {
             firstNameField.setText(currentUser.getFirstName());
             lastNameField.setText(currentUser.getLastName());
@@ -152,18 +137,21 @@ public class UserSettings implements IScene {
 
         // User feedback label
         final Label infoLabel = new Label();
-        GridPane.setConstraints(infoLabel, 1, 5);
-        GridPane.setColumnSpan(infoLabel, 2);
-        root.getChildren().add(infoLabel);
+        infoLabel.setWrapText(true);
+        root.add(infoLabel, 1, 5, 2, 1);
 
         updateInfoButton.setOnAction(e -> {
             String firstName = firstNameField.getText();
             String lastName = lastNameField.getText();
             String email = emailField.getText();
+            boolean emailTaken = db.getAccount(email) != null;
 
             if ((firstName.isEmpty() || lastName.isEmpty() || email.isEmpty())) {
                 infoLabel.setTextFill(Color.RED);
-                infoLabel.setText("Please insert new info");
+                infoLabel.setText("Please fill out all the information above.");
+            } else if (emailTaken) {
+                infoLabel.setTextFill(Color.RED);
+                infoLabel.setText("Email address is already in use.");
             } else {
                 db.updateUserInfo(firstName, lastName, email, currentUser.getId());
                 currentUser.updateUserInfo(firstName, lastName, email);

@@ -1,6 +1,5 @@
 package InkGroupProject.view;
 
-import InkGroupProject.controller.World;
 import InkGroupProject.model.*;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
@@ -12,7 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class LoginPage implements IScene {
-    private GridPane grid;
+    private GridPane root;
     private Database db;
 
     public LoginPage() {
@@ -23,42 +22,36 @@ public class LoginPage implements IScene {
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
 
         // GridPane container
-        grid = new GridPane();
-        grid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(5);
-        grid.setHgap(5);
+        root = new GridPane();
+        root.setPadding(new Insets(10, 10, 10, 10));
+        root.setVgap(5);
+        root.setHgap(5);
 
         // Email text field
         final TextField email = new TextField();
         email.setPromptText("Enter your email address");
         email.setFocusTraversable(false);
         email.setPrefColumnCount(16);
-        GridPane.setConstraints(email, 0, 0);
-        grid.getChildren().add(email);
+        root.add(email, 0, 0);
 
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
-        GridPane.setConstraints(password, 0, 1);
-        grid.getChildren().add(password);
+        root.add(password, 0, 1);
 
         // Login button
         Button login = new Button("Login");
         login.setFocusTraversable(false);
         login.setDefaultButton(true);
-        GridPane.setConstraints(login, 1, 0);
-        grid.getChildren().add(login);
+        root.add(login, 1, 0);
 
         Hyperlink createAccount = new Hyperlink("Create an account");
         createAccount.setFocusTraversable(false);
-        GridPane.setConstraints(createAccount, 0, 2);
-        grid.getChildren().add(createAccount);
+        root.add(createAccount, 0, 2);
 
         final Label infoLabel = new Label();
-        GridPane.setConstraints(infoLabel, 0, 3);
-        GridPane.setColumnSpan(infoLabel, 2);
-        grid.getChildren().add(infoLabel);
+        root.add(infoLabel, 0, 3, 2, 1);
 
         login.setOnAction(e -> {
             if (email.getText().isEmpty() || password.getText().isEmpty()) {
@@ -88,13 +81,13 @@ public class LoginPage implements IScene {
             createAccountScene.start(Main.getStage());
         });
 
-        //Move to next textfield on TAB
+        // Move to next TextField on TAB
         email.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB)
                 password.requestFocus();
         });
 
-        //Move to previous textfield on TAB & SHIFT combined
+        // Move to previous TextField on TAB & SHIFT combined
         password.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB && e.isShiftDown())
                 email.requestFocus();
@@ -102,7 +95,7 @@ public class LoginPage implements IScene {
     }
 
     public void start(Stage stage) {
-        Scene loginScene = new Scene(grid);
+        Scene loginScene = new Scene(root);
         stage.setTitle("Login");
         stage.setResizable(false);
         stage.setScene(loginScene);
@@ -110,6 +103,6 @@ public class LoginPage implements IScene {
     }
 
     public Parent getRoot() {
-        return grid;
+        return root;
     }
 }

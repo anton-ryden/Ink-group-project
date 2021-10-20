@@ -33,36 +33,31 @@ public class CreateAccount implements IScene {
         final TextField firstName = new TextField();
         firstName.setPromptText("Enter your first name");
         firstName.setFocusTraversable(false);
-        GridPane.setConstraints(firstName, 0, 0);
-        root.getChildren().add(firstName);
+        root.add(firstName, 0, 0);
 
         // Last name text field
         final TextField lastName = new TextField();
         lastName.setPromptText("Enter your last name");
         lastName.setFocusTraversable(false);
-        GridPane.setConstraints(lastName, 1, 0);
-        root.getChildren().add(lastName);
+        root.add(lastName, 1, 0);
 
         // Email text field
         final TextField email = new TextField();
         email.setPromptText("Enter your email address");
         email.setFocusTraversable(false);
-        GridPane.setConstraints(email, 0, 1, 2, 1);
-        root.getChildren().add(email);
+        root.add(email, 0, 1, 2, 1);
 
         // Password text field
         final TextField password = new PasswordField();
         password.setPromptText("Enter your password");
         password.setFocusTraversable(false);
-        GridPane.setConstraints(password, 0, 2);
-        root.getChildren().add(password);
+        root.add(password, 0, 2);
 
         // Re-enter password text field
         final TextField rePassword = new PasswordField();
         rePassword.setPromptText("Re-enter your password");
         rePassword.setFocusTraversable(false);
-        GridPane.setConstraints(rePassword, 1, 2);
-        root.getChildren().add(rePassword);
+        root.add(rePassword, 1, 2);
 
         // Login button
         Button createAccount = new Button(" Create\nAccount");
@@ -74,14 +69,11 @@ public class CreateAccount implements IScene {
         // Go back to login screen button
         Hyperlink goBack = new Hyperlink("<- Go back");
         goBack.setFocusTraversable(false);
-        GridPane.setConstraints(goBack, 0, 3);
-        root.getChildren().add(goBack);
+        root.add(goBack, 0, 3);
 
         // User feedback label
         final Label infoLabel = new Label();
-        GridPane.setConstraints(infoLabel, 0, 4);
-        GridPane.setColumnSpan(infoLabel, 2);
-        root.getChildren().add(infoLabel);
+        root.add(infoLabel, 0, 4, 2, 1);
 
         // Click event for create account button
         createAccount.setOnAction(e -> {
@@ -116,14 +108,13 @@ public class CreateAccount implements IScene {
             loginPage.start(Main.getStage());
         });
 
-        //Move to next textfield on TAB
-
+        // Move to next TextField on TAB
         firstName.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB)
                 lastName.requestFocus();
         });
 
-        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
+        // Move to next TextField on TAB, move to previous TextField on TAB & SHIFT combined
         lastName.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -133,7 +124,7 @@ public class CreateAccount implements IScene {
             }
         });
 
-        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
+        // Move to next TextField on TAB, move to previous TextField on TAB & SHIFT combined
         email.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -143,7 +134,7 @@ public class CreateAccount implements IScene {
             }
         });
 
-        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
+        // Move to next TextField on TAB, move to previous TextField on TAB & SHIFT combined
         password.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB) {
                 if (e.isShiftDown())
@@ -153,7 +144,7 @@ public class CreateAccount implements IScene {
             }
         });
 
-        //Move to next textfield on TAB, move to previous textfield on TAB & SHIFT combined
+        // Move to next TextField on TAB, move to previous TextField on TAB & SHIFT combined
         rePassword.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.TAB && e.isShiftDown())
                 password.requestFocus();
