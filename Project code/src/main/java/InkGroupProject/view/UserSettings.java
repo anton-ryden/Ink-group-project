@@ -137,21 +137,20 @@ public class UserSettings implements IScene {
 
         // User feedback label
         final Label infoLabel = new Label();
-        infoLabel.setWrapText(true);
         root.add(infoLabel, 1, 5, 2, 1);
 
         updateInfoButton.setOnAction(e -> {
             String firstName = firstNameField.getText();
             String lastName = lastNameField.getText();
             String email = emailField.getText();
-            boolean emailTaken = db.getAccount(email) != null;
+            boolean emailTaken = db.getAccount(email) != null && !email.equals(currentUser.getEmail());
 
             if ((firstName.isEmpty() || lastName.isEmpty() || email.isEmpty())) {
                 infoLabel.setTextFill(Color.RED);
-                infoLabel.setText("Please fill out all the information above.");
+                infoLabel.setText("Text fields cannot be empty.");
             } else if (emailTaken) {
                 infoLabel.setTextFill(Color.RED);
-                infoLabel.setText("Email address is already in use.");
+                infoLabel.setText("Email address already in use.");
             } else {
                 db.updateUserInfo(firstName, lastName, email, currentUser.getId());
                 currentUser.updateUserInfo(firstName, lastName, email);
