@@ -13,6 +13,7 @@ import InkGroupProject.controller.World;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -317,24 +318,36 @@ public class Map implements IScene, PropertyChangeListener {
         drawCountry(countryPath);
 
         donationValue.setVisible(true);
-        donationValue.textProperty().addListener((obs, isUnfocused, isFocused) -> {
-            double amount;
+        donationValue.setTextFormatter(new TextFormatter<Integer>(c -> {
             try {
-                // Strip input of non-numeric characters
-                String searchText = donationValue.getText().replaceAll("[^\\d.]", "");
-                amount = Double.parseDouble(searchText);
-                String amountString = String.format("%,d", (int)amount);
-                Platform.runLater(() -> {
-                    donationValue.setText(amountString);
-                    donationValue.positionCaret(amountString.length());
-                });
-            } catch (NumberFormatException ex) {
-                amount = -1;
+                if (!c.isContentChange()) {
+                    return c;
+                }
+                String newText = c.getControlNewText();
+                if (newText.isEmpty()) {
+                    return c;
+                }
+                String modifiedText = String.format("%,d", Integer.parseInt(newText.replace(",", "")));
+                c.setRange(0, c.getControlText().length());
+                c.setText(modifiedText);
+                c.setCaretPosition(modifiedText.length());
+                c.setAnchor(modifiedText.length());
+
+                return c;
+            } catch (NumberFormatException e) {
+                return null;
             }
+        }));
+        donationValue.textProperty().addListener((obs, oldValue, newValue) -> {
+            int amount;
+            try {
+                amount = Integer.parseInt(newValue.replace(",", ""));
+            } catch (NumberFormatException ex) {
+                amount = 0;
+            }
+
             double cost = countryPath.getHealthyDietCost();
             int numberOfMeals = (int)(amount / cost);
-            if (numberOfMeals < 0)
-                numberOfMeals = 0;
             String numberOfMealsString = String.format("%,d", numberOfMeals);
             if (cost > 0) {
                 moneyCheckText.setTextFill(Color.BLACK);
