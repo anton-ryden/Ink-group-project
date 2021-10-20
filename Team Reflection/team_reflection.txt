@@ -167,3 +167,22 @@ We are all mostly working individually on user stories assigned at meetings and 
 
 What we want it to be (B & C)
 This week has been the best week besides week 3 in terms of team satisfaction as we believe that we have learnt a lot from our mistakes, especially with user stories being more independent making the progress this week the most smooth. Not quite sure what we would have wanted to change this week as most people were very satisfied with few issues. 
+-------(WEEK 8)---------
+Customer Value and Scope
+This week has been mostly code cleaning and making sure that everything works. This is mostly in reference to our attempts to create a JAR file which we've had some issues with. 
+Our success criterias were mostly met last week so there wasn't a lot to verify this week. Since we didnt program a lot this week, we mostly focused our meetings on other tasks unrelated to the code such as the presentation, preparing for the final report etc. This means that we didn't get to use utilise the user stories. 
+
+Social Contract and Effort
+Our social contract hasnt changed.
+
+Design decisions and product structure
+Our design decisions remain the same as the last week. 
+We have a bit more javadoc comments now and we've been cleaning the code to ensure the code quality and code standard.
+
+Application of Scrum
+Nothing has really changed since the last week since we haven't done a lot of programming this week. But we have had quite a few meetings since we need to wrap up the remaining
+assignments.
+
+
+What we want it to be (B & C)
+This week there isnt a lot to improve as we haven't been completing any more user stories and mostly focused on cleaning up the code and finishing up other assignments related to the project.
