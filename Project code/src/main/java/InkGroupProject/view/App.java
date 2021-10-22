@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
-public class Main extends Application {
+public class App extends Application {
     private static Stage stage;
 
     public static void main(String[] args) {
@@ -14,7 +14,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         stage = primaryStage;
-//        Image image = new Image("./InkGroupProject/icons/povertyHelp.png");
         Image image = new Image(getClass().getResource("/main/resources/InkGroupProject/icons/povertyHelp.png").toExternalForm());
         stage.getIcons().add(image);
         LoginPage loginPage = new LoginPage();

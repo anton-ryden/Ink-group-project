@@ -14,6 +14,7 @@
     </properties>
 
     <dependencies>
+        <!-- App dependencies -->
         <dependency>
             <groupId>at.favre.lib</groupId>
             <artifactId>bcrypt</artifactId>
@@ -24,6 +25,31 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.36.0.3</version>
         </dependency>
+
+        <!-- Import JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>15</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>15</version>
+            <classifier>win</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>15</version>
+            <classifier>linux</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>15</version>
+            <classifier>mac</classifier>
+        </dependency>
     </dependencies>
 
     <build>
@@ -33,7 +59,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>InkGroupProject.view.Main</mainClass>
+                            <mainClass>InkGroupProject.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

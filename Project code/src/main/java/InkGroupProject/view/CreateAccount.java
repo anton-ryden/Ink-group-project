@@ -93,7 +93,7 @@ public class CreateAccount implements IScene {
                     infoLabel.setTextFill(Color.GREEN);
                     infoLabel.setText("Account created successfully!");
                     LoginPage loginPage = new LoginPage();
-                    loginPage.start(Main.getStage());
+                    loginPage.start(App.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
                     infoLabel.setText("Account already exists.");
@@ -105,7 +105,7 @@ public class CreateAccount implements IScene {
         goBack.setOnAction(e -> {
             goBack.setVisited(false);
             LoginPage loginPage = new LoginPage();
-            loginPage.start(Main.getStage());
+            loginPage.start(App.getStage());
         });
 
         // Move to next TextField on TAB

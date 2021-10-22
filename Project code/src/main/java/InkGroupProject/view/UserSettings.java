@@ -37,7 +37,7 @@ public class UserSettings implements IScene {
 
         goBack.setOnAction(e -> {
             UserPage userPage = new UserPage();
-            userPage.start(Main.getStage());
+            userPage.start(App.getStage());
         });
     }
 

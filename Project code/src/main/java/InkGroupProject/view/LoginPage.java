@@ -68,7 +68,7 @@ public class LoginPage implements IScene {
                     UserSession.login(account);
 
                     Map mapScene = new Map();
-                    mapScene.start(Main.getStage());
+                    mapScene.start(App.getStage());
                 } else {
                     infoLabel.setTextFill(Color.RED);
                     infoLabel.setText("Invalid email or password.");
@@ -79,7 +79,7 @@ public class LoginPage implements IScene {
         createAccount.setOnAction(e -> {
             createAccount.setVisited(false);
             CreateAccount createAccountScene = new CreateAccount();
-            createAccountScene.start(Main.getStage());
+            createAccountScene.start(App.getStage());
         });
 
         // Move to next TextField on TAB

@@ -49,14 +49,14 @@ public class UserPage implements IScene {
         root.add(goBack, 0, 2);
         goBack.setOnAction(e -> {
             Map mapScene = new Map();
-            mapScene.start(Main.getStage());
+            mapScene.start(App.getStage());
         });
 
         Button userSettingsButton = new Button("Account settings");
         root.add(userSettingsButton, 1, 2);
         userSettingsButton.setOnAction(e -> {
             UserSettings userSettingsScene = new UserSettings();
-            userSettingsScene.start(Main.getStage());
+            userSettingsScene.start(App.getStage());
         });
 
         Button logoutButton = new Button("Logout");
@@ -65,7 +65,7 @@ public class UserPage implements IScene {
         logoutButton.setOnAction(e -> {
             currentUser.logout();
             LoginPage loginPageScene = new LoginPage();
-            loginPageScene.start(Main.getStage());
+            loginPageScene.start(App.getStage());
         });
     }
 

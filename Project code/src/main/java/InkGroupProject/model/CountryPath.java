@@ -18,9 +18,7 @@ package InkGroupProject.model;
 
 import javafx.scene.control.Tooltip;
 import javafx.scene.shape.SVGPath;
-
 import java.util.Locale;
-import java.util.Observable;
 
 /**
  * Public class that represents the path of a country with all information about it.

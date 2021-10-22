@@ -4,7 +4,6 @@ import InkGroupProject.model.CountryPath;
 import InkGroupProject.model.Database;
 import InkGroupProject.model.UserSession;
 import InkGroupProject.model.WorldBuilder;
-import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -114,7 +113,7 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.add(myPageButton, 0, 1);
         myPageButton.setOnAction(e -> {
             UserPage userPage = new UserPage();
-            userPage.start(Main.getStage());
+            userPage.start(App.getStage());
         });
 
         hideShowButton = new Button("˄");
