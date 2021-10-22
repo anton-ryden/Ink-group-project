@@ -49,6 +49,7 @@ public class Map implements IScene, PropertyChangeListener {
     private VBox gradientLine;
     private CountryPath countryToDraw;
     private StackPane stackPane;
+    private UserSession currentUser;
     private Database db;
 
     /**
@@ -81,6 +82,7 @@ public class Map implements IScene, PropertyChangeListener {
      */
     private void init() {
         db = Database.getInstance(":resource:InkGroupProject/db/database.db");
+        currentUser = UserSession.getInstance();
 
         root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
@@ -104,8 +106,7 @@ public class Map implements IScene, PropertyChangeListener {
         donationPanel.setPrefWidth(250);
         donationPanel.setVisible(true);
 
-        UserSession user = UserSession.getInstance();
-        String userFullName = user.getFirstName() + " " + user.getLastName();
+        String userFullName = currentUser.getFirstName() + " " + currentUser.getLastName();
         welcomeText = new Text("Welcome, " + userFullName + "!");
         donationPanel.add(welcomeText, 0, 0);
 
@@ -156,11 +157,12 @@ public class Map implements IScene, PropertyChangeListener {
 
         donationButton.setOnAction(e -> {
             try {
-                int value = Integer.parseInt(donationValue.getText());
+                int value = Integer.parseInt(donationValue.getText().replace(",", ""));
                 if (value > 0) {
                     String countryName = selectedCountryPath.getDisplayName();
-                    String donationAmountString = String.format("%,d", Integer.parseInt(donationValue.getText()));
-                    db.createDonation(UserSession.getInstance().getId(), countryName, value);
+                    String donationAmountString = String.format("%,d", value);
+                    db.createDonation(currentUser.getId(), countryName, value);
+
                     donationPanel.getChildren().clear();
                     donationPanel.setAlignment(Pos.CENTER);
                     Label confirmationText = new Label();
@@ -171,6 +173,7 @@ public class Map implements IScene, PropertyChangeListener {
                     throw new NumberFormatException("Negative value");
                 }
             } catch (NumberFormatException exception) {
+                System.err.println(exception.getMessage());
                 moneyCheckText.setTextFill(Color.RED);
                 moneyCheckText.setText("Invalid amount");
             }
