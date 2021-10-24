@@ -45,3 +45,26 @@ Week 4
 3. Writing down everyones opinions and summarising them.
 
 4. Most things related to the UI, graphs text, what info to incorporate etc.
+----------------------------------------------------------------------
+Week 5
+
+1. Learning more about Panes and different type of panels and the design differences.
+
+2. Same as previous week, just helping planning out GUIs
+
+3. Helping to write the team reflection and taking everyones input.
+
+4. Same as last week mostly UI stuff and connecting the UI to releveant information.
+----------------------------------------------------------------------
+Week 6 
+
+1. Need to get better at sorting out the code and making it a lot more user friendly.
+
+2. Just helping out and taking whatever tasks that are remaining.
+
+3. Same as last week, mostly collecting everyones thoughts and opinions and formulating them.
+
+4. Implementing the features that everyone is working on in to the UI's.
+----------------------------------------------------------------------
+
+
