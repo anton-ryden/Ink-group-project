@@ -11,9 +11,15 @@ andtru0913 - Anders Truong
 Where to find stuff:
 
 Individual reflection: located in the map Individual Reflection. One txt file per member with their name as the txt file name
+
 Team reflections: located in the map Team Reflections. One txt file per member with their name as the txt 
+
 Source code: path for the directory Project code/src/main/java
+
 Trello: https://trello.com/b/LY1wmrVj/scrum-project-management-board
+
 KPI: Named KPI_Ink_Group.xlsx
+
 Database: Project code/src/main/resources/InkGroupProject/db/
+
 Coordinates and language codes used for coutries used in World.java: Project code/src/main/resources/InkGroupProject/controller/
