@@ -1,4 +1,5 @@
 Our git history is messy/confusing since we had some git merge problems and we used a plugin named Code with me which commit your changes on someone else computer. Therefore look at the heading "Who has contributed to what" in order to get a grasp of things.
+
 Who is who:
 
 Who has contributed to what:
