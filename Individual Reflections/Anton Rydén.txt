@@ -1,50 +1,143 @@
 *********************WEEK 1*********************
+
 what do I want to learn or understand better?
-	Learn how a group cooperate at the best of their ability. And get to know the group better.
+	A - Current situation
+	Learn how a group cooperate at the best of their ability. And get to know the group better. And ofcource learn more about agile software development
+	
+	B - What might or should be
+	I ofcource would like for the group to have a good group chemistry and know each other better. Also know more about agile software development
+	
+	C -A plan for getting from where you are to where you want to be
+	In order to gain some team chemistry we neew to talk alot more and spend more time together. How to get know more about agile is to attend all to uppcomming lectures.
 
 how can I help someone else, or the entire team, to learn something new?
-	Let everyone speak and reflect upon the answers
+	A - Current situation
+	Let everyone speak and reflect upon the answers.
+	
+	B - What might or should be
+	More speaking on our meetings
+	
+	C - A plan for getting from where you are to where you want to be
+	Asking question to people who not talk so much in order to in incorporate them more
 
 what is my contribution towards the team’s use of Scrum?
-	Letting everyone speak and distributing work evenly
+	A - Current situation
+	I make sure everyone speaks and ask questions to make sure everyone participate. 
+	
+	B - What might or should be
+	The rest of the team should talk more and come up with ideas since we are a team
+	
+	C - A plan for getting from where you are to where you want to be
+	As previous weeks as it seems to work. Ask question!
 
 what is my contribution towards the team’s deliveries?
+	A - Current situation
 	Being on time and doing whats expected
+	
+	B - What might or should be
+	Nothing to deliver so keep doing my part and being active
+	
+	C - A plan for getting from where you are to where you want to be
+	Nothing need to change
+	
 	
 *********************WEEK 2*********************
 what do I want to learn or understand better?
-	What sort of application we want to build
-
+	A - Current situation
+	Understand what sort of application we want to build
+	
+	B - What might or should be
+	Have a clear scope and idea of what we want to build
+	
+	C - A plan for getting from where you are to where you want to be
+	Brainstorming more ideas and finding the right one
+	
 how can I help someone else, or the entire team, to learn something new?
-	Explain how project could potentialy be executed
+	A - Current situation
+	Explain my thought and ideas for the project
+	B - What might or should be
+	Good as is
+	
+	C - A plan for getting from where you are to where you want to be
+	Good as is
 
 what is my contribution towards the team’s use of Scrum?
+	A - Current situation
 	Keeping the discussion going and making sure everyone turn up
+	
+	B - What might or should be
+	Even better participating rate in the meetings
+	
+	C - A plan for getting from where you are to where you want to be
+	Spenf more time as a group and make everyone comfortable
 
 what is my contribution towards the team’s deliveries?
-	Speaking about potential ideas
+	A - Current situation
+	Making sure meetings are productive and explaining possibble designs for our project
+
+	B - What might or should be
+	Having a better vision of our program 
+	
+	C - A plan for getting from where you are to where you want to be
+	Speaking about design and choice. Which means more meetings
 
 *********************WEEK 3*********************
 what do I want to learn or understand better?
+	A - Current situation
 	I want to understand how to use JavaFx and use it for our application. 
 	Absorb as much knowledge as possible.
+	
+	B - What might or should be
+	A better understanding of JavaFx 
+	
+	C - A plan for getting from where you are to where you want to be
+	Look at some tutorials and read some documentation
 
 how can I help someone else, or the entire team, to learn something new?
-	Share my prior knowledge of working in group and programming knowledge if nessecary.
+	A - Current situation
+	I share my prior knowledge of working in group and programming knowledge if nessecary.
+	
+	B - What might or should be
+	Probably keep voicing my opinions if nessecary 
+	
+	C - A plan for getting from where you are to where you want to be
+	Keep up what we are doing
 
 what is my contribution towards the team’s use of Scrum?
-	Talking alot and making sure everyone has a say but also scheule meetings
+	A - Current situation
+	Talking a lot and making sure everyone has a say but also scheule meetings
+	
+	B - What might or should be
+	Not so much better
+	
+	C - A plan for getting from where you are to where you want to be
+	Nothing
+	
 
 what is my contribution towards the team’s deliveries?
+	A - Current situation
 	Making sure the meetings actually happens and participating in all aspects. Latly we have been organizing and 
 	discussing possible solution, making user stories etc.  
-	
+	B - What might or should be
+	I thing my contribution is on par or over
+	C - A plan for getting from where you are to where you want to be
+	Keep it up
 *********************WEEK 4*********************
 what do I want to learn or understand better?
+	A - Current situation
 	I want to understand how we can make a better design pattern
+	B - What might or should be
+	A better understanding
+	C - A plan for getting from where you are to where you want to be
+	Make some research are read some litterature
 
 how can I help someone else, or the entire team, to learn something new?
+	A - Current situation
 	Help with any programming problems while also developing new features for the map
+	
+	B - What might or should be
+	
+	C - A plan for getting from where you are to where you want to be
 
 what is my contribution towards the team’s use of Scrum?
 	Try and act as a scrum master and ask alot of question
