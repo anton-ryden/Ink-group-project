@@ -1,5 +1,4 @@
 *********************WEEK 1*********************
-
 what do I want to learn or understand better?
 	A - Current situation
 	Learn how a group cooperate at the best of their ability. And get to know the group better. And ofcource learn more about agile software development
@@ -118,16 +117,20 @@ what is my contribution towards the team’s deliveries?
 	A - Current situation
 	Making sure the meetings actually happens and participating in all aspects. Latly we have been organizing and 
 	discussing possible solution, making user stories etc.  
+	
 	B - What might or should be
 	I thing my contribution is on par or over
+	
 	C - A plan for getting from where you are to where you want to be
 	Keep it up
 *********************WEEK 4*********************
 what do I want to learn or understand better?
 	A - Current situation
 	I want to understand how we can make a better design pattern
+	
 	B - What might or should be
 	A better understanding
+	
 	C - A plan for getting from where you are to where you want to be
 	Make some research are read some litterature
 
@@ -136,28 +139,68 @@ how can I help someone else, or the entire team, to learn something new?
 	Help with any programming problems while also developing new features for the map
 	
 	B - What might or should be
+	Just keep answering programming related question
 	
 	C - A plan for getting from where you are to where you want to be
-
+	Nothing really need t change
+	
 what is my contribution towards the team’s use of Scrum?
+	A - Current situation
 	Try and act as a scrum master and ask alot of question
+	
+	B - What might or should be
+	Getting even better as a scrum master
+	
+	C - A plan for getting from where you are to where you want to be
+	Keep asking question and gaining experience
 
 what is my contribution towards the team’s deliveries?
+	A - Current situation
 	Alot of new feautres added to the map and some changes to the software pattern. While also helping others with their problem
+	
+	B - What might or should be
+	Keep up maybe doing so much work
+	
+	C - A plan for getting from where you are to where you want to be	
+	Not being so hard on my self and having a lower sprint velocity
 	
 *********************Week 5*********************
 
 what do I want to learn or understand better?
-	I want to learn more about JavaFx
+	A - Current situation
+	I want to expand my knowledge about JavaFx even more
+	
+	B - What might or should be
+	I have a good understanding of JavaFx but i would like to improve it further
+	
+	C - A plan for getting from where you are to where you want to be	
+	As in one of the erlier weeks. Read more documentation and tutorials
 
 how can I help someone else, or the entire team, to learn something new?
-	Teach about good and bad pratices while explaining possible solution for the weeks user stories
+	A - Current situation
+	Some members lack good and bad pratices.
 
+	B - What might or should be
+	If we had a better understanding of good pratices then thw code qualti would incrice 
+	
+	C - A plan for getting from where you are to where you want to be
+	Teach about good and bad pratices while explaining possible solution for the weeks user stories  and teaching people about how the map works
+	
 what is my contribution towards the team’s use of Scrum?
 	Ask questions. Make sure everyone is comfortable and understand their user stories. And helping with potential problems
+	A - Current situation
+	
+	B - What might or should be
+	
+	C - A plan for getting from where you are to where you want to be
 
 what is my contribution towards the team’s deliveries?
 	This week i have been implementing a zoom function, worked on the map rezising correctly and mkaing it possible to select a country.
+	A - Current situation
+	
+	B - What might or should be
+	
+	C - A plan for getting from where you are to where you want to be
 
 *********************Week 6*********************
 
