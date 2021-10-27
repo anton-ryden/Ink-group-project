@@ -162,6 +162,12 @@ public class Database {
         return account;
     }
 
+    /**
+     * Change password
+     * @param newPassword new password for the account
+     * @param user_id which accounts we changing password for
+     * @return return true or false if password was updated or not
+     */
     public boolean updatePassword(String newPassword, int user_id) {
         try {
             PreparedStatement updatePassword = connection.prepareStatement("UPDATE accounts SET password =?  WHERE id =?");
@@ -175,6 +181,14 @@ public class Database {
         }
     }
 
+    /**
+     * change user info
+     * @param firstName first name of account
+     * @param lastName last name of account
+     * @param email email of account
+     * @param user_id which user that is logged in
+     * @return return true or false if user info was updated or not
+     */
     public boolean updateUserInfo(String firstName, String lastName, String email, int user_id) {
         try {
             PreparedStatement updateUserInfo = connection.prepareStatement("UPDATE accounts SET first_name = ?, last_name = ?, email = ? WHERE id = ?");
