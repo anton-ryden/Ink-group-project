@@ -16,6 +16,9 @@ Right now, none since we are at the start and I'm just getting used to it and fi
 
 What is my contribution towards the team’s deliveries?
 This week we only had the Social Contract to send in so I've been working with the team to come up with a Social Contract that we all agree on.
+
+Reflective loop:
+For next week I want to help the team create our business model canvas and start coming up with ideas for what application we wanna make. I'll try to brainstorm some ideas for next week.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 2:
 
@@ -33,6 +36,9 @@ Right now, none since we are at the start and I'm just getting used to it and fi
 
 What is my contribution towards the team’s deliveries?
 Been helping the team with our business model canvas and balling ideas for our project.
+
+Reflective loop:
+This week went well with the business model, looking up what a business model was and looking at examples helped a lot. Next week I want to keep on learning scrum and how to use it and also how to do a team reflection together. To do this I'll read through the information on canvas and take an extra look at the lectures.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 3:
 
@@ -51,6 +57,8 @@ Been helping the team with constructing our scrum board and getting it all toget
 What is my contribution towards the team’s deliveries?
 Helped the team with our first team reflection.
 
+Reflective loop:
+Starting of with scrum went well. Next week I want to be able to start our project by preparing for our user stories and learn more about it. 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 4:
 
@@ -69,6 +77,9 @@ Planned meetings and kept on working on the scrum board.
 What is my contribution towards the team’s deliveries?
 Helping with questions regarding our project for the supervision and also writing down our team reflection. Set up a database and implemented the feature to create accounts with Lukas.
 
+
+Reflective loop:
+First coding week went well and it felt like a good start. For next I would like to work more on our database and try to set it up. Have to look up how to convert csv information to a database. 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 5:
 
@@ -87,6 +98,8 @@ Planned meetings and kept on working on the scrum board.
 What is my contribution towards the team’s deliveries?
 Helping out with our team reflection. This week had more focus on code improvements and added tables to our database from csv files.
 
+Reflective loop:
+Worked pretty well to set up our database, I learnt how to use dbrowser with the help from Lukas. Also got a basic understanding of how to merge with github desktop. For next week I just want to keep up our work and not fall behind by keeping up with the scrum board for every sprint.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 6:
 
@@ -105,6 +118,8 @@ Planned meetings and kept on working on the scrum board.
 What is my contribution towards the team’s deliveries?
 Working on a feature to check how many healthy meals a day can be provided from an amount of money and see total amount donated to a country. Also worked with the team reflections.
 
+Reflective loop:
+Starting to get a good understanding of working with scrum but I want to expand this knowledge. Stayed on track with our sprint and made sure to have meetings to share information regarding questions/problems we had. Hopefully next week stays the same.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 7:
 
@@ -122,3 +137,25 @@ Planned meetings and kept on working on the scrum board.
 
 What is my contribution towards the team’s deliveries?
 Implemented the feature to change user settings.
+
+Reflective loop:
+We are nearing the end of our project and it's been rounding out well, from now on I just want to make sure we finish it off well without any problems. Try to do some quality control on the code and finish of our last user stories. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEEK 8:
+What do I want to learn or understand better?
+Even though I learned some basic understanding of merging during the project, I would still like to understand it better and how to avoid conflicts while merging.
+
+
+How can I help someone else, or the entire team, to learn something new?
+Share my knowledge about making presentations and reports.
+
+
+What is my contribution towards the team’s use of Scrum?
+Meetings and finishing of the scrum board.
+
+
+What is my contribution towards the team’s deliveries?
+Introducing our application on the presentation, cleaning up the code & more documentation.
+
+Reflective loop:
+The application is finished and I'm satisfied with our work. Since this is the last week of reflections, I can only reflect what I would do for next project where I am using scrum and that is to start of with a good estimation techniques by sharing my knowledge to the other members of my experiences. 
