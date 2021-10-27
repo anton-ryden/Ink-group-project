@@ -1,2 +1,5 @@
-# Ink-group-project
-Not decided what we are making yet
+Who is who:
+
+Who has contributed to what:
+
+Where to find stuff:
