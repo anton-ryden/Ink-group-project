@@ -1,12 +1,12 @@
 Our git history is messy/confusing since we had some git merge problems and we used a plugin named Code with me which commit your changes on someone else computer. Therefore look at the user stories in the trello board where each story has someone responsible.
 
-Who is who:
-antonson60 - Anton Rydén
-lukas-gartman - Lukas Gartman
-Bobbyp00 - Bobby Pang
-michaeldaang - Michael Dang
-ekan9 - Erik Näslund
-andtru0913 - Anders Truong
+Who is who:  
+antonson60 - Anton Rydén  
+lukas-gartman - Lukas Gartman  
+Bobbyp00 - Bobby Pang  
+michaeldaang - Michael Dang  
+ekan9 - Erik Näslund  
+andtru0913 - Anders Truong  
 
 Where to find stuff:
 
