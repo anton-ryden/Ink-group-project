@@ -18,3 +18,9 @@ Trello: https://trello.com/b/LY1wmrVj/scrum-project-management-board
 KPI: Named KPI_Ink_Group.xlsx  
 Database: Project code/src/main/resources/InkGroupProject/db/  
 Coordinates and language codes used for coutries used in World.java: Project code/src/main/resources/InkGroupProject/controller/  
+
+## Compile JAR file
+1. Clone the jar branch
+2. Enter the Maven command: 
+```mvn clean compile assembly:single```
+(pro-tip: double click Ctrl in IntelliJ to run Maven commands)
