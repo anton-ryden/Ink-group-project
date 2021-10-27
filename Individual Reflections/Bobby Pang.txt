@@ -3,7 +3,9 @@
 2. how can I help someone else, or the entire team, to learn something new?
 3. what is my contribution towards the team’s use of Scrum?
 4. what is my contribution towards the team’s deliveries?
-5
+B) & C). 
+Step B "what might or should be"
+Step C: "feedback designed to reduce the gap").
 
 Week 1
 ----------------------------------------------------------------------
@@ -18,6 +20,9 @@ Currently nothing as we haven't begun using Scrum
 
 4.
 We have only done the social contract so far and my contribution was sharing my thoughts.
+
+B) Id like the situation to be abit more confirmed as to what we are doing and what is going on.
+C) I could've read up on Agile a lot more.
 ----------------------------------------------------------------------
 Week 2
 1. Understand and learn more about how to program with APIs and open data sources.
@@ -27,6 +32,8 @@ Week 2
 3. We haven't begun to use scrum yet.
 
 4. Ive helped make the preview and shared a few of my thoughts and helped write the project scope.
+B) 
+C) 
 ----------------------------------------------------------------------
 Week 3
 1. I want to learn a bit more about creating UIs on JAVAFX
@@ -36,6 +43,8 @@ Week 3
 3. Helped lay down the foundation of the User stories and scrum board. 
 
 4. Found a reliable data source and started extracting and filtering the information that we want to use. 
+B) Still quite unsure of some points in Agile and the Scrum Board. 
+C)  I should have read up on the course and information regarding Scrum before this meeting so that I would have a clearer picture of what we were supposed to do and possible mistakes.
 ----------------------------------------------------------------------
 Week 4 
 1. I want to understand more about queries and connecting to a database.
