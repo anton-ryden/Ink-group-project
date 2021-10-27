@@ -8,88 +8,153 @@ This is the weekly individual reflection of Erik Näslund. I will be updating th
 
 --------- Week 1 -----------
 what do I want to learn or understand better?
-I want to learn and understand how to work in a group better.
+I have learned the process of making a social contract with a group. 
+I want to learn and understand how to work in a group better. We haven't started working on the project yet except deciding on what we should use for communication.
+I want to learn how to make a project scope and business model which we will create next week.
+In order to learn and understand this I will look at lectures and upcomming guest lectures and using the internet.
 
 how can I help someone else, or the entire team, to learn something new?
-Right now our main goal is to understand working together as good as possible before we start working on the actual project.
+Since we haven't really started to work in a group yet. We are just getting to know eachother as group members so i haven't really taught anyone anything new yet
+For the upcomming week our main goal is to understand working together as good as possible before we start working on the actual project.
+To help with this i will help plan meetings and try to make sure everyone is active in the group.
+
 
 what is my contribution towards the team’s use of Scrum?
 I do not have any contribution towards the team's use of Scrum yet but when we start working on it 
-i will make sure to have understood Scrum the best i can so i can help the team to use it correctly.
+I will make sure to have understood Scrum the best i can so i can help the team to use it correctly.
+I will use internet and watch lectures in order to learn this.
 
 what is my contribution towards the team’s deliveries?
-We have finished writing our Social Contract this week and my contribution was that i learned what it was and helped the team agree on what the social contract should include.
+We have finished writing our Social Contract this week and my contribution was that i helped the team agree on what the social contract should include.
+Next week we will create a project scope and a business model. I will contribute to this by help planning meetings and creating a project scope and business model.
+
 
 --------- Week 2 -----------
 
-Questions 1-3 are the same as last week since we haven't really started working on the project yet.
+what do I want to learn or understand better?
+I have learned how to make a project scope and business model. I want to learn how to use project management boards properly and how to create epics and user stories as well as estimating how much time each will take.
+To learn this I will look at lectures and trying to find information on the internet.
 
-4. What is my contribution towards the team's deliveries?
+how can I help someone else, or the entire team, to learn something new?
+This week i have helped the group understand project scope better. Hopefully I can keep it up and teach someone something new every week.
+By making sure i have learned about project management boards i can teach my group about them if there is something they do not understand next week.
+
+
+what is my contribution towards the team’s use of Scrum?
+I have tried to understand scrum as much as possible. But I'm still not 100% sure how to use it. Hopefully it will get a lot clearer once we start our first sprint.
+
+What is my contribution towards the team's deliveries?
 This week i planned when our meeting was to take place and helped create the project scope (business model and general idea 
-of what we are going to do) as well as the mockup visual representation of the application.
+of what we are going to do) as well as the mockup visual representation of the application. I feel like it was a good amount of effort and hope to keep it up.
+Next week I hope to help create the management board and various user stories and epics.
 
 --------- Week 3 -----------
 
 what do I want to learn or understand better?
-I want to be able to understand how to create an interactable map based on JavaFX. It should be a map of the world where you are
-able to zoom in on, highlight and select all countries. This will be a vital feature of our project.
+This week i learned about how to use project management boards properly and how to create epics and user stories as well as estimating how much time each story will take. As well as a bit more about using scrum since we started working with it this week.
+I want to be able to understand how to create an interactable map based on JavaFX. It should be a map of the world where you are able to zoom in on, highlight and select all countries. This will be a vital feature of our project.
+To learn about this I will mainly use the internet and various coding forums.
 
 how can I help someone else, or the entire team, to learn something new?
-By learning this myself i will be able to tell the other members of my group how it works and how they can use it to create what we want our end result to be.
+I tried to clear up misinformation and misunderstandings about using project management boards and creating epics + user stories.
+However, if i can learn JavaFx myself i will be able to tell the other members of my group how it works and how they can use it to create what we want our end result to be.
 
 what is my contribution towards the team’s use of Scrum?
-I have been assigned as PO 2 other members tasks. I also helped lay the foundation and preparation for our first sprint next week.
-That being estimating and planning what all members should work on in the upcomming sprint.
+I have been assigned as PO to 2 other members tasks. I also helped lay the foundation and preparation for our first sprint next week.
+That being estimating and planning what all members should work on in the upcomming sprint. This is pretty much how I hope my contribution towards my teams use of scrum will be moving forward. Plan and being active in meetings, taking the role of scrum master if necessary, plan upcomming sprints and acting as PO of various user stories to make sure we are on track.
 
 what is my contribution towards the team’s deliveries?
 This week we mostly laid the foundation of our project. I helped create various epics, user stories and estimating how much time each of those user stories should take. 
 We also agreed on a clearer picture of what our end result for the project should be. We decided to devide the group into subgroups of 2. 
-Me and Anton were decided to be one of those subgroups. Me and Anton have been working on and understanding creating an interactable map using javaFX.
+Me and Anton were decided to be one of those subgroups. Me and Anton have been working on and understanding creating an interactable map using javaFX. I'm satisfied with my contribution.
+Next week Me and Anton will try to finish the interactable map.
 
 --------- Week 4 -----------
 
 what do I want to learn or understand better?
-I want to learn how to use data sources better which relates to my task in the upcomming sprint.
+This week i learned about creating an interactable map and using JavaFx to do it. I want to learn how to use data sources and color coding in javafx better which relates to my task in the upcomming sprint. To do this i will mainly use the internet.
 
 how can I help someone else, or the entire team, to learn something new?
-This week I learned a lot about the map we are using for the project and also JavaFX. The information I've learned will allow
-me to help others when they have questions relating those.
+I learned a lot about the map we are using for the project and also JavaFX. The information I've learned allowed
+me to help others when they had questions relating to those. Similar to the previous week i will use what i manage to learn about data sources and color coding to teach my teammates about them if they have any questions.
 
 what is my contribution towards the team’s use of Scrum?
-I helped book meetings and helped plan the upcomming sprint. 
+I helped plan and being active in meetings, taking the role of scrum master if necessary, plan upcomming sprints and acting as PO to verify other group members tasks. I'm satisfied with this.
 
 what is my contribution towards the team’s deliveries?
-This week I worked with Anton to create the visible and interactable map. I also helped verify other group members tasks.
+This week I worked with Anton to create the visible and interactable map. Which is fine. 
+Next week I will hopefully be able to use the data source Bobby and Anders worked on to color code the map so you can see the poverty status of each country.
 
 --------- Week 5 -----------
 
 what do I want to learn or understand better?
-I need to understand the map and the use of databases in java better in order to be able to do my tasks next week.
+I learned a little bit about using data sources and color coding in JavaFX this week. However, for next week I need to understand the map me and Anton created even better and the use of databases in java better in order to be able to do my tasks next week.
+I will take help from my fellow teammates to learn about the databases. Mainly Michael and Lukas.
 
 how can I help someone else, or the entire team, to learn something new?
-I can help them by explaining more about how the map works if they need that information since i have been working on the map a lot.
+I answered questions regarding color coding this week. 
+Next week, I can help them by explaining more about how the map works if they need that information since i have been working on the map a lot.
 
 what is my contribution towards the team’s use of Scrum?
 This week i haven't been able to work as much as i would like to because of personal matters. So my contribution towards the
 team's use of scrum is much lower than i would like it to be but i still managed to attend the meetings and helped a little bit
-with the planning
+with the planning. However, this won't be an issue in the future. I will keep up the work that i was satisified with in the previous weeks.
 
 what is my contribution towards the team’s deliveries?
-Since i haven't been able to work as much this week, i wasn't able to finish my deliveries for the week. I will do better next
-week!
+Since i haven't been able to work as much this week except a bit of color coding on the map, i wasn't able to finish my deliveries for the week which I'm not very satisfied with. I will do better next
+week by keeping to my regular effort!
 
 --------- Week 6 -----------
 
 
 what do I want to learn or understand better?
-I need to learn more about JavaFX and how to change the icon of the program since those are things i'm going to be working on next sprint.
+This week I learned how to use DBBrowser with the help of Michael. And using DBBrowser to merge two tables.
+I need to learn more about JavaFX and how to change the icon of the program since those are things i'm going to be working on next sprint. To learn this I mainly plan on using internet.
 
 how can I help someone else, or the entire team, to learn something new?
-If i learn this it will hopefully be of use for the team. Otherwise i'm stil able to help them learn about the things i've learned from the project.
+This week I helped answer questions about the map since some people were working on features relating to the map.
+If i learn more about JavaFX and changing application icon it will hopefully be of use for the team. Otherwise i'm stil able to help them learn about the things i've learned from the project.
 
 what is my contribution towards the team’s use of Scrum?
-This week i've helped plan meetings and seen to it that we follow our usual sprint schedule. Also planning the next sprint and asking questions to help other members paricipate more.
+This week I've kept up my regular contribution and helped plan and being active in meetings, taking the role of scrum master if necessary, plan upcomming sprints and acting as PO for other tasks checking if other group members user stories were finished.
+Also planning the next sprint and asking questions to help other members paricipate more. Which I'm satisfied with.
 
 what is my contribution towards the team’s deliveries?
-I've fixed a bug and made some improvements to the database. I also tried to help other team members as much as i could and keep communication with them to make sure we are on track.
+I've fixed a bug and made some improvements to the database. I also tried to help other team members as much as I could and keep communication with them to make sure we are on track. 
+Next week I will hopefully be able to change the application icon and change the color coding of countries.
 
+--------- Week 7 -----------
+
+what do I want to learn or understand better?
+This week I learned about changing the application icon and more about color coding in JavaFX. Next week we won't focus on adding features to the application. We will focus on cleaning up the code, make sure the application looks nice and creating a working jar file. Also finalizing the javadoc.
+I want to learn how to create a jar file and how to make an application look nice.
+
+how can I help someone else, or the entire team, to learn something new?
+I didn't really teach anyone anything new this week but tried to be as helpful as possible. Hopefully I will be more helpful next week.
+I will try to be helpful by asking if anyone needs help during our meetings. Also if i notice someone being unsure of what to do i will make sure to clarify or find information that can help them.
+
+
+what is my contribution towards the team’s use of Scrum?
+This week I've kept up my regular contribution which i'm satisfied with. That being plan and being active in meetings, taking the role of scrum master if necessary, plan upcomming sprints and acting as PO for other tasks.
+Next week, I will hopefully keep this up.
+
+what is my contribution towards the team’s deliveries?
+This week i managed to change the application icon, I also created the gradient line we use to show the current situation of poverty in each country using colors from green to red.
+I also changed the color coding of the countries from blue to green to red to green to orange to red which resulted in a more pleasing and accurate look. I'm pretty satisfied with my contribution. I had hoped to be able to do more but
+the user stories i had proved more difficult than I anticipated.
+
+--------- Week 8 -----------
+
+
+what do I want to learn or understand better?
+Since this is the last week we will code (focusing on final report, peer assessment and making sure everything needed is in our repo next week.). There isn't much I need to learn or understand better
+except writing a good final report that reflects everything we have done, the good and the bad.
+
+how can I help someone else, or the entire team, to learn something new?
+Making sure everyone understands what we are supposed to do in the final report will be my top priority. Hopefully some learning comes as a result out of this.
+
+what is my contribution towards the team’s use of Scrum?
+Pretty much the same as previous weeks since it has been working very well. There is not much i would like to change.
+
+what is my contribution towards the team’s deliveries?
+I helped finalize the code pretty much. Deleting some unnecessary things as well as cleaning up.

@@ -3,7 +3,10 @@
 2. how can I help someone else, or the entire team, to learn something new?
 3. what is my contribution towards the team’s use of Scrum?
 4. what is my contribution towards the team’s deliveries?
-5
+A) & B) & C). 
+Step A: "what is"
+Step B "what might or should be"
+Step C: "feedback designed to reduce the gap"
 
 Week 1
 ----------------------------------------------------------------------
@@ -18,6 +21,10 @@ Currently nothing as we haven't begun using Scrum
 
 4.
 We have only done the social contract so far and my contribution was sharing my thoughts.
+
+A) Since this is everyones first time using agile, we are all a bit lost.
+B) Id like the situation to be abit more confirmed as to what we are doing and what is going on.
+C) I will read up on Agile more.
 ----------------------------------------------------------------------
 Week 2
 1. Understand and learn more about how to program with APIs and open data sources.
@@ -27,6 +34,9 @@ Week 2
 3. We haven't begun to use scrum yet.
 
 4. Ive helped make the preview and shared a few of my thoughts and helped write the project scope.
+A) We still haven't started with the scrum board so we should get started with it next week.
+B) Still quite unsure of some points in Agile and the Scrum Board for next week. 
+C)  I should have read up on the course and information regarding Scrum before this meeting so that I would have a clearer picture of what we were supposed to do and possible mistakes.
 ----------------------------------------------------------------------
 Week 3
 1. I want to learn a bit more about creating UIs on JAVAFX
@@ -36,8 +46,23 @@ Week 3
 3. Helped lay down the foundation of the User stories and scrum board. 
 
 4. Found a reliable data source and started extracting and filtering the information that we want to use. 
+A) I think the group is coming together well but there's definetely more stuff to do.
+B) Id like to help the group a bit more.
+C) I think I will take responsibility of writing down peoples opinions and summarising them to use for the team reflection. 
 ----------------------------------------------------------------------
-Week 4 
+Week 4
+1. I want to learn a bit more about effective ways of filtering information in data sources.
+
+2. Try to make functions to access vital information.
+
+3. Worked on user stories and helped summarise peoples opinions.
+
+4. Working with implementing the data from the data source.
+A) Everyone has started and Im assigned mostly with UI and datasource related tasks. 
+B) Id like to know a bit more about taking information from data sources and filtering information from databases.
+C) Watching videos and documentation of how to extract wanted information.
+----------------------------------------------------------------------
+Week 5
 1. I want to understand more about queries and connecting to a database.
 
 2. Help with planning UIs
@@ -45,8 +70,11 @@ Week 4
 3. Writing down everyones opinions and summarising them.
 
 4. Most things related to the UI, graphs text, what info to incorporate etc.
+A) The group has had a few communication issues due to our initial user stories that were too big or were not independent enough.
+B) Think we should have fixed the user story issue earlier in the weeks but definetely learned what not to do next time.
+C) Next time make user stories more independent and divide them in smaller user stories.
 ----------------------------------------------------------------------
-Week 5
+Week 6
 
 1. Learning more about Panes and different type of panels and the design differences.
 
@@ -54,9 +82,11 @@ Week 5
 
 3. Helping to write the team reflection and taking everyones input.
 
-4. Same as last week mostly UI stuff and connecting the UI to releveant information.
+A) I think the situation is good, we have stabilised since the first week and everyone seems to be getting comfortable with each other.
+B) I don't think there is much to say.
+C) Think this week was fine, we sorted out the user story issue and the project is really coming together. 
 ----------------------------------------------------------------------
-Week 6 
+Week 7
 
 1. Need to get better at sorting out the code and making it a lot more user friendly.
 
@@ -65,6 +95,9 @@ Week 6
 3. Same as last week, mostly collecting everyones thoughts and opinions and formulating them.
 
 4. Implementing the features that everyone is working on in to the UI's.
+A) Mostly everything is done and everyone has done a great job.
+B) Nothing to really complain over since everyone is meshing together well now and the project only has small adjustmentes remaining.
+C) Pretty much like last week. 
 ----------------------------------------------------------------------
 
 
