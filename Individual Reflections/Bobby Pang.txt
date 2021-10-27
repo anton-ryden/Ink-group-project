@@ -46,7 +46,18 @@ Week 3
 B) Still quite unsure of some points in Agile and the Scrum Board. 
 C)  I should have read up on the course and information regarding Scrum before this meeting so that I would have a clearer picture of what we were supposed to do and possible mistakes.
 ----------------------------------------------------------------------
-Week 4 
+Week 4
+1. I want to learn a bit more about effective ways of filtering information in data sources.
+
+2. Try to make functions to access vital information.
+
+3. Worked on user stories and helped summarise peoples opinions.
+
+4. Working with implementing the data from the data source.
+B) 
+C)
+----------------------------------------------------------------------
+Week 5
 1. I want to understand more about queries and connecting to a database.
 
 2. Help with planning UIs
@@ -54,8 +65,10 @@ Week 4
 3. Writing down everyones opinions and summarising them.
 
 4. Most things related to the UI, graphs text, what info to incorporate etc.
+B) 
+C)
 ----------------------------------------------------------------------
-Week 5
+Week 6
 
 1. Learning more about Panes and different type of panels and the design differences.
 
@@ -64,8 +77,10 @@ Week 5
 3. Helping to write the team reflection and taking everyones input.
 
 4. Same as last week mostly UI stuff and connecting the UI to releveant information.
+B) 
+C)
 ----------------------------------------------------------------------
-Week 6 
+Week 7
 
 1. Need to get better at sorting out the code and making it a lot more user friendly.
 
@@ -74,6 +89,8 @@ Week 6
 3. Same as last week, mostly collecting everyones thoughts and opinions and formulating them.
 
 4. Implementing the features that everyone is working on in to the UI's.
+B) 
+C)
 ----------------------------------------------------------------------
 
 
