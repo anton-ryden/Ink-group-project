@@ -9,4 +9,4 @@ Individual reflection: located in the map Individual Reflection. One txt file pe
 Team reflections: located in the map Team Reflections. One txt file per member with their name as the txt 
 Source code: path for the directory Ink-group-project/Project code/src/main/java
 Trello: https://trello.com/b/LY1wmrVj/scrum-project-management-board
-KPI: Named KPI_Ink_Group.xlsx
+KPI: Named KPI_Ink_Group(1).xlsx
