@@ -181,52 +181,142 @@ how can I help someone else, or the entire team, to learn something new?
 	Some members lack good and bad pratices.
 
 	B - What might or should be
-	If we had a better understanding of good pratices then thw code qualti would incrice 
+	If we had a better understanding of good pratices then the code quality would increase
 	
 	C - A plan for getting from where you are to where you want to be
 	Teach about good and bad pratices while explaining possible solution for the weeks user stories  and teaching people about how the map works
 	
 what is my contribution towards the team’s use of Scrum?
-	Ask questions. Make sure everyone is comfortable and understand their user stories. And helping with potential problems
 	A - Current situation
+	Im a big part of the meetings and try to make the meetings productive
 	
 	B - What might or should be
+	The meetings could always be better with more comments from certain members
 	
 	C - A plan for getting from where you are to where you want to be
+	Try and involve the people who are not participating as much in the meetings§
 
 what is my contribution towards the team’s deliveries?
-	This week i have been implementing a zoom function, worked on the map rezising correctly and mkaing it possible to select a country.
+	
 	A - Current situation
+	In term of the user stories we are at a good state in personaly im probably speding to much time
+	This week i have been implementing a zoom function, worked on the map rezising correctly and mkaing it possible to select a country.
 	
 	B - What might or should be
+	Probably spending a little less time 
 	
 	C - A plan for getting from where you are to where you want to be
+	Spend less time on the project however it so much fun which make it hard
 
 *********************Week 6*********************
 
 what do I want to learn or understand better?
-	I need to have a deeper understanding of svg paths and how java handels translets on javafx components.
+	A - Current situation
+	I need to have a deeper understanding of svg paths and how java handels translates on javafx components.
+	
+	B - What might or should be
+	better understanding of svg which would make the developmnet faster
+	
+	C - A plan for getting from where you are to where you want to be
+	Reading about the documentation on svgpath
 
 how can I help someone else, or the entire team, to learn something new?
 	Basically a combination from the previous week. 
 
+	
+
 what is my contribution towards the team’s use of Scrum?
-	Talking and asking question since most of the members are mostly silent. Make sure everyone is participating and comforatable in the group and with their user story.
+	A - Current situation
+	Talking and asking question since some of the members are mostly silent. Make sure everyone is participating and comforatable in the group and with their user story.
+	
+	B - What might or should be
+	Better comunication
+	
+	C - A plan for getting from where you are to where you want to be
+	Continuing with what im doing
+	
 
 what is my contribution towards the team’s deliveries?
+	A - Current situation
 	This week i have been working ALOT. I have made some querys and for the database and making sure the information from the database is interpreted in the right way in 	the application. I discoverd 2 bugs last week which i took care of while also implementing a drag function for the map.
 	
+	B - What might or should be
+	This week i did A LOT more than what was expected however i was the only one with the expertise to solve the problems. Instead of doing everything this week maybe postpone some of it, however we want to also finish the last few features
+	
+	C - A plan for getting from where you are to where you want to be
+	Im happy with the outcome however for the sake of team satisfaction maybe stop being a perfectionist
+	
 	*********************Week 7*********************
-
 what do I want to learn or understand better?
+	A - Current situation
 	I gained alot of knowledge on svg path last week but since i will be working alot with it this week also it would be nice to gain more knowledge. Specificly how you can make svq path have a "size" so other components does not take the same place in the panels
-
+	
+	B - What might or should be 
+	Not much i feel prepared
+	
+	C - A plan for getting from where you are to where you want to be
+	Not much i feel prepared
+	
 how can I help someone else, or the entire team, to learn something new?
+	A - Current situation
 	Same as previous weeks. Acting like a sounding board.
+	
+	B - What might or should be 
+	Not much feels kinda good
+	
+	C - A plan for getting from where you are to where you want to be
+	No need for improvment
 
 what is my contribution towards the team’s use of Scrum?
+	A - Current situation
 	Same as previous week and scheduling 
 
+	B - What might or should be 
+	Scheduling beforehand however thats hard since everyone has so diffrent schedules
+	
+	C - A plan for getting from where you are to where you want to be
+	Keep asking about the teams available time
+	
 what is my contribution towards the team’s deliveries?
+	A - Current situation
 	I have made some small changes with ui and helping erik with the gradient line. The main thing I have been working on is the painting of a country in the donation panel when you select it on the map
+	B - What might or should be 
+	We are basically done with the project at this point
+	
+	C - A plan for getting from where you are to where you want to be
+	NOTHING
+	
+	*********************Week 8*********************
+what do I want to learn or understand better?
+	A - Current situation
+	Not much since project is coming to an end. But probably how to make a "fat jar"
+	
+	B - What might or should be 
+	
+	
+	C - A plan for getting from where you are to where you want to be
+	Reading some documentation about maven 
 
+
+what is my contribution towards the team’s use of Scrum?
+	A - Current situation
+	Scheduling and making sure we so the deliverables for the week
+
+	B - What might or should be 
+	Not much 
+	
+	C - A plan for getting from where you are to where you want to be
+	Keep up
+	
+what is my contribution towards the team’s deliveries?
+	A - Current situation
+	Cleaning up in the code base, structuring the presentation and some small fixes in the project
+	
+	B - What might or should be 
+	Since most people have exam this week. Week have scheduled writing the final report next week
+	
+	C - A plan for getting from where you are to where you want to be
+	Writing the final report
+	
+
+	
