@@ -1,34 +1,34 @@
 Week 1:
 * What do I want to learn or understand better?
-I feel a little bit rusty on what it is we are learning this week so I want to get up-to-date with that.
+I feel a little bit rusty on what it is we are learning this week so I want to get up-to-date with that by taking a look at the posted material on Canvas and browsing the Internet.
 
 * How can I help someone else, or the entire team, to learn something new?
-To work and study together by asking each other questions.
+To work and study together by asking each other questions, which we have already started doing.
 
 * What is my contribution towards the team’s use of Scrum?
-We have not yet started using Scrum.
+We have not yet started using Scrum but we will eventually when things progress in the course.
 
 * What is my contribution towards the team’s deliveries?
-This week we created the social contract and I helped by sharing my thoughts and ideas.
+This week we created the social contract and I helped by sharing my thoughts and ideas. Next sprint, we should be looking at what kind of product we want to create, and I will again help out by sharing my thoughts and ideas.
 
 
 Week 2:
 * What do I want to learn or understand better?
-I want to learn more about the APIs that we are going to be working with.
+I want to learn more about the APIs that we are going to be working with. I will do that by looking at example usages and trying them out myself.
 
 * How can I help someone else, or the entire team, to learn something new?
 I think the project we are going to work on is new for everybody so my plan is whenever I learn something new then I will share it with the group.
 
 * What is my contribution towards the team’s use of Scrum?
-We have not yet started using Scrum.
+We have not yet started using Scrum but we will eventually when things progress in the course.
 
 * What is my contribution towards the team’s deliveries?
-I helped the team to brainstorm ideas on what our project is going to be, such as having an interactive map for our app.
+I helped the team to brainstorm ideas on what our project is going to be, such as having an interactive map for our app. From here on, we want to look at what needs to be added in more detail by creating a scrum board.
 
 
 Week 3:
 * What do I want to learn or understand better?
-In order to start working on my assigned tasks, I want to refresh my knowledge about SQL and databases. I also want to learn more about JavaFX to design the data input menu.
+In order to start working on my assigned tasks, I want to refresh my knowledge about SQL and databases. I also want to learn more about JavaFX to design the data input menu. This will be done by looking at online documentation and example code.
 
 * How can I help someone else, or the entire team, to learn something new?
 Me and Michael are going to be working more closely together and I see us bouncing ideas with each other (whenever we get started) to learn new things.
@@ -37,12 +37,12 @@ Me and Michael are going to be working more closely together and I see us bounci
 I helped the group set up the Scrum board by creating and assigning user stories and estimating how long they will take.
 
 * What is my contribution towards the team’s deliveries?
-Besides setting up our Scrum board, I helped the team to create a UML diagram to get a better idea of what our code structure will look like, I contributed to the team reflection, and I looked at different options for our map.
+Besides setting up our Scrum board, I helped the team to create a UML diagram to get a better idea of what our code structure will look like, I contributed to the team reflection, and I looked at different options for our map. I want to have set up the database structure for the next sprint and will do so by looking into the different options.
 
 
 Week 4:
 * What do I want to learn or understand better?
-I want to learn how to create a user session in a JavaFX application so that we can access a user's information after they have logged in to the map.
+I want to learn how to create a user session in a JavaFX application so that we can access a user's information after they have logged in to the map (which currently we cannot do). I will accomplish this by going to the Internet.
 
 * How can I help someone else, or the entire team, to learn something new?
 By sharing the things I learn during our team meetings. This sprint, for example, I learnt how to create new JavaFX scenes and how to switch between different scenes.
@@ -51,12 +51,12 @@ By sharing the things I learn during our team meetings. This sprint, for example
 I helped the team to go over our user stories and to plan for the next sprint.
 
 * What is my contribution towards the team’s deliveries?
-In addition to the team meetings where we worked on the Scrum board and wrote the team reflection, I also worked together with Michael to set up a database, created JavaFX interfaces to login and create accounts, and implemented the code to execute SQL queries to our database to manage account data.
+In addition to the team meetings where we worked on the Scrum board and wrote the team reflection, I also worked together with Michael to set up a database, created JavaFX interfaces to login and create accounts, and implemented the code to execute SQL queries to our database to manage account data. The plan for my next team delivery is to create a user session system, and I will achieve that by looking up how to do that in Java.
 
 
 Week 5:
 * What do I want to learn or understand better?
-I want to get a refresher on Javadoc.
+I want to get a refresher on Javadoc. I have not written Javadoc in a long time but it will be easy to get a refresher on the Javadoc online documentation.
 
 * How can I help someone else, or the entire team, to learn something new?
 I show my team members my solutions to the user stories I resolve and talk about my reasonings behind the decisions I make.
@@ -65,12 +65,12 @@ I show my team members my solutions to the user stories I resolve and talk about
 I helped the team to go over our user stories and to plan for the next sprint.
 
 * What is my contribution towards the team’s deliveries?
-This week I created a UserSession system, moved data from CSV files into database tables, made some code improvements/cleanup, and fixed the .gitignore file.
+This week I created a UserSession system, moved data from CSV files into database tables, made some code improvements/cleanup, and fixed the .gitignore file. It is now time to document our code and I will do that by adding my comments after finding out what the Javadoc conventions are.
 
 
 Week 6:
 * What do I want to learn or understand better?
-I want to learn more about lambdas.
+I want to learn more about lambdas. I can write a basic lambda function for a button call, but I want to see what more you can do with them because they seem powerful in a way. As always, I learn about this from searching on the Internet, usually from Stack Overflow.
 
 * How can I help someone else, or the entire team, to learn something new?
 I believe that thoroughly explaining your decision making when showing someone your code helps a lot for other people to perhaps learn something new.
@@ -79,12 +79,12 @@ I believe that thoroughly explaining your decision making when showing someone y
 I helped the team to go over our user stories and to plan for the next sprint.
 
 * What is my contribution towards the team’s deliveries?
-I implemented the functionality for checking how many meals a given donation could help a country and wrote some Javadoc documentation for the code that is already finished.
+I implemented the functionality for checking how many meals a given donation could help a country and wrote some Javadoc documentation for the code that is already finished. We are getting towards the end and I feel like it is time to start cleaning up the code because it is very cluttered all over the place. This will be done by going from top to bottom in all the classes, looking for things that can be improved or broken down/moved for better readability.
 
 
 Week 7:
 * What do I want to learn or understand better?
-I want to understand how the final presentation will work out.
+I want to understand how the final presentation will work out. This will be taught in the lecture and I plan to watch that to figure it out.
 
 * How can I help someone else, or the entire team, to learn something new?
 Communicating! Sharing! Et cetera...
@@ -93,4 +93,18 @@ Communicating! Sharing! Et cetera...
 I helped the team to go over our user stories.
 
 * What is my contribution towards the team’s deliveries?
-I designed the user settings page, helped out some team members, and did a thorough cleanup of the code.
+I designed the user settings page, helped out some team members, and did a thorough cleanup of the code. Now that the final presentation is coming up, it is time to figure out how to compile a JAR application file. I will do so by looking up how to do that while also including all the necessary dependencies.
+
+
+Week 8:
+* What do I want to learn or understand better?
+I want to be prepapred for the final report that needs to be written. This information is available on Canvas and I plan to look at that and also speak to my team members.
+
+* How can I help someone else, or the entire team, to learn something new?
+Tell them what I found out about the final report in case they have not looked it up themselves yet or have any questions I can answer.
+
+* What is my contribution towards the team’s use of Scrum?
+I helped the team to go over our user stories for the final KPI calculation.
+
+* What is my contribution towards the team’s deliveries?
+After lots of struggles, I finally managed to compile a working JAR file with all the required dependencies. Next up is the final report and I will help my team to write it together in Google Docs via communication in a Discord call.
