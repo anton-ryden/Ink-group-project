@@ -12,6 +12,16 @@ We have yet not used Scrum in our practices.
 What is my contribution towards the team’s deliveries?
 Working towards the social contracts that we all agree on together with the team
 
+A: Current situation
+Early planning phase, we began to discuss how we will work as a group.
+
+B: What might or should be
+It would be nice if everyone had the same expectation and goal for our course.
+
+C: A plan for getting from where you are to where you want to be
+Attending exercises and lectures together
+
+
 Week 2 -------------------------------------------
 What do I want to learn or understand better?
 Understanding how to access and use an open data source
@@ -24,6 +34,16 @@ We have not begun using scrum yet.
 
 What is my contribution towards the team’s deliveries?
 I gave ideas how to divide the role of members being responsible for user stories and product owners.
+
+A: Current situation
+A lot of planning, using a drawing application to show how our application will look like.
+
+B: What might or should be
+We could make the structure more clear of using technical documentations. However we discarded the use of class diagram
+since our code are subject to change
+
+C: A plan for getting from where you are to where you want to be
+Use a technical documentation and frequently update it whenever the structure of our code changes.
 
 Week 3 -------------------------------------------
 What do I want to learn or understand better?
@@ -39,6 +59,15 @@ This week I made sure the user stories had an acceptance criteria, and members w
 
 What is my contribution towards the team's deliveries?
 I began with the creation of the trello board and contributed towards creating the user stories and epics for our application.
+
+A: Current situation
+Discussing how our code will be implemented, and making API decisions. However, we were slightly behind with our work as a hello world demo should be created already.
+
+B: What might or should be
+We should have started coding and make a foundations for our code structure.
+
+C: A plan for getting from where you are to where you want to be
+Start coding a hello world demo but applied with MVC pattern and the APIs that we will use for our application.
 
 Week 4 -------------------------------------------
 What do I want to learn or understand better?
@@ -56,6 +85,14 @@ What is my contribution towards the team's deliveries?
 This week I created the information panel on the right side of the panel which was taking data from an open source on the internet and
 processing the data to give out a percentage of the population living in poverty
 
+A: Current situation
+We caught up a lot for this week when everyone has started implementing their code for their user story.
+
+B: What might or should be
+Instead of having two on every user story, we could divide tasks even smaller and have every individual working on a user story.
+
+C: A plan for getting from where you are to where you want to be
+Discuss on the upcoming sprint and try see if it works better.
 
 Week 5 -------------------------------------------
 What do I want to learn or understand better?
@@ -75,6 +112,16 @@ I made the coloring of the map depending on its poverty status. Initially I had 
 had problem integrating my information panel with the coloring of the map. That is why I had to rewrite my code to being able to easily color maps.
 
 
+A: Current situation
+Miscommunications on how open source data will be collected and stored. Bad coding structure which caused slow performance on the application.
+
+B: What might or should be
+We should have a discussion on what API we should use. It worked good between JavaFX and Java Swing since we made it clear among ourselves that everyone
+in the group would use JavaFX. However how the data will be stored had not been discussed at all.
+
+C: A plan for getting from where you are to where you want to be
+Communicate more and talk about how it goes for someone and what they are planning to do, so we could discuss if someone are about to implement a wrong API.
+
 Week 6 -------------------------------------------
 What do I want to learn or understand better?
 To understand what the other members have done and how I could implement my user story with their code.
@@ -87,6 +134,21 @@ Help planning the upcoming part and create more user stories that everyone could
 
 What is my contribution towards the team's deliveries?
 I made a donation panel connected to a database which could be registered by a user.
+
+A: Current situation
+I had a lot of difficulties for this sprint. I had to discuss with someone who were first designing the donation panel since we were both working
+on a user story on a same panel. Afterwards I had some discussion with a teammate how they implemented the database, and another teammate of how they
+implemented the user session. And lastly a discussion if we should keep the MVC design as it showed a lot of difficulties if I had to write several
+different places in the code to keep up with the MVC pattern while getting my user story done. This was a frustrating user story where I had to check in
+with several teammates before I could start working on my task.
+
+B: What might or should be
+Alternatively we could split or change the user story and make it less dependant on other stories, as this user story did not meet the INVEST criteria.
+
+C: A plan for getting from where you are to where you want to be
+I should have been more open with the group of my complications with the user story. As in our social contract we all agreed to ask for support if we met an
+obstacle.
+
 
 Week 7 -------------------------------------------
 What do I want to learn or understand better?
@@ -101,6 +163,17 @@ Giving suggestion and planning how the user page will look like and we eventuall
 What is my contribution towards the team's deliveries?
 I created a user page where the user could see how much money they donated and how many healthy diets it corresponds to.
 
+A: Current situation
+The project is about to meet its finish line and we started to clean up our code. From my previous sprint. I reflected upon how to handle parts that
+are dependant of other work by teammates. I left out smaller parts for them to easily connect their part of work together
+with my task, that could be for example creating a button and make an unfinished button handler to run a part from my teammates code.
+
+B: What might or should be
+As above, user stories could be better planned to meet the INVEST criteria, in that way parts would not be that too dependant to each other.
+
+C: A plan for getting from where you are to where you want to be
+A discussion of how features could be implemented when creating a user story.
+
 Week 8 -------------------------------------------
 What do I want to learn or understand better?
 Reflect on how we could work to do better on the next project.
@@ -113,3 +186,12 @@ Reflect on our use of scrum and what we could do for the next project.
 
 What is my contribution towards the team's deliveries?
 Working on the final report together
+
+A: Current situation
+Finishing our project, this sprint we worked mostly on documentation and reflections.
+
+B: What might or should be
+-
+
+C: A plan for getting from where you are to where you want to be
+-
