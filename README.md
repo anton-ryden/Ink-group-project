@@ -1,26 +1,42 @@
-# Poverty-map
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Project Status](#project-status)
+<!-- * [License](#license) -->
 
-Our git history is messy/confusing since we had some git merge problems and we used a plugin named Code with me which commit your changes on someone else computer. Therefore look at the user stories in the trello board where each story has someone responsible.
+## General Information
+- This project was part of a agile software development course
+- We aimed at affecting one of FN global goals (poverty and hunger)
+- The application creates an overview of how many people are living in poverty and how much a donation would help
 
-## Who is who:  
-antonson60 - Anton Rydén  
-lukas-gartman - Lukas Gartman  
-Bobbyp00 - Bobby Pang  
-michaeldaang - Michael Dang  
-ekan9 - Erik Näslund  
-andtru0913 - Anders Truong  
+## Technologies Used
+- Java - version 1.8
+- JavaFx
 
-## Where to find stuff:  
-Individual reflections: located in the map Individual Reflection. One txt file per member with their name as the txt file name  
-Team reflection: located in the map Team Reflection  
-Source code: Project code/src/main/java  
-Trello: https://trello.com/b/LY1wmrVj/scrum-project-management-board  
-KPI: Named KPI_Ink_Group.xlsx  
-Database: Project code/src/main/resources/InkGroupProject/db/database.db  
-Coordinates and language codes used for coutries used in World.java: Project code/src/main/resources/InkGroupProject/controller/  
+## Features
+List the ready features here:
+- Create user and login
+- Keep track of donation data about each user
+- Interactive heatmap
+- User settings
+- View donation history
 
-## Compile JAR file
-1. Switch to the jar branch
-2. Enter the Maven command: 
-```mvn clean compile assembly:single```
-(pro-tip: double click Ctrl in IntelliJ to run Maven commands)
+## Screenshots
+![login](./images/1.gif)
+![create-account](./images/2.gif)
+![login](./images/3.gif)
+![map](./images/4.gif)
+![user-page](./images/5.gif)
+![user-settings](./images/6.gif)
+<!-- If you have screenshots you'd like to share, include them here. -->
+
+## Setup
+
+## Project Status
+Project is: no longer being worked on.
+
+
+
